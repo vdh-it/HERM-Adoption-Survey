@@ -30,7 +30,7 @@
 
 ### For Researchers & Project Owners
 - See [`CLAUDE.md`](./CLAUDE.md) for AI agent configuration and specialized workflows
-- Check [`Agents.md`](./Agents.md) for available AI agents and their capabilities
+- Check [`AGENTS.md`](./AGENTS.md) for available AI agents and their capabilities
 - Review project structure in `.instructions.md`
 
 ### For Contributors
@@ -44,7 +44,7 @@
 .
 ├── README.md                    # This file
 ├── CLAUDE.md                    # AI configuration for this project
-├── Agents.md                    # Custom agents available
+├── AGENTS.md                    # Custom agents available
 ├── .instructions.md             # Detailed project instructions for AI
 ├── data/
 │   ├── case-studies/           # Raw case study data
@@ -63,7 +63,7 @@
 
 1. **For AI-supported research:** Ask me to help with case study analysis, pattern identification, or synthesis
 2. **To add a case study:** Use the template in `docs/templates/case-study-template.md`
-3. **To analyze data:** Use agents specialized in research synthesis (see `Agents.md`)
+3. **To analyze data:** Use agents specialized in research synthesis (see `AGENTS.md`)
 
 ---
 

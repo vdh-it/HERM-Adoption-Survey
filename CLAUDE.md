@@ -74,7 +74,7 @@ When analyzing, structure findings as:
 
 ## Available Specialized Agents
 
-See `Agents.md` for detailed specifications. Quick reference:
+See `AGENTS.md` for detailed specifications. Quick reference:
 
 - **case-study-synthesizer:** Analyze multiple cases for patterns
 - **theme-extractor:** Identify common themes and variations
