@@ -37,6 +37,7 @@
 - Start with case study templates in `data/case-studies/`
 - Use analysis frameworks in `analysis/`
 - Follow contribution guidelines below
+- Contribute at https://github.com/vdh-it/HERM-Adoption-Survey
 
 ## Directory Structure
 
