@@ -1,4 +1,4 @@
-# Agents.md: Specialized AI Agents for HERM Research
+# AGENTS.md: Specialized AI Agents for HERM Research
 
 This document defines specialized AI agents available for this research project.
 
