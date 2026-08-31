@@ -48,6 +48,8 @@ Section 4: Sharing — internally split, see Section 4 below:
 Section 5: Open Questions & Barriers
   → everyone who did NOT trigger the Section 4 Part B engagement flag
     (i.e. limited or no active EA/HERM engagement) — catch-all wrap-up
+  → Q5.2 specifically is suppressed for anyone who saw Section 3b
+    (3b.1 already covers "reasons for not using HERM"); 5.1/5.3 still apply
 
 → END
 ```
@@ -70,11 +72,6 @@ A respondent using HERM *and* TOGAF sees both Section 3 and Section 3a — this 
 | 1.5 | Staff size (approx. headcount)      | Single select   | <200 / 200–1k / 1–3k / >3k / n.a.                                        |
 | 1.6 | Your role                           | Multi select    | EA Architect / IT Strategist / CIO/IT Director / IT Project Lead / Other |
 - [ ] check for good boundaries in student size and staff headcount
-- [ ] follow-up topics
-	- [ ] medical faculty or not
-	- [ ] how broad is the spectrum of subjects -> double check importance of TU/full university vs university // school of arts or music
-	- [ ] background of person
-	- [ ] more details about the type of institution
 
 ---
 
@@ -113,7 +110,6 @@ A respondent using HERM *and* TOGAF sees both Section 3 and Section 3a — this 
 (\*) maybe, we leave this out after pretest.
 
 - [x] more generic on EA not HERM — resolved by keeping this section strictly HERM-scoped and giving general-EA content its own module (Section 3a), instead of merging the labels ✅ 2026-08-31
-- [ ] follow-up: Planing horizon
 
 **Options for Q3.3 — Problems solved with HERM:**
 - Structuring the application landscape (ARM)
@@ -198,7 +194,6 @@ A respondent using HERM *and* TOGAF sees both Section 3 and Section 3a — this 
 | 4.5 | For which purpose would you like to be contacted                            | Multi select     | Only shown if 4.3 = Yes or Maybe, see selection below  |
 
 - [ ]  make a choice, for what reason to contact.
-- [ ] later: tooling questions
 
 *Note:* Respondents who rate transferability "High, Medium" AND agree to share → flag for follow-up contact / activity. Gating Part B on the engagement flag rather than on the HERM/non-HERM branch ensures EA-practicing institutions without HERM are not silently dropped from the recruitment funnel described in `Draft-Letter2EUNISBoard.md` (deliverables 3–7: follow-up interviews, workshops).
 
@@ -214,13 +209,14 @@ A respondent using HERM *and* TOGAF sees both Section 3 and Section 3a — this 
 ## Section 5: Open Questions & Barriers
 *Everyone who did NOT trigger the Section 4 Part B engagement flag — i.e. limited or no active EA/HERM engagement; this is the catch-all wrap-up*
 
-| #   | Question                                                       | Type                 | Notes                                              |
-| --- | ------------------------------------------------------------------ | -------------------- | ------------------------------------------------------- |
-| 5.1 | What are your biggest open questions about EAM?                    | Text                 | Core data for "what do practitioners need to know"      |
-| 5.2 | What is the main barrier to adopting HERM at your institution?     | Multi-select + Other | Options below                                            |
-| 5.3 | What would most help you move forward?                             | Text                 | Optional                                                 |
+| #   | Question                                                       | Type                 | Condition                              | Notes                                                    |
+| --- | ------------------------------------------------------------------ | -------------------- | ------------------------------------------ | ------------------------------------------------------------- |
+| 5.1 | What are your biggest open questions about EAM?                    | Text                 | Always                                      | Core data for "what do practitioners need to know"            |
+| 5.2 | What is the main barrier to adopting HERM at your institution?     | Multi-select + Other | Only if Section 3b was NOT shown            | Skip for respondents who already answered 3b.1 with the same ground — asking again is redundant |
+| 5.3 | What would most help you move forward?                             | Text                 | Always                                      | Optional                                                       |
 
 - [x] more generic EA not only HERM — Q5.1 already asks about EAM broadly, not HERM specifically ✅ 2026-08-31
+- [x] Section 5 / Section 3b overlap — respondents who complete 3b (EA practice, no HERM) but land in Section 5 anyway (no engagement flag, e.g. 3b.2 = Unlikely/Definitely not) were being re-asked "main barrier to adopting HERM" right after 3b.1 covered the same ground. Q5.2 is now suppressed for anyone who saw Section 3b; 5.1 and 5.3 still apply to everyone ✅ 2026-08-31
 
 **Options for Q5.2 — Barriers:**
 - Lack of awareness / don't know HERM well enough
@@ -231,6 +227,19 @@ A respondent using HERM *and* TOGAF sees both Section 3 and Section 3a — this 
 - Lack of visibility of community 
 - Lack of peer examples to learn from
 - Other
+
+---
+
+## Deferred to Follow-up Wave
+
+These came out of the EA-SIG discussion at EUNIS 2026 but go beyond a first short landscape survey — they add case-study depth or roadmap detail rather than serving the core "who uses HERM / which frameworks / why (not)" questions. `Draft-Letter2EUNISBoard.md` already commits to a follow-up wave (deliverable 7: "recommendations for follow-up activities, including possible more detailed surveys, interviews, or workshops") — that is where these belong, not in this instrument.
+
+- Medical faculty present or not
+- Breadth of subjects offered (TU/full university vs. university vs. school of arts or music)
+- Respondent's professional background
+- More detail on institution type
+- Planning horizon for EAM/HERM adoption
+- Tooling questions (which EA tools are used) — explicitly marked "later" in the source discussion notes
 
 ---
 
