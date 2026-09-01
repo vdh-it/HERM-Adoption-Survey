@@ -3,7 +3,7 @@
 **Status:** Draft  
 **Audience:** EA practitioners at HE institutions  
 **Distribution:** EUNIS to national organizations asking to distribute via member channels
-**Last updated:** 2026-08-31
+**Last updated:** 2026-09-01
 
 ---
 
@@ -32,12 +32,14 @@ Section 2: Screener (everyone)                              — 2.1–2.3
        — kept as a universal question purely for the HERM-awareness headline
          metric across ALL respondents; it does NOT drive routing.
   2.3  Which EA framework(s) are in use?  Multi-select, includes HERM as an
-       option; shown if 2.1 = Yes/Exploring — this drives the routing below.
+       option; shown if 2.1 = Yes/Exploring OR 2.2 = Yes/Exploring — broadened
+       beyond 2.1 alone (fixed 2026-09-01) so a respondent who reports using
+       HERM in 2.2 without calling it "EAM practice" still reaches Section 3.
 
 Section 3: routing (independent conditions — several can be true at once)  — 3.1–3.15
-  HERM ∈ 2.3 selection                          → 3.1–3.9   (HERM Usage Details)
-  (2.3 selection \ {HERM}) is non-empty         → 3.10–3.11 (Other Framework Details)
-  HERM ∉ 2.3 selection AND 2.1 = Yes/Exploring   → 3.12–3.15 (Why not (yet) HERM?)
+  HERM ∈ 2.3 selection                                    → 3.1–3.9   (HERM Usage Details)
+  (2.3 selection \ {HERM, "No formal framework"}) non-empty → 3.10–3.11 (Other Framework Details)
+  HERM ∉ 2.3 selection AND (2.1 = Yes/Exploring OR 2.2 = Yes/Exploring) → 3.12–3.15 (Why not (yet) HERM?)
 
 Section 4: Sharing & Contact — two independently-gated groups           — 4.1–4.5
   4.1       (naming consent)    → everyone who gave an institution name in 1.1
@@ -75,19 +77,22 @@ A respondent using HERM *and* TOGAF sees both 3.1–3.9 and 3.10–3.11 — this
 ---
 
 ## Section 2: Screener — EAM & HERM Practice
-*2.1 and 2.2 are always required; 2.3 is required if 2.1 = Yes/Exploring*
+*2.1 and 2.2 are always required; 2.3 is required if 2.1 = Yes/Exploring OR 2.2 = Yes/Exploring*
 
 | #   | Question                                                      | Type          | Options                                                                                                                                                            |
 | --- | -------------------------------------------------------------- | ------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | 2.1 | Does your institution practice Enterprise Architecture (EAM)? | Single select | Yes, established practice / We are exploring or just starting / No / Not familiar with EAM                                                                       |
 | 2.2 | Does your institution use HERM?                               | Single select | Yes, actively / We are exploring or piloting / No / Not familiar with HERM                                                                                        |
-| 2.3 | Which EA framework(s) does your institution use or pilot?     | Multi-select  | HERM / TOGAF / Zachman Framework / ArchiMate (as modelling language) / Custom / in-house framework / No formal framework, ad hoc EA practice / Other (text). Shown only if 2.1 = Yes/Exploring |
+| 2.3 | Which EA framework(s) does your institution use or pilot?     | Multi-select  | HERM / TOGAF / Zachman Framework / ArchiMate (as modelling language) / Custom / in-house framework / No formal framework, ad hoc EA practice / Other (text). Shown if 2.1 = Yes/Exploring OR 2.2 = Yes/Exploring |
 
 - [x] add optional text field to specify exactly — covered by "Other" free text on 2.3 ✅ 2026-08-31
+- [x] Bug fix (2026-09-01): 2.3 was gated on 2.1 alone, so a respondent reporting HERM use in 2.2 without formal "EAM practice" (2.1 = No/Not familiar) never reached Section 3 at all — contradicting Goal 1. Broadened the gate to 2.1 = Yes/Exploring **OR** 2.2 = Yes/Exploring. Found via the scenario walkthrough in `qa/eval_survey_flow.py` (checks `HERM_DISAGREEMENT_2.2_says_yes_but_no_3.1-3.9`) ✅
+- [x] Bug fix (2026-09-01): "No formal framework, ad hoc EA practice" counted as a non-HERM framework, so selecting it alone incorrectly fired 3.10–3.11 and, through that, the Section 4 follow-up-contact engagement flag — routing respondents with no real framework into the recruitment funnel. 3.10–3.11's condition now explicitly excludes "No formal framework". Found via `qa/eval_survey_flow.py`'s `NOFORMAL_POLLUTES_ENGAGEMENT_FLAG` check ✅
 
-*2.2 is kept purely for the HERM-awareness metric across all respondents, including those without EA practice — it is not a routing condition.*
-*Routing within Section 3 is derived from 2.3 membership combined with 2.1 — see flow diagram above.*
+*2.2 is kept purely for the HERM-awareness metric across all respondents, including those without EA practice — it is not itself a routing condition, but it now (as of the fix above) co-determines whether 2.3 is shown.*
+*Routing within Section 3 is derived from 2.3 membership combined with 2.1/2.2 — see flow diagram above.*
 *Based on the combination of 2.1 / 2.2 / 2.3 we set the VAR to "HERM" / "EAM & HERM" / "EAM"*
+*Residual risk:* 2.2 and 2.3 are still two independently-answered questions, so a respondent can in principle self-report a contradiction (e.g. 2.2 = "No" but still ticks HERM in 2.3, which is shown because 2.1 = Yes). No routing condition can prevent this — it's a data-quality property of self-report surveys, not a branching bug. Re-run the `HERM_DISAGREEMENT_*` checks in `qa/eval_survey_flow.py` against real submissions to catch and review these cases during cleaning.
 
 ---
 
@@ -128,7 +133,7 @@ A respondent using HERM *and* TOGAF sees both 3.1–3.9 and 3.10–3.11 — this
 - Other (free text)
 
 ### 3.10–3.11 — Other EA Framework Details
-*Shown if at least one non-HERM framework was selected in 2.3 — independent of 3.1–3.9, so it can co-occur with it (HERM + another framework case)*
+*Shown if at least one non-HERM, non-"No formal framework" entry was selected in 2.3 — i.e. a real named framework other than HERM. "No formal framework, ad hoc EA practice" is deliberately excluded (fixed 2026-09-01: it used to count, incorrectly triggering this group and the Section 4 engagement flag for respondents with no real framework to report on). Independent of 3.1–3.9, so it can co-occur with it (HERM + another framework case)*
 
 | #    | Question                                                              | Type                 | Notes                                                          |
 | ---- | ------------------------------------------------------------------------ | -------------------- | ----------------------------------------------------------------- |
@@ -148,7 +153,7 @@ A respondent using HERM *and* TOGAF sees both 3.1–3.9 and 3.10–3.11 — this
 - Other
 
 ### 3.12–3.15 — Why not (yet) HERM?
-*Shown if HERM was NOT selected in 2.3, AND 2.1 = Yes/Exploring*
+*Shown if HERM was NOT selected in 2.3, AND (2.1 = Yes/Exploring OR 2.2 = Yes/Exploring)*
 
 | #    | Question                                                       | Type                                                 | Notes                                                                |
 | ---- | ------------------------------------------------------------------ | ------------------------------------------------------- | ------------------------------------------------------------------------ |
@@ -182,7 +187,7 @@ A respondent using HERM *and* TOGAF sees both 3.1–3.9 and 3.10–3.11 — this
 ### 4.2–4.5 — Follow-up Contact
 *Shown if the "engagement flag" is set — i.e. any of the following holds, regardless of which part of Section 3 produced it:*
 - 3.6 (HERM maturity) ∈ {Pilot, Actively used, Embedded in governance}, or
-- 3.10 was answered (an other-framework is in active use), or
+- 3.10 was answered (a real other-framework is in active use — "No formal framework" does not count, see 3.10–3.11's condition), or
 - 3.13 (adoption interest) ∈ {Yes interested, Maybe}
 
 | #   | Question                                                                   | Type             | Notes                                                 |
@@ -251,6 +256,7 @@ These came out of the EA-SIG discussion at EUNIS 2026 but go beyond a first shor
 - [x] Decide whether institution name is truly optional (anonymization vs. case study richness tradeoff), yes, optional as much as possible ✅ 2026-06-02
 - [x] Resolve HERM-vs-other-framework overlap: 2.3 (universal multi-select, includes HERM) now drives 3.1–3.9 / 3.10–3.11 / 3.12–3.15 via independent set-membership conditions instead of mutually exclusive branching, so HERM + another framework can be recorded together ✅ 2026-08-31
 - [x] Numbering cleanup: dropped lettered sub-sections (3a/3b) and lettered parts (Part A/B) in favor of one running number per top-level section (3.1–3.15, 4.1–4.5); conditional groups are still called out with descriptive sub-headings and number ranges ✅ 2026-08-31
+- [x] Fixed two routing bugs found by the `qa/eval_survey_flow.py` scenario walkthrough: (1) 2.3's visibility gate broadened from "2.1 = Yes/Exploring" to "2.1 = Yes/Exploring OR 2.2 = Yes/Exploring", so reporting HERM use in 2.2 is now sufficient to reach Section 3 even without formal EAM practice; (2) 3.10–3.11's condition now excludes "No formal framework, ad hoc EA practice" so it no longer counts as a real "other framework" and no longer pollutes the Section 4 engagement flag ✅ 2026-09-01
 - [ ] Add introduction and full ethics/consent statement at the top — naming-consent question added as 4.1; purpose/GDPR intro text still needed
 - [ ] Consider a short version (Sections 1–2–4 only, ~5 min) for conference distribution
 - [x] Confirm the chosen survey tool (LamaPoll / LimeSurvey / etc.) can implement: (a) branching on multi-select membership within Section 3, (b) the 4.2–4.5 flag combining answers from three different points in the flow ✅ 2026-08-31
