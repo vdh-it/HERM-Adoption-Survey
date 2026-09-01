@@ -25,28 +25,29 @@ Two core research questions must be answerable **independently, including in com
 Routing within Section 3 (3.1–3.9 / 3.10–3.11 / 3.12–3.15) is driven by **set membership** in Q2.3 (which framework(s) are in use), not by mutually exclusive branches. Numbering is a single flat sequence per section — no lettered sub-sections (3a/3b) or lettered parts (Part A/B) anymore; the three groups within Section 3, and the two groups within Section 4, are shown or hidden independently, they just share one running number.
 
 ```
-Section 1: Profile (everyone)                              — 1.1–1.6
-Section 2: Screener (everyone)                              — 2.1–2.3
+Section 1: Profile (everyone)                                              — 1.1–1.6
+
+Section 2: Screener (everyone)                                             — 2.1–2.3
   2.1  Practice EAM?                     (Yes / Exploring / No / Not familiar)
   2.2  Use HERM?                         (Yes / Exploring / No / Not familiar)
        — kept as a universal question purely for the HERM-awareness headline
          metric across ALL respondents; it does NOT drive routing.
   2.3  Which EA framework(s) are in use?  Multi-select, includes HERM as an
        option; shown if 2.1 = Yes/Exploring OR 2.2 = Yes/Exploring — broadened
-       beyond 2.1 alone (fixed 2026-09-01) so a respondent who reports using
+       beyond 2.1 alone so a respondent who reports using
        HERM in 2.2 without calling it "EAM practice" still reaches Section 3.
 
 Section 3: routing (independent conditions — several can be true at once)  — 3.1–3.15
-  HERM ∈ 2.3 selection                                    → 3.1–3.9   (HERM Usage Details)
-  (2.3 selection \ {HERM, "No formal framework"}) non-empty → 3.10–3.11 (Other Framework Details)
-  HERM ∉ 2.3 selection AND (2.1 = Yes/Exploring OR 2.2 = Yes/Exploring) → 3.12–3.15 (Why not (yet) HERM?)
+  HERM ∈ 2.3 selection                                                     → 3.1–3.9   (HERM Usage Details)
+  (2.3 selection \ {HERM, "No formal framework"}) non-empty                → 3.10–3.11 (Other Framework Details)
+  HERM ∉ 2.3 selection AND (2.1 = Yes/Exploring OR 2.2 = Yes/Exploring)    → 3.12–3.15 (Why not (yet) HERM?)
 
-Section 4: Sharing & Contact — two independently-gated groups           — 4.1–4.5
+Section 4: Sharing & Contact — two independently-gated groups              — 4.1–4.5
   4.1       (naming consent)    → everyone who gave an institution name in 1.1
   4.2–4.5   (follow-up contact) → gated on an engagement flag (3.6/3.10/3.13
                                    signals), not on which part of Section 3 fired
 
-Section 5: Open Questions & Barriers                                    — 5.1–5.3
+Section 5: Open Questions & Barriers                                       — 5.1–5.3
   → everyone who did NOT trigger the 4.2–4.5 engagement flag
     (i.e. limited or no active EA/HERM engagement) — catch-all wrap-up
   → 5.2 specifically is suppressed for anyone who saw 3.12–3.15
