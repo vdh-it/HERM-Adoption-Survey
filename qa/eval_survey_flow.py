@@ -2,10 +2,16 @@
 """
 QA harness for survey-blueprint.md's branching logic.
 
-This is SYNTHETIC TEST DATA, not real survey responses. It exists to exercise
-the routing logic (visibility()) described in survey-blueprint.md as written
-today (2026-08-31 / 2026-09-01 revision), including its known bugs, so those
-bugs are visible in a concrete dataset rather than only in prose.
+This is SYNTHETIC TEST DATA, not real survey responses. It exercises the
+routing logic (visibility()) as written in survey-blueprint.md AFTER the
+2026-09-01 fix: 2.3 shown if 2.1=Yes/Exploring OR 2.2=Yes/Exploring, and
+3.10-3.11 excludes "No formal framework" from counting as a real other
+framework. The two consistency checks that used to fire on this dataset
+(HERM_DISAGREEMENT_..._no_3.1-3.9 and NOFORMAL_POLLUTES_ENGAGEMENT_FLAG)
+are kept as permanent regression tests -- they should report 0 rows now.
+The remaining HERM_DISAGREEMENT_..._3.1-3.9_fired check documents a
+residual, unfixable self-report contradiction (see R14) that no routing
+condition can prevent; re-run it against real submissions during cleaning.
 
 Run: python3 qa/eval_survey_flow.py
 Produces: qa/synthetic_responses.csv (24 hand-designed respondents)
@@ -23,6 +29,9 @@ OUT_CSV = HERE / "synthetic_responses.csv"
 
 FRAMEWORK_TOKENS = ["HERM", "TOGAF", "ZACHMAN", "ARCHIMATE", "CUSTOM", "NOFORMAL", "OTHER"]
 NON_HERM_TOKENS = [t for t in FRAMEWORK_TOKENS if t != "HERM"]
+# Real, named frameworks other than HERM -- excludes NOFORMAL, which is the
+# "no framework at all" placeholder and (post-fix) must not count as one.
+REAL_OTHER_TOKENS = [t for t in NON_HERM_TOKENS if t != "NOFORMAL"]
 
 COUNTRIES = ["DE", "NL", "FI", "IT", "PL", "ES", "PT", "AT", "CH", "FR", "SE", "IE"]
 INST_TYPES = ["University", "University of Applied Sciences", "Research Institute", "Other"]
@@ -86,20 +95,22 @@ SCENARIOS = [
     dict(id="R08", label="Custom in-house framework only, aware of HERM but not using",
          eam="Yes", herm2_2="No", frameworks=["CUSTOM"], name_given=True, consent="Yes",
          consider="Maybe", share="Maybe"),
-    dict(id="R09", label="No formal framework (ad hoc), no HERM -- BUG2 probe: does this pollute engagement flag?",
+    dict(id="R09", label="No formal framework (ad hoc), no HERM -- regression check: must NOT pollute engagement flag (fixed 2026-09-01)",
          eam="Yes", herm2_2="No", frameworks=["NOFORMAL"], name_given=True, consent="Yes",
          consider="Unlikely", share=None),
-    dict(id="R10", label="No formal framework only, not familiar with HERM, no name -- BUG2 probe variant",
+    dict(id="R10", label="No formal framework only, not familiar with HERM, no name -- regression check variant",
          eam="Exploring", herm2_2="NotFamiliar", frameworks=["NOFORMAL"], name_given=False,
          consider="Unlikely", share=None),
     dict(id="R11", label="Other (free-text) framework only, no HERM, interested in HERM",
          eam="Yes", herm2_2="No", frameworks=["OTHER"], name_given=True, consent="Yes",
          consider="Yes interested", share="Yes"),
-    dict(id="R12", label="EAM=No, HERM=Yes actively -- BUG1a probe: claims HERM use but 2.3 never shown",
-         eam="No", herm2_2="Yes", frameworks=None, name_given=True, consent="Yes", share=None),
-    dict(id="R13", label="EAM=Not familiar, HERM=Exploring -- BUG1a probe variant",
-         eam="NotFamiliar", herm2_2="Exploring", frameworks=None, name_given=False, share=None),
-    dict(id="R14", label="EAM=Yes, HERM(2.2)=No, but HERM checked in 2.3 -- BUG1b probe: 2.2/2.3 contradict the other way",
+    dict(id="R12", label="EAM=No, HERM=Yes actively -- regression check: 2.3 now shown via 2.2, reaches 3.1-3.9 (fixed 2026-09-01)",
+         eam="No", herm2_2="Yes", frameworks=["HERM"], name_given=True, consent="Yes",
+         maturity="Actively used", share="Yes"),
+    dict(id="R13", label="EAM=Not familiar, HERM=Exploring -- regression check variant, no formal EAM but piloting HERM",
+         eam="NotFamiliar", herm2_2="Exploring", frameworks=["HERM"], name_given=False,
+         maturity="Exploring", share=None),
+    dict(id="R14", label="EAM=Yes, HERM(2.2)=No, but HERM checked in 2.3 -- residual self-report contradiction, not fixable via routing",
          eam="Yes", herm2_2="No", frameworks=["HERM"], name_given=True, consent="Yes",
          maturity="Pilot", share="No"),
     dict(id="R15", label="EAM=No, HERM=No, straightforward non-user, fast exit",
@@ -124,7 +135,7 @@ SCENARIOS = [
     dict(id="R22", label="TOGAF-only, no HERM, interested but declines to share contact details",
          eam="Yes", herm2_2="No", frameworks=["TOGAF"], name_given=True, consent="Yes",
          consider="Yes interested", share="No"),
-    dict(id="R23", label="EAM exploring, HERM+NOFORMAL selected together -- BUG2 probe: NOFORMAL alongside a real answer",
+    dict(id="R23", label="EAM exploring, HERM+NOFORMAL selected together -- regression check: NOFORMAL must not add to 3.10-3.11",
          eam="Exploring", herm2_2="Exploring", frameworks=["HERM", "NOFORMAL"], name_given=False,
          maturity="Exploring", share=None),
     dict(id="R24", label="Custom-only, not familiar with HERM, definitely not adopting, name given, consents",
@@ -143,12 +154,15 @@ def build_row(s):
     row["q2_2_herm"] = s["herm2_2"]
 
     practicing = s["eam"] in ("Yes", "Exploring")
-    frameworks = s["frameworks"] if practicing and s["frameworks"] else ([] if practicing else None)
+    herm_engaged = s["herm2_2"] in ("Yes", "Exploring")
+    show_2_3 = practicing or herm_engaged  # fixed 2026-09-01: was `practicing` alone
+    frameworks = s["frameworks"] if show_2_3 and s["frameworks"] else ([] if show_2_3 else None)
     row["_frameworks"] = frameworks  # internal, not written to CSV directly
+    row["_show_2_3"] = show_2_3
     row["q2_3_frameworks"] = ";".join(frameworks) if frameworks is not None else ""
 
     has_herm = bool(frameworks) and "HERM" in frameworks
-    has_other = bool(frameworks) and any(f in frameworks for f in NON_HERM_TOKENS)  # BUG2: includes NOFORMAL
+    has_other = bool(frameworks) and any(f in frameworks for f in REAL_OTHER_TOKENS)  # fixed: excludes NOFORMAL
 
     # 3.1-3.9 intended answers (used only if has_herm)
     row["q3_1_artifacts"] = ";".join(pick(ARTIFACTS, 3))
@@ -192,17 +206,17 @@ def build_row(s):
 
 
 # ---------------------------------------------------------------------------
-# visibility(): implements survey-blueprint.md's routing AS WRITTEN, bugs
-# included. This is deliberate -- see the walkthrough in the chat reply.
+# visibility(): implements survey-blueprint.md's routing as written after the
+# 2026-09-01 fix (2.3 gated on 2.1 OR 2.2; NOFORMAL excluded from "other").
 # ---------------------------------------------------------------------------
 def visibility(row):
-    practicing = row["_practicing"]
+    show_2_3 = row["_show_2_3"]
     has_herm = row["_has_herm"]
-    has_other = row["_has_other"]  # BUG2: 'NOFORMAL' counts as "other" here, as written in the spec
+    has_other = row["_has_other"]  # excludes NOFORMAL (fixed)
 
     show_3_1_9 = has_herm
     show_3_10_11 = has_other
-    show_3_12_15 = (not has_herm) and practicing
+    show_3_12_15 = (not has_herm) and show_2_3
 
     engagement_flag = (
         (show_3_1_9 and row["q3_6_maturity"] in ("Pilot", "Actively used", "Embedded in governance"))
@@ -358,7 +372,9 @@ def monte_carlo_reachable(n=20000):
         eam = random.choice(["Yes", "Exploring", "No", "NotFamiliar"])
         herm2_2 = random.choice(["Yes", "Exploring", "No", "NotFamiliar"])
         practicing = eam in ("Yes", "Exploring")
-        if practicing:
+        herm_engaged = herm2_2 in ("Yes", "Exploring")
+        show_2_3 = practicing or herm_engaged  # fixed 2026-09-01
+        if show_2_3:
             fw = [t for t in FRAMEWORK_TOKENS if random.random() < 0.3]
             if not fw:
                 fw = [random.choice(FRAMEWORK_TOKENS)]
@@ -372,6 +388,7 @@ def monte_carlo_reachable(n=20000):
 
         raw = {
             "_practicing": practicing,
+            "_show_2_3": show_2_3,
             "q2_2_herm": herm2_2,
             "q1_1_institution_name": "x" if name_given else "",
             "q4_1_consent": consent,
@@ -381,7 +398,7 @@ def monte_carlo_reachable(n=20000):
             "_frameworks": fw,
         }
         has_herm = bool(fw) and "HERM" in fw
-        has_other = bool(fw) and any(f in fw for f in NON_HERM_TOKENS)
+        has_other = bool(fw) and any(f in fw for f in REAL_OTHER_TOKENS)  # fixed: excludes NOFORMAL
         raw["_has_herm"] = has_herm
         raw["_has_other"] = has_other
         vis = visibility(raw)
@@ -428,18 +445,21 @@ def coverage_report(rows):
     print(f"Covered by synthetic_responses.csv: {n_covered}/{len(all_cells)}")
     print(f"Gaps (reachable but not covered): {n_gap}")
     print(f"Structurally unreachable (0/{20000} Monte Carlo draws landed here): {n_structurally_unreachable}")
-    # NotPracticing x {WithHERM,WithoutHERM} x 3 consent states x {ShareYesMaybe,ShareNo}: 2x3x2=12
-    if n_structurally_unreachable == 12:
-        print("  -> confirms Bug 1: no NotPracticing respondent can ever reach the")
-        print("     follow-up-contact funnel, no matter how engaged they claim (2.2) to be,")
-        print("     because 2.3 (and therefore all of Section 3) is gated on 2.1=Yes/Exploring.")
-        print("     Only NoFlag is reachable for NotPracticing respondents, regardless of 2.2.")
+    # Post-fix: only NotPracticing x WithoutHERM x 3 consent states x {ShareYesMaybe,ShareNo}
+    # remains unreachable (1x1x3x2=6) -- correctly so, since a respondent with neither EAM
+    # practice nor HERM engagement never triggers 2.3 at all, so has nothing to be engaged
+    # about. NotPracticing x WithHERM is now reachable (via 2.2), which is the fix working.
+    if n_structurally_unreachable == 6:
+        print("  -> post-fix: the only unreachable cells left are genuine non-users")
+        print("     (NotPracticing AND WithoutHERM) trying to reach the contact funnel --")
+        print("     correctly impossible, since they have no engagement signal to report.")
+        print("     NotPracticing x WithHERM is now reachable: Bug 1 is fixed.")
 
     print("\n=== Secondary table: framework-selection category (not multiplied into the cube) ===")
     cat_counts = {}
     for raw, vis, out in rows:
-        if not raw["_practicing"]:
-            cat = "not_shown_(not_practicing)"
+        if not raw["_show_2_3"]:
+            cat = "not_shown_(2.3_not_shown)"
         elif raw["_has_herm"] and raw["_has_other"]:
             cat = "HERM+Other"
         elif raw["_has_herm"]:
