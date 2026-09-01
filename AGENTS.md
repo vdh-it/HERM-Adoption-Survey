@@ -150,6 +150,12 @@ All agents operate under constraints defined in `.instructions.md`:
 - Acknowledge context and contingency factors
 - Practitioner-focused language and framing
 
+## Access Restrictions
+
+The `.logs/` directory is **excluded from agent access**. It contains local
+runtime/session logs, not research data, and must not be read, indexed, or
+referenced by any agent listed above.
+
 ---
 
 ## Requesting New Agents
