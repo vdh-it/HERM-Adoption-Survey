@@ -87,20 +87,19 @@ SCENARIOS = [
     dict(id="R05", label="TOGAF-only, no HERM, considering adoption -> engagement flag via 4.2",
          eam="Yes", herm2_2="No", frameworks=["TOGAF"], name_given=True, consent="Yes",
          consider="Maybe", share="Yes"),
-    dict(id="R06", label="TOGAF-only, no HERM, unlikely to adopt -> no flag -> Section 6, 6.2 suppressed. "
-                         "(regression check: pre-restructure this got an engagement flag anyway via old "
-                         "3.10-trigger; now correctly has none since duration moved to Section 2)",
+    dict(id="R06", label="TOGAF-only, no HERM, unlikely to adopt, SHORT duration (1-3y) -> no flag -> Section 6, 6.2 suppressed",
          eam="Yes", herm2_2="No", frameworks=["TOGAF"], name_given=False,
-         consider="Unlikely", share=None),
+         consider="Unlikely", share=None, duration="1-3y"),
     dict(id="R07", label="Zachman-only, definitely not adopting HERM, no name given",
          eam="Exploring", herm2_2="NotFamiliar", frameworks=["ZACHMAN"], name_given=False,
          consider="Definitely not", share=None),
     dict(id="R08", label="Custom in-house framework only, aware of HERM but not using",
          eam="Yes", herm2_2="No", frameworks=["CUSTOM"], name_given=True, consent="Yes",
          consider="Maybe", share="Maybe"),
-    dict(id="R09", label="No formal framework (ad hoc), no HERM -- 2.4/2.5 now general, still answered here",
+    dict(id="R09", label="Ad hoc EA practice (NoFormal) for >7y, no HERM interest -- NEW trigger: long-time "
+                         "adopter without HERM intent still gets flagged for follow-up contact",
          eam="Yes", herm2_2="No", frameworks=["NOFORMAL"], name_given=True, consent="Yes",
-         consider="Unlikely", share=None),
+         consider="Unlikely", share="Maybe", duration=">7y"),
     dict(id="R10", label="No formal framework only, not familiar with HERM, no name",
          eam="Exploring", herm2_2="NotFamiliar", frameworks=["NOFORMAL"], name_given=False,
          consider="Unlikely", share=None),
@@ -168,7 +167,7 @@ def build_row(s):
     has_other = bool(frameworks) and any(f in frameworks for f in NON_HERM_TOKENS)  # reporting only, not routing
 
     # 2.4-2.5: general, same condition as 2.3
-    row["q2_4_duration"] = random.choice(["<1y", "1-3y", "4-7y", ">7y"])
+    row["q2_4_duration"] = s.get("duration") or random.choice(["<1y", "1-3y", "4-7y", ">7y"])
     row["q2_5_coupling"] = ";".join(pick(COUPLING, 2))
 
     # 3.1-3.9 intended answers (used only if has_herm)
@@ -210,7 +209,8 @@ def build_row(s):
 
 # ---------------------------------------------------------------------------
 # visibility(): implements survey-blueprint.md's routing as written after the
-# 2026-09-01 restructure (Section 3 / Section 4 split; 2.4-2.5 general).
+# Section 3/4 split (2.4-2.5 general) and the long-time-adopter engagement
+# flag trigger.
 # ---------------------------------------------------------------------------
 def visibility(row):
     show_2_3to5 = row["_show_2_3to5"]
@@ -222,6 +222,7 @@ def visibility(row):
     engagement_flag = (
         (show_3 and row["q3_6_maturity"] in ("Pilot", "Actively used", "Embedded in governance"))
         or (show_4 and row["q4_2_consider"] in ("Yes interested", "Maybe"))
+        or (show_4 and row["q2_4_duration"] in ("4-7y", ">7y"))
     )
 
     show_5_1 = bool(row["q1_1_institution_name"])
@@ -387,6 +388,7 @@ def monte_carlo_reachable(n=20000):
         maturity = random.choice(["Exploring", "Pilot", "Actively used", "Embedded in governance", "n.a."])
         consider = random.choice(["Yes interested", "Maybe", "Unlikely", "Definitely not"])
         share = random.choice(["Yes", "Maybe", "No"])
+        duration = random.choice(["<1y", "1-3y", "4-7y", ">7y"])
 
         raw = {
             "_practicing": practicing,
@@ -396,6 +398,7 @@ def monte_carlo_reachable(n=20000):
             "q5_1_consent": consent,
             "q3_6_maturity": maturity,
             "q4_2_consider": consider,
+            "q2_4_duration": duration,
             "q5_3_share": share,
             "_frameworks": fw,
         }
