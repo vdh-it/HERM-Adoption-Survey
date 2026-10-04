@@ -1,0 +1,44 @@
+AD - Andorra
+AL - Shqipëria
+AT - Österreich
+BA - Bosna i Hercegovina / Босна и Херцеговина
+BE - België / Belgique / Belgien
+BG - България
+BY - Беларусь
+CH - Schweiz / Suisse / Svizzera / Svizra
+CZ - Česko
+DE - Deutschland
+DK - Danmark
+EE - Eesti
+ES - España
+FI - Suomi / Finland
+FR - France
+GB - United Kingdom
+GR - Ελλάδα
+HR - Hrvatska
+HU - Magyarország
+IE - Éire / Ireland
+IS - Ísland
+IT - Italia
+LI - Liechtenstein
+LT - Lietuva
+LU - Lëtzebuerg / Luxembourg / Luxemburg
+LV - Latvija
+MC - Monaco
+MD - Moldova
+ME - Crna Gora / Црна Гора
+MK - Северна Македонија / Maqedonia e Veriut
+MT - Malta
+NL - Nederland
+NO - Norge / Noreg
+PL - Polska
+PT - Portugal
+RO - România
+RS - Србија / Srbija
+RU - Россия
+SE - Sverige
+SI - Slovenija
+SK - Slovensko
+SM - San Marino
+UA - Україна
+VA - Città del Vaticano
