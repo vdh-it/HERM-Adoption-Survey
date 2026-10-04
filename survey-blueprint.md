@@ -9,7 +9,7 @@
 
 ## Goals
 
-1. Map who is using HERM and which artifacts, and for what problems
+1. Map who is applying EA .i.e. using HERM and which artifacts, and for what problems
 2. Identify transfer-worthy case studies for community sharing
 3. Capture open questions practitioners have about HERM (future content direction)
 
@@ -19,15 +19,15 @@
 
 Two core research questions must be answerable **independently, including in combination** — an institution can use HERM *and* another framework at the same time (e.g. HERM as content model, ArchiMate as notation):
 
-1. How is HERM used? → Section 3
-2. Which other/alternative EA framework(s) are used? → 2.3 (which) + 2.4–2.5 (duration/coupling, general — see below)
+1. Which EA framework(s) are used? → 2.3 (which) + 2.4–2.5 (duration/coupling, general — see below)
+2. How is HERM used? → Section 3 {OR} Why is HERM not used? → Section 4
 
 Section 3 ("HERM Usage Details") and Section 4 ("Why not (yet) HERM?") are separate, mutually exclusive top-level sections.
 
 ```
 Section 1: Profile (everyone)                                              — 1.1–1.6
 
-Section 2: Screener (everyone)                                             — 2.1–2.5
+Section 2: Screener (everyone)                                             — 2.1–2.6
   2.1  Practice EAM?                     (Yes / Exploring / No / Not familiar)
   2.2  Use HERM?                         (Yes / Exploring / No / Not familiar)
        — kept as a universal question purely for the HERM-awareness headline
@@ -38,11 +38,12 @@ Section 2: Screener (everyone)                                             — 2
        General duration, covering everything selected in 2.3 (HERM included)
        — independent of 3.5, which still asks HERM's own specific start year.
        Shown under the same condition as 2.3.
-  2.5  To which business unit/function is your EAM practice coupled most?
+  2.5  To which business unit/function is your EAM practice coupled?
        General organizational-coupling question, same condition as 2.3/2.4.
+  2.6  Lead of EAM practise -> governance model, same options as 2.5
        
 Section 3: HERM Usage Details                                              — 3.1–3.9
-  Shown if HERM ∈ 2.3 selection
+  Shown if HERM ∈ 2.3 selection or 2.2 is Yes or Exploring
   Jump to section 5 afterwards.
 
 Section 4: Why not (yet) HERM?                                             — 4.1–4.4
@@ -67,21 +68,21 @@ Section 6: Open Questions & Barriers                                       — 6
 → END
 ```
 
-A respondent using HERM *and* TOGAF answers 2.3 (both), 2.4/2.5 once (general, covering the whole picture), then goes straight into Section 3 — no more detour through a "other framework" sub-block sitting inside the HERM section.
+A respondent using HERM *and* TOGAF answers 2.3 (both), 2.4/2.5 once (general, covering the whole picture), then goes straight into Section 3. Conditional questions within the sections are marked with (C).
 
 ---
 
 ## Section 1: Profile
 *Everyone answers — keep short*
 
-| #   | Question                            | Type            | Notes                                                                    |
-| --- | ------------------------------------ | --------------- | -------------------------------------------------------------------------- |
-| 1.1 | Institution name                    | Text (optional) | Add: "Or describe anonymously (e.g. 'mid-size German university')"       |
-| 1.2 | Country                             | Dropdown / Text | ISO country list or free text                                            |
-| 1.3 | Institution type                    | Single select   | University / University of Applied Sciences / Research Institute / Other |
-| 1.4 | Institution size (approx. students) | Single select   | <2k / 2–10k / 10–30k / >30k / n.a.                                       |
-| 1.5 | Staff size (approx. headcount)      | Single select   | <200 / 200–1k / 1–3k / >3k / n.a.                                        |
-| 1.6 | Your role                           | Multi select    | EA Architect / IT Strategist / CIO/IT Director / IT Project Lead / Other |
+| #   | Question                            | Type            | Notes                                                                                                                                    |
+| --- | ----------------------------------- | --------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| 1.1 | Institution name                    | Text (optional) | Add: "Or describe anonymously (e.g. 'mid-size German university')"                                                                       |
+| 1.2 | Country                             | Dropdown / Text | ISO country list (Europe) + Other -> free text                                                                                           |
+| 1.3 | Institution type                    | Single select   | University / University of Applied Sciences / Research Institute / Arts or Music / Other                                                 |
+| 1.4 | Institution size (approx. students) | Single select   | <1k / 1-3.16k / 3.16–10k / 10–31.6k / 31.6-100k / >100k / n.a.                                                                           |
+| 1.5 | Staff size (approx. headcount)      | Single select   | <100 / 100-316 / 317–1k / 1–3.16k / 3.16-10k / >10k / n.a.                                                                               |
+| 1.6 | Your role                           | Multi select    | Any form of architect / IT Strategist / CIO/IT Director / IT Project Lead / Scientist with EA context / Educator with EA context / Other |
 - [ ] check for good boundaries in student size and staff headcount
 
 ---
@@ -89,13 +90,14 @@ A respondent using HERM *and* TOGAF answers 2.3 (both), 2.4/2.5 once (general, c
 ## Section 2: Screener — EAM & HERM Practice
 *2.1 and 2.2 are always required; 2.3–2.5 are required if 2.1 = Yes/Exploring OR 2.2 = Yes/Exploring*
 
-| #   | Question                                                             | Type                 | Options / Notes                                                                                                                                                                                                                |
-| --- | -------------------------------------------------------------------- | -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| 2.1 | Does your institution practice Enterprise Architecture (EAM)?        | Single select        | Yes, established practice / We are exploring or just starting / No / Not familiar with EAM                                                                                                                                     |
-| 2.2 | Does your institution use HERM?                                      | Single select        | Yes, actively / We are exploring or piloting / No / Not familiar with HERM                                                                                                                                                     |
-| 2.3 | Which EA framework(s) does your institution use or pilot?            | Multi-select         | HERM / TOGAF / Zachman Framework / HORA,  HOSA / ArchiMate (as modelling language) / Custom / in-house framework / No formal framework, ad hoc EA practice / Other (text). Shown if 2.1 = Yes/Exploring OR 2.2 = Yes/Exploring |
-| 2.4 | How long have you been using the framework(s) selected above?        | Single select        | Less than 1 year / 1–3 years / 4–7 years / More than 7 years. Same condition as 2.3. General — covers everything picked in 2.3, HERM included; independent of 3.5 (HERM's own start year)                                      |
-| 2.5 | To which business unit / function is your EAM practice coupled most? | Multi-select + Other | See options below. Same condition as 2.3/2.4                                                                                                                                                                                   |
+| #       | Question                                                        | Type                 | Options / Notes                                                                                                                                                                                                                |
+| ------- | --------------------------------------------------------------- | -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| 2.1     | Does your institution practice Enterprise Architecture (EAM)?   | Single select        | Yes, established practice / We are exploring or just starting / No / Not familiar with EAM                                                                                                                                     |
+| 2.2     | Does your institution use HERM?                                 | Single select        | Yes, actively / We are exploring or piloting / No / Not familiar with HERM                                                                                                                                                     |
+| 2.3 (C) | Which EA framework(s) does your institution use or pilot?       | Multi-select         | HERM / TOGAF / Zachman Framework / HORA,  HOSA / ArchiMate (as modelling language) / Custom / in-house framework / No formal framework, ad hoc EA practice / Other (text). Shown if 2.1 = Yes/Exploring OR 2.2 = Yes/Exploring |
+| 2.4 (C) | How long have you been using the framework(s) selected above?   | Single select        | Less than 1 year / 1–3 years / 4–7 years / More than 7 years. Same condition as 2.3. General — covers everything picked in 2.3, HERM included; independent of 3.5 (HERM's own start year)                                      |
+| 2.5 (C) | To which business unit / function is your EAM practice coupled? | Multi-select + Other | See options below. Same condition as 2.3/2.4                                                                                                                                                                                   |
+| 2.6 (C) | Who is in lead?                                                 | Single select        | same options as 2.5, but only, if 2.5 has more than one answer                                                                                                                                                                 |
 
 **Options for 2.5 — EAM Coupling:**
 - CIO
@@ -105,6 +107,8 @@ A respondent using HERM *and* TOGAF answers 2.3 (both), 2.4/2.5 once (general, c
 - Finance
 - Central IT
 - CDO / Digital Office
+- Science
+- Teaching
 - Other
 
 *2.2 does not itself route to Section 3 vs. Section 4 (that's driven by 2.3's HERM membership); together with 2.1 it gates whether 2.3–2.5 are shown.*
@@ -114,21 +118,19 @@ A respondent using HERM *and* TOGAF answers 2.3 (both), 2.4/2.5 once (general, c
 ---
 
 ## Section 3: HERM Usage Details
-*Shown if HERM is among the frameworks selected in 2.3*
+*Shown if HERM is among the frameworks selected in 2.3 or 2.2 is yes or exploring*
 
-| #       | Question                                                                           | Type                 | Condition                   | Notes                                                                                                          |
-| ------- | ---------------------------------------------------------------------------------- | -------------------- | --------------------------- | -------------------------------------------------------------------------------------------------------------- |
-| 3.1     | Which HERM artifacts do you use?                                                   | Multi-select         | Always, randomized order    | ARM / BRM / TRM / DRM / Business Model Canvas / SRM / Process Models / Value Streams / other (text)            |
-| 3.2 (C) | Primary Business Capability area of HERM adoption (if known)                       | Text                 | Only if 3.1 is not empty    | e.g. BC number or name — helps cross-reference HERM structure                                                  |
-| 3.3     | What problem(s) are you solving with HERM?                                         | Multi-select + Other | Always, randomized order    | See options below                                                                                              |
-| 3.4 (C) | Describe one successful solution scenario of the previous question in more detail. | Text                 | Only if 3.3 is not empty    |                                                                                                                |
-| 3.5     | When did your institution start using HERM?                                        | Year (number)        | Always                      | Rough estimate is fine. Independent of 2.4's general duration question                                         |
-| 3.6     | Current HERM adoption maturity                                                     | Single select        | Always                      | Exploring / Pilot / Actively used / Embedded in governance / n.a.                                              |
-| 3.7     | Is HERM embedded in your broader EAM practice?                                     | Single select        | Only if 2.1 = Yes/Exploring | Yes, central to it / Partly / No, used standalone. Refines 2.5's general coupling answer for HERM specifically |
-| 3.8(\*) | What has worked well?                                                              | Text                 | Always                      | Optional but valuable                                                                                          |
-| 3.9     | What has been difficult or is missing?                                             | Text                 | Always                      | Optional but valuable                                                                                          |
-
-(\*) maybe, we leave this out after pretest.
+| #       | Question                                                                           | Type                  | Condition                                                         | Notes                                                                                                          |
+| ------- | ---------------------------------------------------------------------------------- | --------------------- | ----------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| 3.1     | Which HERM artifacts do you use?                                                   | Multi-select          | Always, randomized order                                          | ARM / BRM / TRM / DRM / Business Model Canvas / SRM / Process Models / Value Streams / other (text)            |
+| 3.2 (C) | Primary Business Capability area of HERM adoption (if known)                       | Text                  | Only if 3.1 is not empty                                          | e.g. BC number or name — helps cross-reference HERM structure                                                  |
+| 3.3     | What problem(s) are you solving with HERM?                                         | Multi-select + Other  | Always, randomized order                                          | See options below                                                                                              |
+| 3.4 (C) | Describe one successful solution scenario of the previous question in more detail. | Text                  | Only if 3.3 is not empty                                          |                                                                                                                |
+| 3.5     | When did your institution start using HERM?                                        | Year (number)         | Always                                                            | Rough estimate is fine. Independent of 2.4's general duration question                                         |
+| 3.6     | Current HERM adoption maturity                                                     | Mullti-select + Other | Always                                                            | Exploring / Pilot / Actively used / Embedded in governance / Other                                             |
+| 3.7     | Is HERM embedded in your broader EAM practice?                                     | Single select         | Only if 2.1 = Yes/Exploring                                       | Yes, central to it / Partly / No, used standalone. Refines 2.5's general coupling answer for HERM specifically |
+| 3.8 (C) | What has worked well?                                                              | Text                  | Only if 3.7 is not NO or if 3.1 is not empty, or 3.3 is not emoty | Aditional info for some cases                                                                                  |
+| 3.9 (C) | What has been difficult or is missing?                                             | Text                  | Same as 3.8                                                       | Aditional info for some cases                                                                                  |
 
 **Options for 3.3 — Problems solved with HERM:**
 - Structuring the application landscape (ARM)
@@ -153,9 +155,9 @@ A respondent using HERM *and* TOGAF answers 2.3 (both), 2.4/2.5 once (general, c
 | #       | Question                                                       | Type                                               | Notes                                                               |
 | ------- | -------------------------------------------------------------- | -------------------------------------------------- | ------------------------------------------------------------------- |
 | 4.1     | What is the main reason you are not using HERM?                | Multi-select + Other                               | See options below                                                   |
-| 4.2     | Would you consider adopting HERM?                              | Single select                                      | Yes, interested / Maybe, need more info / Unlikely / Definitely not |
+| 4.2     | Would you consider adopting HERM?                              | Single select                                      | yes, interested / maybe, need more info / unlikely / definitely not |
 | 4.3 (C) | Would HERM act as...                                           | Single-select + Other (Only if 4.2 is = Yes/Maybe) | complement / replacement / other (specify)                          |
-| 4.4     | What would HERM need to offer for you to consider adopting it? | Text                                               | Optional — high value for roadmap/community content                 |
+| 4.4     | What would HERM need to offer for you to consider adopting it? | Text                                               |                                                                     |
 
 **Options for 4.1 — Reasons for not using HERM:**
 - Not aware of it until now
@@ -183,12 +185,12 @@ A respondent using HERM *and* TOGAF answers 2.3 (both), 2.4/2.5 once (general, c
 - 4.2 (adoption interest) ∈ {Yes interested, Maybe}, or
 - Section 4 fired AND 2.4 (duration) ∈ {4–7 years, More than 7 years} — a long-time EA adopter still counts as worth recruiting even without current HERM intent
 
-| #   | Question                                                                   | Type             | Notes                                                 |
-| --- | -------------------------------------------------------------------------- | ---------------- | ----------------------------------------------------- |
-| 5.2 | How transferable do you think your experience is to other HE institutions? | Single select    | High / Medium / Low / Uncertain                       |
-| 5.3 | Are you interested in sharing knowledge with the community?                | Single select    | Yes / Maybe / No                                      |
-| 5.4 | Contact email                                                              | Email (optional) | Only shown if 5.3 = Yes or Maybe                      |
-| 5.5 | For which purpose would you like to be contacted                           | Multi select     | Only shown if 5.3 = Yes or Maybe, see selection below |
+| #       | Question                                                                   | Type             | Notes                                                 |
+| ------- | -------------------------------------------------------------------------- | ---------------- | ----------------------------------------------------- |
+| 5.2     | How transferable do you think your experience is to other HE institutions? | Single select    | High / Medium / Low / Uncertain                       |
+| 5.3     | Are you interested in sharing knowledge with the community?                | Single select    | Yes / Maybe / No                                      |
+| 5.4 (C) | Contact email                                                              | Email (optional) | Only shown if 5.3 = Yes or Maybe                      |
+| 5.5 (C) | For which purpose would you like to be contacted                           | Multi select     | Only shown if 5.3 = Yes or Maybe, see selection below |
 
 - [ ]  make a choice, for what reason to contact.
 
@@ -243,7 +245,7 @@ These came out of the EA-SIG discussion at EUNIS 2026 but go beyond a first shor
 - [x] Long-time non-HERM framework users included in the Section 5 engagement flag (2.4 duration ∈ {4–7y, >7y} AND Section 4 fired)
 - [ ] Add introduction and full ethics/consent statement at the top — naming-consent question added as 5.1; purpose/GDPR intro text still needed
 - [ ] Consider a short version (Sections 1–2 + naming consent only, ~5 min) for conference distribution
-- [ ] Confirm LamaPoll can implement: (a) 2.3 gating 2.4–2.5, (b) Section 3 vs. Section 4 as mutually exclusive on HERM membership, (c) the 5.2–5.5 engagement flag combining 3.6, 4.2, and 2.4 across three points in the flow
+- [ ] Confirm LamaPoll can implement: (a) 2.3 gating 2.4–2.6, (b) Section 3 vs. Section 4 as mutually exclusive on HERM membership, (c) the 5.2–5.5 engagement flag combining 3.6, 4.2, and 2.4 across three points in the flow
 
 ---
 
