@@ -2,7 +2,7 @@
 
 **Status:** Revised Draft  
 **Audience:** EA practitioners and related decision-makers at higher education institutions  
-**Distribution:** EUNIS and national organizations via member channels  
+**Distribution:** EUNIS and national organisations via member channels  
 **Last updated:** 2026-10-04
 
 ---
@@ -11,7 +11,7 @@
 
 1. Describe the use of Enterprise Architecture (EA) and HERM among participating higher education institutions.
 2. Identify which EA frameworks, reference models, modelling languages, and in-house approaches are used.
-3. Understand how HERM is used, including artifacts, application areas, adoption stage, and organizational embedding.
+3. Understand how HERM is used, including artefacts, application areas, adoption stage, and organisational embedding.
 4. Identify barriers and enabling conditions for HERM adoption.
 5. Identify concrete HERM use cases that may be suitable for community sharing or follow-up case studies.
 6. Capture open questions and support needs related to EA and HERM.
@@ -24,7 +24,7 @@ The primary unit of analysis is the **institution**.
 
 Respondents answer on behalf of their institution to the best of their knowledge. Where institutional knowledge cannot reasonably be assumed, a **Don't know / Cannot assess** option is provided.
 
-Respondent-level variables such as role, organizational unit, and familiarity with HERM are treated separately from institution-level variables.
+Respondent-level variables such as role, organisational unit, and familiarity with HERM are treated separately from institution-level variables.
 
 If multiple responses are received from the same institution, they must be identifiable where possible and handled during data cleaning and analysis.
 
@@ -33,6 +33,11 @@ If multiple responses are received from the same institution, they must be ident
 ## 3. Question Flow
 
 ```text
+Section 0: Introduction, GDPR, How to proceed?    everyone
+
+If 0.1 = Leave
+    -> Section 9
+
 Section 1: Respondent & Institution Profile        everyone
 Section 2: EA Practice                             everyone, partly conditional
 
@@ -58,6 +63,28 @@ Section 9: Closing & Feedback                      everyone
 
 ---
 
+# Section 0: Introduction, GDPR, How to proceed?
+
+Introduction text see [[Introduction-text]]
+
+## 0.1 How would you like to proceed?
+
+**Type:** Single select, mandatory
+
+> Please select one option:
+
+- Leave the survey without participating. You may optionally tell us why on the final page.
+- Preview the questionnaire only. My responses will not be included in the study.
+- Participate in the survey. I have read the information above and voluntarily consent to the processing of my survey responses for the purposes described.
+
+**Routing:**
+
+- Preview -> Section 1 (responses are excluded from the study; see data rule 13)
+- Participate -> Section 1
+- Leave -> Section 9
+
+---
+
 # Section 1: Respondent & Institution Profile
 
 ## 1.1 Institution name
@@ -74,6 +101,8 @@ Optional. If you prefer not to identify your institution, leave this field blank
 
 **Type:** Single select as dropdown
 
+> Which country is your institution based in?
+
 - European country list
 - Other
 
@@ -83,11 +112,11 @@ If **Other**: free text — "Please state the country in which your institution 
 
 ## 1.3 Institution type
 
-**Type:** Single select
+**Type:** Single select, randomised
 
 - University
 - University of Applied Sciences / Polytechnic
-- Specialized higher education institution
+- Specialised higher education institution
 - Arts or Music institution
 - Research institution
 - Don't know / Cannot assess
@@ -98,6 +127,8 @@ If **Other**: free text — "Please state the country in which your institution 
 ## 1.4 Approximate number of students
 
 **Type:** Single select
+
+> Report head count.
 
 - Fewer than 1,000
 - 1,000–4,999
@@ -140,7 +171,7 @@ If **Other**: free text — "Please state the country in which your institution 
 
 ---
 
-## 1.7 Your organizational unit
+## 1.7 Your organisational unit
 
 **Type:** Single select
 
@@ -148,7 +179,7 @@ If **Other**: free text — "Please state the country in which your institution 
 
 - Central IT
 - Central administration or services outside IT (incl. executive or strategy office)
-- Decentralized IT in a faculty, department or institute
+- Decentralised IT in a faculty, department or institute
 - Faculty, department or institute (outside IT)
 - External to the institution (e.g. consultant)
 - Other + Text
@@ -193,7 +224,7 @@ If **Other**: free text — "Please state the country in which your institution 
 
 ---
 
-## 2.2 Coverage of EA across organizational areas
+## 2.2 Coverage of EA across organisational areas
 
 **Type:** Matrix, one answer per row, fixed order, optional
 
@@ -204,14 +235,15 @@ If **Other**: free text — "Please state the country in which your institution 
 | -------------------------------------------------------------------------------------------- | ----------- | ----------------- | --------------------- | ----- | ----------------- |
 | Central IT (e.g. IT services, infrastructure, IT governance)                                  | ○           | ○                 | ○                     | ○     | ○                 |
 | Central administration and services outside IT (e.g. student administration, finance, HR)     | ○           | ○                 | ○                     | ○     | ○                 |
-| Decentralized IT in faculties, departments or institutes                                      | ○           | ○                 | ○                     | ○     | ○                 |
-| Faculties, departments, institutes (organization of teaching and research, local processes)   | ○           | ○                 | ○                     | ○     | ○                 |
+| Decentralised IT in faculties, departments or institutes                                      | ○           | ○                 | ○                     | ○     | ○                 |
+| Faculties, departments, institutes (organisation of teaching and research, local processes)   | ○           | ○                 | ○                     | ○     | ○                 |
+| Other (please name)                                                                           | ○           | ○                 | ○                     | ○     | ○                 |
 
-**Implementation note:** Store each row as a separate ordinal variable (0 = No EA … 3 = Established; "Don't know / n.a." as a separate missing code). Because of the "most advanced part" instruction in 2.1, the highest row value is expected to match 2.1 (consistency check).
+**Implementation note:** Store each row as a separate ordinal variable (0 = No EA … 3 = Established; "Don't know / n.a." as a separate missing code). Because of the "most advanced part" instruction in 2.1, the highest row value is expected to match 2.1 (consistency check). The "Other" row has a free-text field for the area name; it is coded separately and not part of the four-area coverage typology.
 
 ---
 
-## 2.3 Organizational age of the EA practice
+## 2.3 Organisational age of the EA practice
 
 **Condition:** Show if 2.1 = Established / Early operational practice
 
@@ -229,9 +261,10 @@ If **Other**: free text — "Please state the country in which your institution 
 
 ## 2.4 EA approaches currently used
 
-**Type:** Multi-select
+**Type:** Multi-select, randomised
 
 > Which of the following frameworks/methods/etc. does your institution currently use, pilot, or actively evaluate for Enterprise Architecture?
+> For the following questions, you can select more than one option.
 
 ### EA frameworks / methods
 
@@ -257,7 +290,7 @@ If **Other**: free text — "Please state the country in which your institution 
 ### Institution-specific approach
 
 - Custom / in-house EA framework
-- Just EA standards without customization
+- Just EA standards without customisation
 - No formal framework; pragmatic or ad hoc EA practice
 - Other
 - Don't know / Cannot assess
@@ -266,19 +299,19 @@ If **Other**: free text — "Please state the country in which your institution 
 
 ---
 
-## 2.5 Organizational home of the EA practice
+## 2.5 Organisational home of the EA practice
 
-**Type:** Multi-select
+**Type:** Multi-select, randomised
 
-> Where is the EA practice organizationally located or formally anchored?
+> Where is the EA practice organisationally located or formally anchored?
 
 - Dedicated Enterprise Architecture team
 - Central IT
 - CIO office / IT leadership
 - CDO / Digital Office
 - Central administration outside IT
-- Academic / teaching organization
-- Research organization
+- Academic / teaching organisation
+- Research organisation
 - Cross-institutional / distributed model
 - Undefined
 - Don't know / Cannot assess
@@ -286,11 +319,11 @@ If **Other**: free text — "Please state the country in which your institution 
 
 ---
 
-## 2.6 Executive or organizational lead for EA
+## 2.6 Executive or organisational lead for EA
 
-**Type:** Single select
+**Type:** Single select, randomised
 
-> Who has primary organizational responsibility for Enterprise Architecture?
+> Who has primary organisational responsibility for Enterprise Architecture?
 
 - CIO
 - IT Director / Head of IT
@@ -324,7 +357,7 @@ If **Other**: free text — "Please state the country in which your institution 
 
 **Type:** Single select
 
-> To the best of your knowledge, what is the current status of HERM at your institution?
+> To the best of your knowledge, what is the highest current level of HERM adoption at your institution?
 
 - Not considered
 - Being evaluated / considered
@@ -364,7 +397,7 @@ If **Other**: free text — "Please state the country in which your institution 
 
 ## 4.2 HERM application area
 
-**Type:** Multi-select, randomized
+**Type:** Multi-select, randomised
 
 > In which areas of your organisation are the HERM artefacts mentioned earlier used?
 
@@ -382,13 +415,13 @@ If **Other**: free text — "Please state the country in which your institution 
 
 ---
 
-## 4.3 HERM artifacts used or evaluated
+## 4.3 HERM artefacts used or evaluated
 
 **Type:** Matrix, one answer per row, random order
 
-> Which HERM artifacts does your institution currently use, pilot, or actively evaluate?
+> Which HERM artefacts does your institution currently use, pilot, or actively evaluate?
 
-| Artifact                          | Operational | Pilot | Evaluating | Not used | Don't know / n.a. |
+| Artefact                          | Operational | Pilot | Evaluating | Not used | Don't know / n.a. |
 | --------------------------------- | ----------- | ----- | ---------- | -------- | ----------------- |
 | Business Reference Model (BRM)    | ○           | ○     | ○          | ○        | ○                 |
 | Data Reference Model (DRM)        | ○           | ○     | ○          | ○        | ○                 |
@@ -400,9 +433,9 @@ If **Other**: free text — "Please state the country in which your institution 
 
 ---
 
-## 4.4 Additional artifacts used
+## 4.4 Additional artefacts used
 
-**Type:** Multi-select, randomized
+**Type:** Multi-select, randomised
 
 > Which EAM and HERM-related/supporting artefacts and approaches are in use?
 
@@ -415,25 +448,25 @@ If **Other**: free text — "Please state the country in which your institution 
 
 ---
 
-## 4.5 HERM application area (follow up to 4.2)
+## 4.5 Primary HERM application area
 
 **Condition:** Show if 4.2 ≠ "Don't know / Cannot assess"
 
 **Type:** Text, optional
 
-> Which is currently the primary area? Provide HERM Business Capability name or identifier, if known.
+> Which is currently the primary area? Provide HERM Business Capability name or other HERM identifier, if known.
 
 ---
 
 ## 4.6 Problems and tasks addressed with HERM
 
-**Type:** Multi-select, randomized
+**Type:** Multi-select, randomised
 
 > For which tasks is HERM currently used or evaluated at your institution?
 
 - Structuring or documenting the application landscape
 - Structuring or communicating business capabilities
-- Technology standardization or technology lifecycle management
+- Technology standardisation or technology lifecycle management
 - Data governance or data architecture
 - Service design or service architecture
 - Strategic or transformation planning
@@ -451,7 +484,7 @@ If **Other**: free text — "Please state the country in which your institution 
 
 ## 4.7 Value received from using HERM
 
-**Type:** Multi-select, randomized
+**Type:** Multi-select, randomised
 
 > What specific value can you now offer your organisation?
 
@@ -478,7 +511,7 @@ If **Other**: free text — "Please state the country in which your institution 
 > 
 > - **Use case:** What was the problem, task, or decision?
 > - **Actors:** Who was involved?
-> - **HERM use:** Which HERM artifact(s) were used, and how were they applied?
+> - **HERM use:** Which HERM artefact(s) were used, and how were they applied?
 > - **Outcome:** What was produced, decided, or changed?
 > - **Benefit:** Who benefited from the result, and in what way?
 > 
@@ -500,7 +533,7 @@ Prompt: "Please provide details how you applied HERM and why this was a success.
 
 ## 4.10 Enabling factors
 
-**Type:** Multi-select, randomized
+**Type:** Multi-select, randomised
 
 > What factors enabled the implementation of HERM at your institution?
 
@@ -548,7 +581,7 @@ Prompt: "Provide details on road blocks concerning HERM..."
 
 ## 4.13 Adapted, extended or mapped HERM
 
-**Type:** Multi-select, randomized
+**Type:** Multi-select, randomised
 
 > Have you adapted, extended or mapped HERM in a way that might be useful to other institutions?
 
@@ -560,7 +593,7 @@ Prompt: "Provide details on road blocks concerning HERM..."
 - Data mapping
 - Tool implementation
 - Governance model
-- Visualization
+- Visualisation
 - Don't know / Cannot assess
 - Other
 
@@ -570,7 +603,7 @@ Prompt: "Provide details on road blocks concerning HERM..."
 
 ## 5.1 Reasons HERM is not currently in operational use
 
-**Type:** Multi-select, randomized
+**Type:** Multi-select, randomised
 
 > Which factors currently contribute to HERM not being used operationally at your institution?
 
@@ -584,7 +617,7 @@ Prompt: "Provide details on road blocks concerning HERM..."
 - Insufficient documentation or guidance
 - Lack of implementation examples / peer cases
 - Insufficient internal EA capacity
-- Lack of leadership or organizational support
+- Lack of leadership or organisational support
 - Switching or adoption effort is too high
 - Benefits are unclear compared with the required effort
 - EA/HERM knowledge depends on too few individuals
@@ -598,7 +631,7 @@ Prompt: "Provide details on road blocks concerning HERM..."
 
 **Condition:** Show if at least one substantive option selected in 5.1
 
-**Type:** Single select, piped from selected responses in 5.1
+**Type:** Single select, piped from selected responses in 5.1, randomised; added options anchored at the end
 
 > Of the factors you selected, which is currently the most important barrier?
 
@@ -611,7 +644,7 @@ Added options:
 
 ## 5.3 Future consideration of HERM
 
-**Type:** Single select, randomized
+**Type:** Single select
 
 > Is there currently an intention or plan to evaluate or pilot HERM within the next two years?
 
@@ -634,7 +667,7 @@ Added options:
 - Complement to an existing EA framework or method
 - Reference model for selected domains or use cases
 - Primarily a benchmarking / comparison reference
-- Cannot assess
+- Don't know / Cannot assess
 - Other
 
 ---
@@ -667,7 +700,7 @@ Added options:
 
 ## 6.3 Support needs
 
-**Type:** Multi-select, randomized
+**Type:** Multi-select, randomised
 
 > What kind of support would your institution like HERM to provide to help move EA forward?
 
@@ -680,7 +713,7 @@ Added options:
 - Training or workshops
 - Peer exchange with other institutions
 - Benchmarking data
-- Governance and organizational guidance
+- Governance and organisational guidance
 - Mapping to other EA frameworks or standards
 - Don't know / Cannot assess
 - Other
@@ -691,7 +724,7 @@ Added options:
 
 **Condition:** Show if at least one substantive option selected in 6.3
 
-**Type:** Single select, piped from 6.3
+**Type:** Single select, piped from 6.3, randomised; added options anchored at the end
 
 > Which of these would be most valuable to your institution?
 
@@ -706,7 +739,7 @@ Added options:
 
 ## 7.1 Potential value of the institution's experience
 
-**Type:** Single select, randomized
+**Type:** Single select
 
 > Do you believe your institution has an EA or HERM experience that could be useful for other higher education institutions?
 
@@ -714,13 +747,13 @@ Added options:
 - Possibly
 - Unlikely
 - No
-- Cannot assess
+- Don't know / Cannot assess
 
 ---
 
 ## 7.2 Interest in community exchange
 
-**Type:** Multi-select
+**Type:** Multi-select, randomised
 
 > Would you or your institution be interested in any of the following?
 
@@ -744,7 +777,7 @@ Added options:
 **Type:** Email, optional
 
 > By providing your contact details, you consent to the purpose(s) provided in the previous question.
-> Please note that your response will not be included in the publication of the dataset. It will only be processed internally by the EUNIS EA SIG. If you selected peer matching, your contact details will be shared only with peer institutions that have also selected peer matching.
+> Please note that your response will not be included in the publication of the dataset. It will only be processed internally by SemaLogic and the EUNIS EA SIG. If you selected peer matching, your contact details will be shared only with peer institutions that have also selected peer matching.
 
 Prompt: "Your e-mail address"
 
@@ -762,22 +795,22 @@ Prompt: "Your e-mail address"
 > May your institution be named in publications or datasets resulting from this survey?
 
 - Yes, the institution may be named
-- No, use only anonymized or aggregated information
+- No, use and publish only anonymised or aggregated information
 
 ---
 
 # Section 9: Closing & Feedback
 
-## 9.1 Thanks and final question
+> Thank you for your time.
+> We will evaluate, discuss and publish the results as soon as possible.
+
+## 9.1 Feedback
 
 **Type:** Text, optional
 
-> Thank you for participating in this survey.
-> We will evaluate, discuss and publish the results as soon as possible.
->
-> Do you have any final comments about the survey itself?
+> Do you have any final comments about the survey itself? If you chose not to participate, we would appreciate a short note on why.
 
-Closing text: "Thanks again for your personal support of the global HERM community!"
+Closing text: "Thank you again for your personal support of the global HERM community!"
 
 ---
 
@@ -785,7 +818,7 @@ Closing text: "Thanks again for your personal support of the global HERM communi
 
 1. Do not force institution-level answers where respondents may reasonably lack knowledge; provide **Don't know / Cannot assess**.
 2. Store multi-select responses as separate binary variables.
-3. Randomize unordered option lists where supported by the survey platform; keep ordinal scales (e.g. 2.1, 2.2, 4.12, 5.3, 5.4, 7.1) in fixed order.
+3. Randomise unordered option lists where supported by the survey platform; keep ordinal scales (2.1, 2.2, 3.1, 3.2, 4.12, 5.3, 5.4, 7.1) in fixed order.
 4. Keep "Other" as a separate binary variable plus free-text field.
 5. Keep "None" and "Don't know" mutually exclusive with substantive options.
 6. Use identical duration categories for 2.3 and 4.1.
@@ -795,6 +828,7 @@ Closing text: "Thanks again for your personal support of the global HERM communi
 10. Preserve the exact survey version used for every response.
 11. Store each row of matrix items (2.2, 4.3) as a separate ordinal variable.
 12. Remove contact details (8.1) from the research dataset; keep them in a separate contact list with restricted access.
+13. Exclude responses with 0.1 = Preview or Leave from the research dataset; keep any feedback given in 9.1 for survey improvement only.
 
 ---
 
@@ -812,27 +846,28 @@ What should the final study claim?
 
 The third objective would require a substantially more explicit sampling frame, recruitment strategy, and treatment of non-response.
 
-> option 1 and 2 Defitively not 3, sinfe we dont have a good distribution channel beyond EUNIS.
+> Options 1 and 2, definitely not 3, since we do not have a good distribution channel beyond EUNIS.
+> Distribution will be done via the national bodies registered in EUNIS. We have 15 organisations named on eunis.org/eunis-members (section "Partners", list "Member Organisations of EUNIS").
 
 ## OI-2 — One response per institution vs. multiple expert responses
 
 Should the study aim for:
 
 1. one authoritative institutional response,
-2. multiple expert responses that are analyzed independently, or
+2. multiple expert responses that are analysed independently, or
 3. multiple responses that are reconciled into one institutional record?
 
 This determines recruitment wording, duplicate handling, and the unit used in inferential analyses.
 
-> option 2 is key. However, we will often get only one answer per institution had teeat ot as option 1. 
+> Option 2 is key. However, we will often get only one answer per institution and treat it as option 1.
 
-> Proposal: Item 1.7 records the respondent's organizational unit, mirroring the rows of 2.2. If several experts from the same institution respond, differing answers (e.g. in 2.1 or 2.2) can then be interpreted as different vantage points (e.g. central IT vs. faculty) instead of being treated as inconsistencies. Responses are not merged. Respondent-level analysis is primary; institution-level counts use one response per institution, selected by a predefined rule (highest knowledge in 1.8), and are reported as a sensitivity analysis (see Analysis Matrix E3).
+> Decided: Item 1.7 records the respondent's organisational unit, mirroring the rows of 2.2. If several experts from the same institution respond, differing answers (e.g. in 2.1 or 2.2) can then be interpreted as different vantage points (e.g. central IT vs. faculty) instead of being treated as inconsistencies. Responses are not merged. Respondent-level analysis is primary; institution-level counts use one response per institution, selected by a predefined rule (highest knowledge in 1.8), and are reported as a sensitivity analysis (see Analysis Matrix E3).
 
 ## OI-3 — Scope of "Higher Education Institution"
 
-Should research institutes and other non-teaching organizations remain part of the target population, or should the survey focus strictly on higher education institutions?
+Should research institutes and other non-teaching organisations remain part of the target population, or should the survey focus strictly on higher education institutions?
 
-> yes. Keep this. Just to see the differences.
+> Yes. Keep this. Just to see the differences.
 
 ## OI-4 — Required depth of framework comparison
 
@@ -840,10 +875,12 @@ Is it sufficient to know which frameworks / reference models / modelling languag
 
 - adoption status,
 - start year,
-- organizational scope,
+- organisational scope,
 - purpose of use?
 
 A framework-by-framework comparison would require a repeated question block or matrix.
+
+> Decided: No framework-by-framework comparison in this wave. 2.4 records which frameworks, reference models, modelling languages and in-house approaches are used, piloted or evaluated (one binary variable per option). Adoption status, start year, scope and purpose per framework are reserved for follow-up research (OI-12). For HERM, status (3.2), duration (4.1), artefact stage (4.3) and application areas (4.2) are captured in detail.
 
 ## OI-5 — Meaning of HERM adoption
 
@@ -851,11 +888,27 @@ Should "adoption" require operational use, or should active evaluation and pilot
 
 A reporting definition should be fixed before fieldwork.
 
-## OI-6 — HERM artifact taxonomy
+> Decided: Adoption starts with pilot use. Labels follow the answer options of 3.2.
 
-Which artifacts are officially considered part of HERM for this study, and which are related artifacts or methods used alongside HERM?
+| 3.2 answer option                                | Is adoption  | Reporting category         |
+| ------------------------------------------------ | -----------: | -------------------------- |
+| Not considered                                   |           no | non-adoption               |
+| Being evaluated / considered                     |           no | considering adoption       |
+| Pilot or experimental use                        |          yes | early / pilot adoption     |
+| Active operational use                           |          yes | operational adoption       |
+| Embedded in governance or standard EA processes  |          yes | institutionalised adoption |
+| Previously used, but no longer in use            | formerly yes | discontinued adoption      |
+| Don't know / Cannot assess                       |            — | excluded (unknown)         |
+
+> Note: Routing after 3.2 does not follow this definition one-to-one. "Being evaluated / considered" is routed to Section 4 (usage details) although it does not count as adoption, and "Previously used" is routed to Section 5. Reports on Section 4 must therefore distinguish evaluators from adopters.
+
+## OI-6 — HERM artefact taxonomy
+
+Which artefacts are officially considered part of HERM for this study, and which are related artefacts or methods used alongside HERM?
 
 The final answer options should use one agreed taxonomy and naming convention.
+
+> Decided: The HERM reference models in 4.3 are BRM, DRM, ARM, TRM and SRM. The SRM is scheduled for HERM 4.0 but is already included in HERM 3.2 as an alpha version for community feedback; "Don't know / n.a." in 4.3 covers institutions using a version without SRM. Related artefacts and approaches used alongside HERM (Business Model Canvas, Recipe Cards, Process Models, Value Streams) are captured separately in 4.4.
 
 ## OI-7 — Desired granularity of institutional application areas
 
@@ -863,21 +916,25 @@ Is a broad functional classification sufficient, or should HERM Business Capabil
 
 If formal capability-level analysis is intended, a controlled selection should replace optional free text.
 
+> Decided: A broad functional classification (4.2) is sufficient for this wave. The primary area can be specified as an optional HERM Business Capability name or identifier (4.5, free text); these answers are coded qualitatively where possible. Formal capability-level analysis is not intended.
+
 ## OI-8 — Case-study selection criteria
 
 What makes a case "transfer-worthy" for the purposes of the study?
 
 Possible criteria include:
 
-- demonstrated outcome,
-- reuse potential,
-- documentation quality,
-- cross-institutional relevance,
-- maturity,
-- novelty,
-- willingness to share.
+- demonstrated outcome, -> yes
+- reuse potential, -> yes
+- documentation quality, -> no
+- cross-institutional relevance, -> yes
+- maturity, -> yes
+- novelty, -> no
+- willingness to share. -> yes
 
 The criteria should be defined before using survey responses to rank cases.
+
+> See "-> yes/no" entries.
 
 ## OI-9 — Intended analysis of institutional size
 
@@ -885,11 +942,15 @@ Will student and staff size be used only descriptively, or should they support s
 
 If comparative analysis is planned, the final category boundaries should be aligned with expected sample sizes and relevant European higher-education classifications.
 
+> Head-count categories are adapted, and we will use them to compare groups of institutions.
+
 ## OI-10 — Country-level analysis
 
 Are country comparisons an intended output?
 
 If yes, minimum case counts per country, treatment of uneven national recruitment, and aggregation rules should be specified before fieldwork.
+
+> We have a few countries where fewer than 10 universities exist. Grouping them into one class might be an option for group-wise comparison.
 
 ## OI-11 — EA maturity beyond HERM status
 
@@ -897,7 +958,7 @@ Is the study intended to compare overall EA maturity between institutions?
 
 If yes, the current EA status item is insufficient; a separate multi-item EA maturity construct would be required.
 
-> Proposal: No validated maturity construct in this wave. 2.1 (highest EA status), 2.2 (coverage across organizational areas), 2.3 (age), 2.5/2.6 (anchoring) and 3.2 (HERM status) are reported together as an "EA status and coverage profile", not as "EA maturity". A multi-dimensional maturity assessment remains a candidate for follow-up research (OI-12).
+> Decided: No validated maturity construct in this wave. 2.1 (highest EA status), 2.2 (coverage across organisational areas), 2.3 (age), 2.5/2.6 (anchoring) and 3.2 (HERM status) are reported together as an "EA status and coverage profile", not as "EA maturity". A multi-dimensional maturity assessment remains a candidate for follow-up research (OI-12).
 
 ## OI-12 — Relationship to follow-up research
 
@@ -914,22 +975,28 @@ Candidate follow-up topics include:
 - failure cases,
 - detailed mappings between HERM and other frameworks.
 
+> Decided: All candidate topics above are reserved for follow-up interviews, workshops or a second survey, together with framework-by-framework comparison (OI-4) and a multi-dimensional maturity assessment (OI-11). This wave answers quantitatively: EA status, coverage, age, approaches and anchoring (Section 2), HERM status and usage (Sections 3–4), barriers (Section 5), and support needs (Section 6). Respondents willing to take part in follow-up activities are identified via 7.2.
+
 ## OI-13 — Publication and data-sharing model
 
 Will the published output contain:
 
 - aggregated statistics only,
-- anonymized respondent-level data,
+- anonymised respondent-level data,
 - named institution-level data with consent,
 - or a public case-study directory?
 
 The final consent and privacy wording depends on this decision.
+
+> Decided (see [[Introduction-text]]): a pseudonymised respondent-level dataset is published for long-term access via the Zenodo community "Research on Digital Transformation and Information Technology in Higher Education in Europe" under CC-BY-NC-SA 4.0. Contact details and other direct identifiers are excluded (data rule 12). Institutions are named only with permission in 8.2.
 
 ## OI-14 — Survey language
 
 Will the survey be English-only or translated into national languages?
 
 If translated, a translation and reconciliation procedure should be defined to preserve measurement equivalence across language versions.
+
+> Decided: English only, using British spelling, as institutions from all over Europe are invited. No translation procedure is required.
 
 ---
 
