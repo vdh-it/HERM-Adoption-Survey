@@ -104,9 +104,9 @@ Optional. If you prefer not to identify your institution, leave this field blank
 > Which country is your institution based in?
 
 - European country list
-- Other
+- Other (please specify below)
 
-If **Other**: free text — "Please state the country in which your institution is based."
+If **Other**: follow-up text question "Specific Country" — "Please state the country in which your institution is based."
 
 ---
 
@@ -770,7 +770,7 @@ Added options:
 
 # Section 8: Naming & Contact Consent
 
-## 8.1 Contact email
+## 8.1 Contact e-mail
 
 **Condition:** Show if at least one follow-up option other than "None" was selected in 7.2
 
