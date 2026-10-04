@@ -2,7 +2,7 @@
 
 **Status:** Revised Draft  
 **Audience:** EA practitioners and related decision-makers at higher education institutions  
-**Distribution:** EUNIS and national organizations via member channels
+**Distribution:** EUNIS and national organizations via member channels  
 **Last updated:** 2026-10-04
 
 ---
@@ -39,7 +39,7 @@ Section 2: EA Practice                             everyone, partly conditional
 If EA status (2.1) = Established / Early operational
     -> 2.2–2.6: EA coverage, age, approaches, home, lead
 If EA status (2.1) = Exploring or planning
-    -> 2.2+2.4–2.6: EA approaches, home, lead
+    -> 2.2, 2.4–2.6: EA coverage, approaches, home, lead
 Else
     -> Section 3
 
@@ -53,6 +53,7 @@ Else
 Section 6: Open Questions & Support Needs          everyone
 Section 7: Knowledge Sharing & Follow-up           everyone, partly conditional
 Section 8: Naming & Contact Consent                conditional
+Section 9: Closing & Feedback                      everyone
 ```
 
 ---
@@ -71,13 +72,12 @@ Optional. If you prefer not to identify your institution, leave this field blank
 
 ## 1.2 Country
 
-**Type:** Single select
+**Type:** Single select as dropdown
 
 - European country list
 - Other
 
-If **Other**: free text.
-- Please state the country in which your institution is based.
+If **Other**: free text — "Please state the country in which your institution is based."
 
 ---
 
@@ -187,7 +187,8 @@ If **Other**: free text.
 **Routing:**
 
 - Established operational practice -> 2.2
-- Early operational practice / currently being established / Exploring or planning EA -> 2.2
+- Early operational practice / currently being established -> 2.2
+- Exploring or planning EA -> 2.2 (2.3 is skipped)
 - All other responses -> Section 3
 
 ---
@@ -228,30 +229,33 @@ If **Other**: free text.
 
 ## 2.4 EA approaches currently used
 
-
 **Type:** Multi-select
 
 > Which of the following frameworks/methods/etc. does your institution currently use, pilot, or actively evaluate for Enterprise Architecture?
 
 ### EA frameworks / methods
+
 - TOGAF
 - Zachman Framework
 - Don't know / Cannot assess
 - Other EA framework or method
 
 ### Higher-education reference models / architectures
+
 - HERM
 - HORA / HOSA
 - Don't know / Cannot assess
 - Other higher-education reference model
 
 ### Modelling languages / standards
+
 - ArchiMate
 - BPMN
 - Don't know / Cannot assess
 - Other modelling language or notation
 
 ### Institution-specific approach
+
 - Custom / in-house EA framework
 - Just EA standards without customization
 - No formal framework; pragmatic or ad hoc EA practice
@@ -263,7 +267,6 @@ If **Other**: free text.
 ---
 
 ## 2.5 Organizational home of the EA practice
-
 
 **Type:** Multi-select
 
@@ -284,7 +287,6 @@ If **Other**: free text.
 ---
 
 ## 2.6 Executive or organizational lead for EA
-
 
 **Type:** Single select
 
@@ -376,9 +378,7 @@ If **Other**: free text.
 - Facilities / infrastructure
 - Governance / strategy
 - Don't know / Cannot assess
-- Other
-
-**Type:** Text, optional
+- Other + Text
 
 ---
 
@@ -417,11 +417,11 @@ If **Other**: free text.
 
 ## 4.5 HERM application area (follow up to 4.2)
 
-Visibility is conditional on 4.2 being something other than "Don't know"
-
-> Which is currently the primary area? Provide HERM Business Capability name or identifier, if known.
+**Condition:** Show if 4.2 ≠ "Don't know / Cannot assess"
 
 **Type:** Text, optional
+
+> Which is currently the primary area? Provide HERM Business Capability name or identifier, if known.
 
 ---
 
@@ -449,7 +449,7 @@ Visibility is conditional on 4.2 being something other than "Don't know"
 
 ---
 
-## 4.7 Value are you receiving from using HERM
+## 4.7 Value received from using HERM
 
 **Type:** Multi-select, randomized
 
@@ -494,11 +494,11 @@ Prompt: "Your HERM use-case-description..."
 
 > What aspects of using HERM have worked particularly well at your institution?
 
-Prompt: "Please provide details how you applied HERM and why this was a sucess..."
+Prompt: "Please provide details how you applied HERM and why this was a success..."
 
 ---
 
-### 4.10 Enabling factors
+## 4.10 Enabling factors
 
 **Type:** Multi-select, randomized
 
@@ -535,7 +535,7 @@ Prompt: "Provide details on road blocks concerning HERM..."
 
 **Type:** Single select
 
-> **What role does HERM play in your institution's broader EA practice?**
+> What role does HERM play in your institution's broader EA practice?
 
 - Central foundation of the EA approach
 - Integrated component of the EA approach
@@ -603,9 +603,9 @@ Prompt: "Provide details on road blocks concerning HERM..."
 > Of the factors you selected, which is currently the most important barrier?
 
 Added options:
-Other (meaning the item you provided above)
-None of the above
-Don't know / Cannot assess
+- Other (meaning the item you provided above)
+- None of the above
+- Don't know / Cannot assess
 
 ---
 
@@ -696,9 +696,9 @@ Don't know / Cannot assess
 > Which of these would be most valuable to your institution?
 
 Added options:
-Other (meaning the item you provided above)
-None of the above
-Don't know / Cannot assess
+- Other (meaning the item you provided above)
+- None of the above
+- Don't know / Cannot assess
 
 ---
 
@@ -710,11 +710,11 @@ Don't know / Cannot assess
 
 > Do you believe your institution has an EA or HERM experience that could be useful for other higher education institutions?
 
-Yes
-Possibly
-Unlikely
-No
-Cannot assess
+- Yes
+- Possibly
+- Unlikely
+- No
+- Cannot assess
 
 ---
 
@@ -724,19 +724,18 @@ Cannot assess
 
 > Would you or your institution be interested in any of the following?
 
-Receiving the results of this survey
-Sharing a use case or practical experience
-Presenting and discussing your EA / HERM work
-Joining a community workgroup on EA / HERM
-Participating in a follow-up interview
-Participating in a more detailed follow-up survey
-Being connected with peer institutions that have a similar EA setup (peer matching)
-None of these
+- Receiving the results of this survey
+- Sharing a use case or practical experience
+- Presenting and discussing your EA / HERM work
+- Joining a community workgroup on EA / HERM
+- Participating in a follow-up interview
+- Participating in a more detailed follow-up survey
+- Being connected with peer institutions that have a similar EA setup (peer matching)
+- None of these
 
 ---
 
 # Section 8: Naming & Contact Consent
-
 
 ## 8.1 Contact email
 
@@ -767,18 +766,18 @@ Prompt: "Your e-mail address"
 
 ---
 
-## 9.1 Thanks and final Question
+# Section 9: Closing & Feedback
 
-Thank you for participating in this survey.
-We will evaluate, discuss and publish the results as soon as possible.
-
-### Feedback 
+## 9.1 Thanks and final question
 
 **Type:** Text, optional
 
+> Thank you for participating in this survey.
+> We will evaluate, discuss and publish the results as soon as possible.
+>
 > Do you have any final comments about the survey itself?
 
-Thanks again for your personal supoort of the global HERM community!
+Closing text: "Thanks again for your personal support of the global HERM community!"
 
 ---
 
