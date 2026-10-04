@@ -3,7 +3,7 @@
 **Status:** Revised Draft  
 **Audience:** EA practitioners and related decision-makers at higher education institutions  
 **Distribution:** EUNIS and national organizations via member channels
-**Last updated:** 2026-09-01
+**Last updated:** 2026-10-04
 
 ---
 
@@ -24,7 +24,7 @@ The primary unit of analysis is the **institution**.
 
 Respondents answer on behalf of their institution to the best of their knowledge. Where institutional knowledge cannot reasonably be assumed, a **Don't know / Cannot assess** option is provided.
 
-Respondent-level variables such as role and familiarity with HERM are treated separately from institution-level variables.
+Respondent-level variables such as role, organizational unit, and familiarity with HERM are treated separately from institution-level variables.
 
 If multiple responses are received from the same institution, they must be identifiable where possible and handled during data cleaning and analysis.
 
@@ -34,7 +34,15 @@ If multiple responses are received from the same institution, they must be ident
 
 ```text
 Section 1: Respondent & Institution Profile        everyone
-Section 2: EA Practice                             everyone
+Section 2: EA Practice                             everyone, partly conditional
+
+If EA status (2.1) = Established / Early operational
+    -> 2.2–2.6: EA coverage, age, approaches, home, lead
+If EA status (2.1) = Exploring or planning
+    -> 2.2+2.4–2.6: EA approaches, home, lead
+Else
+    -> Section 3
+
 Section 3: HERM Awareness & Adoption               everyone
 
 If HERM status = Evaluating / Pilot / Active / Embedded
@@ -132,7 +140,24 @@ If **Other**: free text.
 
 ---
 
-## 1.7 Your knowledge of your institution's EA practice
+## 1.7 Your organizational unit
+
+**Type:** Single select
+
+> In which part of your institution do you mainly work?
+
+- Central IT
+- Central administration or services outside IT (incl. executive or strategy office)
+- Decentralized IT in a faculty, department or institute
+- Faculty, department or institute (outside IT)
+- External to the institution (e.g. consultant)
+- Other + Text
+
+**Implementation note:** Respondent-level variable. The first four options mirror the rows of 2.2 so that the respondent's vantage point can be compared with the reported EA coverage (see OI-2).
+
+---
+
+## 1.8 Your knowledge of your institution's EA practice
 
 **Type:** Single select
 
@@ -147,9 +172,11 @@ If **Other**: free text.
 
 ## 2.1 Current status of Enterprise Architecture at your institution
 
-**Type:** Single select, randomized
+**Type:** Single select
 
 > To the best of your knowledge, what is the current status of Enterprise Architecture at your institution?
+>
+> _If the status differs between parts of your institution (e.g. central units vs. faculties), please answer for the most advanced part._
 
 - Established operational practice
 - Early operational practice / currently being established
@@ -157,9 +184,33 @@ If **Other**: free text.
 - No EA practice
 - Don't know / Cannot assess
 
+**Routing:**
+
+- Established operational practice -> 2.2
+- Early operational practice / currently being established / Exploring or planning EA -> 2.2
+- All other responses -> Section 3
+
 ---
 
-## 2.2 Organizational age of the EA practice
+## 2.2 Coverage of EA across organizational areas
+
+**Type:** Matrix, one answer per row, fixed order, optional
+
+> In higher education, EA often covers some parts of the institution more than others.
+> For each of the following areas, what is the current status of EA?
+
+| Area                                                                                         | Established | Early operational | Exploring or planning | No EA | Don't know / n.a. |
+| -------------------------------------------------------------------------------------------- | ----------- | ----------------- | --------------------- | ----- | ----------------- |
+| Central IT (e.g. IT services, infrastructure, IT governance)                                  | ○           | ○                 | ○                     | ○     | ○                 |
+| Central administration and services outside IT (e.g. student administration, finance, HR)     | ○           | ○                 | ○                     | ○     | ○                 |
+| Decentralized IT in faculties, departments or institutes                                      | ○           | ○                 | ○                     | ○     | ○                 |
+| Faculties, departments, institutes (organization of teaching and research, local processes)   | ○           | ○                 | ○                     | ○     | ○                 |
+
+**Implementation note:** Store each row as a separate ordinal variable (0 = No EA … 3 = Established; "Don't know / n.a." as a separate missing code). Because of the "most advanced part" instruction in 2.1, the highest row value is expected to match 2.1 (consistency check).
+
+---
+
+## 2.3 Organizational age of the EA practice
 
 **Condition:** Show if 2.1 = Established / Early operational practice
 
@@ -175,9 +226,8 @@ If **Other**: free text.
 
 ---
 
-## 2.3 EA approaches currently used
+## 2.4 EA approaches currently used
 
-**Condition:** Show if 2.1 = Established / Early operational / Exploring
 
 **Type:** Multi-select
 
@@ -212,9 +262,8 @@ If **Other**: free text.
 
 ---
 
-## 2.4 Organizational home of the EA practice
+## 2.5 Organizational home of the EA practice
 
-**Condition:** Show if 2.1 = Established / Early operational / Exploring
 
 **Type:** Multi-select
 
@@ -234,9 +283,8 @@ If **Other**: free text.
 
 ---
 
-## 2.5 Executive or organizational lead for EA
+## 2.6 Executive or organizational lead for EA
 
-**Condition:** Show if 2.1 = Established / Early operational / Exploring
 
 **Type:** Single select
 
@@ -296,11 +344,19 @@ If **Other**: free text.
 
 # Section 4: HERM Usage Details
 
-## 4.1 Start of HERM engagement
+## 4.1 Duration of HERM engagement
 
-**Type:** Year or Don't know
+**Type:** Single select
 
-> Approximately when did your institution first start actively evaluating or using HERM?
+> Approximately how long has your institution been actively evaluating or using HERM?
+
+- Less than 1 year
+- 1–3 years
+- 4–7 years
+- More than 7 years
+- Don't know
+
+**Implementation note:** Same categories as 2.3, so that the duration of HERM engagement and the age of the EA practice can be compared directly.
 
 ---
 
@@ -328,17 +384,19 @@ If **Other**: free text.
 
 ## 4.3 HERM artifacts used or evaluated
 
-**Type:** Multi-select, randomized
+**Type:** Matrix, one answer per row, random order
 
 > Which HERM artifacts does your institution currently use, pilot, or actively evaluate?
 
-| Artifact                          | Not used | Evaluating | Pilot | Operational |
-| --------------------------------- | -------- | ---------- | ----- | ----------- |
-| Business Reference Model (BRM)    | ○        | ○          | ○     | ○           |
-| Data Reference Model (DRM)        | ○        | ○          | ○     | ○           |
-| Application Reference Model (ARM) | ○        | ○          | ○     | ○           |
-| Technology Reference Model (TRM)  | ○        | ○          | ○     | ○           |
-| Service Reference Model (SRM)     | ○        | ○          | ○     | ○           |
+| Artifact                          | Operational | Pilot | Evaluating | Not used | Don't know / n.a. |
+| --------------------------------- | ----------- | ----- | ---------- | -------- | ----------------- |
+| Business Reference Model (BRM)    | ○           | ○     | ○          | ○        | ○                 |
+| Data Reference Model (DRM)        | ○           | ○     | ○          | ○        | ○                 |
+| Application Reference Model (ARM) | ○           | ○     | ○          | ○        | ○                 |
+| Technology Reference Model (TRM)  | ○           | ○     | ○          | ○        | ○                 |
+| Service Reference Model (SRM)     | ○           | ○     | ○          | ○        | ○                 |
+
+**Implementation note:** Rows in random order, columns in fixed order (same direction as 2.2). Store each row as a separate ordinal variable (0 = Not used … 3 = Operational; "Don't know / n.a." as a separate missing code).
 
 ---
 
@@ -475,7 +533,7 @@ Prompt: "Provide details on road blocks concerning HERM..."
 
 **Condition:** Show if 2.1 = Established / Early operational / Exploring
 
-**Type:** Single select, randomized
+**Type:** Single select
 
 > **What role does HERM play in your institution's broader EA practice?**
 
@@ -568,7 +626,7 @@ Don't know / Cannot assess
 
 **Condition:** Show if 5.3 = Yes / under discussion
 
-**Type:** Single select, randomized
+**Type:** Single select
 
 > If your institution adopted HERM, what role would it most likely play?
 
@@ -672,6 +730,7 @@ Presenting and discussing your EA / HERM work
 Joining a community workgroup on EA / HERM
 Participating in a follow-up interview
 Participating in a more detailed follow-up survey
+Being connected with peer institutions that have a similar EA setup (peer matching)
 None of these
 
 ---
@@ -686,9 +745,11 @@ None of these
 **Type:** Email, optional
 
 > By providing your contact details, you consent to the purpose(s) provided in the previous question.
-> Please note that your response will not be included in the publication of the dataset. It will only be processed internally by the EUNIS EA SIG.
+> Please note that your response will not be included in the publication of the dataset. It will only be processed internally by the EUNIS EA SIG. If you selected peer matching, your contact details will be shared only with peer institutions that have also selected peer matching.
 
 Prompt: "Your e-mail address"
+
+**Implementation note:** Peer matching only connects respondents who both selected peer matching in 7.2 and provided an e-mail address here.
 
 ---
 
@@ -725,14 +786,16 @@ Thanks again for your personal supoort of the global HERM community!
 
 1. Do not force institution-level answers where respondents may reasonably lack knowledge; provide **Don't know / Cannot assess**.
 2. Store multi-select responses as separate binary variables.
-3. Randomize unordered option lists where supported by the survey platform.
+3. Randomize unordered option lists where supported by the survey platform; keep ordinal scales (e.g. 2.1, 2.2, 4.12, 5.3, 5.4, 7.1) in fixed order.
 4. Keep "Other" as a separate binary variable plus free-text field.
 5. Keep "None" and "Don't know" mutually exclusive with substantive options.
-6. Validate year fields against plausible bounds.
+6. Use identical duration categories for 2.3 and 4.1.
 7. Retain respondent-level and institution-level variables separately.
 8. Flag duplicate institution responses during data cleaning where institution identity is available.
 9. Do not automatically merge conflicting responses from the same institution; define a reconciliation rule before analysis.
 10. Preserve the exact survey version used for every response.
+11. Store each row of matrix items (2.2, 4.3) as a separate ordinal variable.
+12. Remove contact details (8.1) from the research dataset; keep them in a separate contact list with restricted access.
 
 ---
 
@@ -763,6 +826,8 @@ Should the study aim for:
 This determines recruitment wording, duplicate handling, and the unit used in inferential analyses.
 
 > option 2 is key. However, we will often get only one answer per institution had teeat ot as option 1. 
+
+> Proposal: Item 1.7 records the respondent's organizational unit, mirroring the rows of 2.2. If several experts from the same institution respond, differing answers (e.g. in 2.1 or 2.2) can then be interpreted as different vantage points (e.g. central IT vs. faculty) instead of being treated as inconsistencies. Responses are not merged. Respondent-level analysis is primary; institution-level counts use one response per institution, selected by a predefined rule (highest knowledge in 1.8), and are reported as a sensitivity analysis (see Analysis Matrix E3).
 
 ## OI-3 — Scope of "Higher Education Institution"
 
@@ -832,6 +897,8 @@ If yes, minimum case counts per country, treatment of uneven national recruitmen
 Is the study intended to compare overall EA maturity between institutions?
 
 If yes, the current EA status item is insufficient; a separate multi-item EA maturity construct would be required.
+
+> Proposal: No validated maturity construct in this wave. 2.1 (highest EA status), 2.2 (coverage across organizational areas), 2.3 (age), 2.5/2.6 (anchoring) and 3.2 (HERM status) are reported together as an "EA status and coverage profile", not as "EA maturity". A multi-dimensional maturity assessment remains a candidate for follow-up research (OI-12).
 
 ## OI-12 — Relationship to follow-up research
 
