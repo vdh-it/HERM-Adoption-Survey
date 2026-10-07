@@ -41,7 +41,7 @@ SE - Sverige - Sweden
 SI - Slovenija - Slovenia
 SK - Slovensko - Slovakia
 SM - San Marino - San Marino
-TR - Türkiye - Türkiye
+TR - Türkiye - Turkey
 UA - Україна - Ukraine
 VA - Città del Vaticano - Vatican City
 XK - Kosova / Косово - Kosovo
