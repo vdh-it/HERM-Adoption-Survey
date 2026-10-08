@@ -12,7 +12,7 @@ Additionally, the survey is aligned with the Memorandum of Understanding (MoU) w
 
 ## Planned survey
 
-The EA SIG therefore plans to conduct a survey. The online questionnaire will be short and precise (5-10 minutes), but open enough to provide an initial overview of the current situation. The intention is to start small and build on the initial results by conducting more in-depth research later.
+The EA SIG therefore plans to conduct a survey. The online questionnaire will be short and precise (10-20 minutes), but open enough to provide an initial overview of the current situation. The intention is to start small and build on the initial results by conducting more in-depth research later.
 
 The survey will collect practical and relevant information on where EA is currently applied, why it is used, the scenarios it supports and the challenges institutions face. It should also provide insight into the adoption of EA frameworks, including HERM, and the reasons why institutions decide against introducing EA or have not yet started. An initial draft of the questionnaire was suggested and discussed by the EA SIG during the pre-conference day in Timișoara.
 
@@ -58,7 +58,7 @@ Where appropriate, the data and outputs should be openly available on Zenodo or 
 
 ## Timeline and deliverables
 
-Ideally, the survey should be ready by the end of summer so that it can be conducted during the winter term, preferably in September and October.
+Ideally, the survey should be ready by the end of summer so that it can be conducted during the winter term, preferably in October and November.
 
 The expected deliverables (D) are as follows:
 1. the final survey questionnaire;

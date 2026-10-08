@@ -26,7 +26,8 @@ Status on 2026-10-08: questionnaire implemented, pretest completed in September 
 | `Distribution.md` | Channel links with LamaPoll attributes | Working document |
 | `National_Higher_Education_IT_Networks_Europe.md` | Inventory of national networks with membership counts | Basis for channels and reach estimates |
 | `Countries.md` | Country list used in question 1.2 | Must match LamaPoll |
-| `Support.md` | Earlier Board Q&A | Superseded by `Adoption_of_EA_in_HE.md`; do not use as reference |
+| `Letter to the board.md` | Request for the Board's endorsement message | Sent; do not edit |
+| `Survey_Invitation.md` | Invitation to national organisations, master texts for members, internal reminder template | Working document for distribution |
 | `README.md`, `.instructions.md` | Earlier case-study framing of the project | Outdated; do not use as reference |
 | `qa/` | Synthetic data and routing tests for the Blueprint of 2026-09-01 | Outdated numbering |
 | `data/` | Raw LamaPoll exports | Contains personal data; see section 3 |
