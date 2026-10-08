@@ -167,7 +167,7 @@ If **Other**: follow-up text question "Specific Country" — "Please state the c
 - IT or Digital Project / Programme Management
 - Academic / Researcher with EA context
 - Educator / Lecturer with EA context
-- Other
+- Other + Text
 
 ---
 
@@ -239,7 +239,7 @@ If **Other**: follow-up text question "Specific Country" — "Please state the c
 | Faculties, departments, institutes (organisation of teaching and research, local processes)   | ○           | ○                 | ○                     | ○     | ○                 |
 | Other (please name)                                                                           | ○           | ○                 | ○                     | ○     | ○                 |
 
-**Implementation note:** Store each row as a separate ordinal variable (0 = No EA … 3 = Established; "Don't know / n.a." as a separate missing code). Because of the "most advanced part" instruction in 2.1, the highest row value is expected to match 2.1 (consistency check). The "Other" row has a free-text field for the area name; it is coded separately and not part of the four-area coverage typology.
+**Implementation note:** Store each row as a separate ordinal variable, using the LamaPoll coding by column position: 1 = Established, 2 = Early operational, 3 = Exploring or planning, 4 = No EA, 5 = Don't know / n.a. (treated as missing in analysis). Lower codes therefore mean a more advanced EA status; the codes 1–5 are identical to those of 2.1. Because of the "most advanced part" instruction in 2.1, the lowest substantive row code (1–4) is expected to match the code of 2.1 (consistency check). The "Other" row has a free-text field for the area name; it is coded separately and not part of the four-area coverage typology.
 
 ---
 
@@ -381,6 +381,8 @@ If **Other**: follow-up text question "Specific Country" — "Please state the c
 
 ## 4.1 Duration of HERM engagement
 
+**Condition:** Show if 3.2 is selected as other than "not considered" or "Don't know" or 3.1 is selected as "basic concept or well known".
+
 **Type:** Single select
 
 > Approximately how long has your institution been actively evaluating or using HERM?
@@ -429,7 +431,7 @@ If **Other**: follow-up text question "Specific Country" — "Please state the c
 | Technology Reference Model (TRM)  | ○           | ○     | ○          | ○        | ○                 |
 | Service Reference Model (SRM)     | ○           | ○     | ○          | ○        | ○                 |
 
-**Implementation note:** Rows in random order, columns in fixed order (same direction as 2.2). Store each row as a separate ordinal variable (0 = Not used … 3 = Operational; "Don't know / n.a." as a separate missing code).
+**Implementation note:** Rows in random order, columns in fixed order (same direction as 2.2). Store each row as a separate ordinal variable, using the LamaPoll coding by column position: 1 = Operational, 2 = Pilot, 3 = Evaluating, 4 = Not used, 5 = Don't know / n.a. (treated as missing in analysis).
 
 ---
 
@@ -825,8 +827,8 @@ Closing text: "Thank you again for your personal support of the global HERM comm
 7. Retain respondent-level and institution-level variables separately.
 8. Flag duplicate institution responses during data cleaning where institution identity is available.
 9. Do not automatically merge conflicting responses from the same institution; define a reconciliation rule before analysis.
-10. Preserve the exact survey version used for every response.
-11. Store each row of matrix items (2.2, 4.3) as a separate ordinal variable.
+10. Preserve the exact survey version used for every response. We restart survey responses after pre-testing.
+11. Store each row of matrix items (2.2, 4.3) as a separate ordinal variable, keeping the LamaPoll column coding (1 = most advanced stage … 4 = none; 5 = Don't know / n.a., treated as missing).
 12. Remove contact details (8.1) from the research dataset; keep them in a separate contact list with restricted access.
 13. Exclude responses with 0.1 = Preview or Leave from the research dataset; keep any feedback given in 9.1 for survey improvement only.
 

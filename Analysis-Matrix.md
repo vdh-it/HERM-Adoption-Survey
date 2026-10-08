@@ -51,11 +51,11 @@
 | `RESPONDENT_KNOWLEDGE_LEVEL` | 1.8 | Ordered categorical | Sensitivity analysis for institution-level answers; selection rule in E3 |
 | `EA_ACTIVE` | 2.1 | 1 = established or early operational; 0 = all other known states | Basic subgroup comparison; equals the visibility condition of 2.3 |
 | `EA_ANY_ENGAGEMENT` | 2.1 | 1 = established, early operational, or exploring | Descriptive subgroup; routing condition for 2.2 and 2.4–2.6; visibility condition of 4.12 |
-| `EA_COVERAGE_<AREA>` | 2.2 (one per row) | 0 = no EA … 3 = established; missing for "Don't know / n.a."; the "Other" row is coded separately with its free text and excluded from the derived coverage variables below | Coverage per organisational area |
-| `EA_COVERAGE_COUNT` | 2.2 | Number of areas with status ≥ early operational (0–4) | Breadth of EA coverage |
-| `EA_COVERAGE_TYPE` | 2.2 | Areas with status ≥ early operational: central IT only / central units (central IT + central administration) / IT institution-wide (central + decentralised IT) / whole institution (all four areas) / other pattern | Typology for comparison and peer matching |
-| `EA_CENTRAL_ACADEMIC_GAP` | 2.2 | max(central IT, central administration) − max(decentralised IT, faculties); range −3 … +3 | Size and direction of the central vs. academic divide |
-| `EA_COVERAGE_CONSISTENT` | 2.1, 2.2 | 1 = highest coverage row equals 2.1; 0 = deviation | Data-quality check (F) |
+| `EA_COVERAGE_<AREA>` | 2.2 (one per row) | LamaPoll coding: 1 = established, 2 = early operational, 3 = exploring or planning, 4 = no EA; missing for 5 = "Don't know / n.a."; lower code = more advanced; the "Other" row is coded separately with its free text and excluded from the derived coverage variables below | Coverage per organisational area |
+| `EA_COVERAGE_COUNT` | 2.2 | Number of areas with status ≥ early operational, i.e. code ≤ 2 (0–4) | Breadth of EA coverage |
+| `EA_COVERAGE_TYPE` | 2.2 | Areas with status ≥ early operational (code ≤ 2): central IT only / central units (central IT + central administration) / IT institution-wide (central + decentralised IT) / whole institution (all four areas) / other pattern | Typology for comparison and peer matching |
+| `EA_CENTRAL_ACADEMIC_GAP` | 2.2 | min(decentralised IT, faculties) − min(central IT, central administration), using codes 1–4; range −3 … +3; positive = central units more advanced | Size and direction of the central vs. academic divide |
+| `EA_COVERAGE_CONSISTENT` | 2.1, 2.2 | 1 = most advanced coverage row (lowest substantive code 1–4) equals the code of 2.1; 0 = deviation | Data-quality check (F) |
 | `HERM_AWARE_RESPONDENT` | 3.1 | Ordered 0–3 or categorical | Respondent awareness only |
 | `HERM_ADOPTION` | 3.2 | 1 = pilot, active operational, or embedded; 0 = other known states; missing for don't know | Headline adoption indicator (Blueprint OI-5) |
 | `HERM_ADOPTION_CATEGORY` | 3.2 | non-adoption / considering / early-pilot / operational / institutionalised / discontinued (Blueprint OI-5) | Reporting categories |
@@ -67,8 +67,8 @@
 | `REFERENCE_MODEL_COUNT` | 2.4 | Count of selected HE reference models | Reference-model diversity |
 | `EA_APPROACH_COUNT` | 2.4 | Count of all substantive selected approaches | Exploratory complexity indicator |
 | `HERM_EA_SEQUENCE` | 2.3, 4.1 | HERM engagement longer / same category / shorter than EA practice age; only where both are answered | Was HERM an entry point to EA or added to an existing practice? |
-| `HERM_ARTEFACT_COUNT` | 4.3 | Count of artefacts with status ≥ evaluating | Breadth of HERM engagement |
-| `HERM_ARTEFACT_OPERATIONAL_COUNT` | 4.3 | Count of artefacts with status = operational | Depth of HERM use |
+| `HERM_ARTEFACT_COUNT` | 4.3 | Count of artefacts with status ≥ evaluating, i.e. code ≤ 3 (LamaPoll coding: 1 = operational, 2 = pilot, 3 = evaluating, 4 = not used, 5 = don't know / n.a. as missing) | Breadth of HERM engagement |
+| `HERM_ARTEFACT_OPERATIONAL_COUNT` | 4.3 | Count of artefacts with status = operational (code 1) | Depth of HERM use |
 | `HERM_TASK_COUNT` | 4.6 | Count of substantive task categories selected | Breadth of HERM application |
 | `HERM_VALUE_REPORTED` | 4.7 | 1 = at least one substantive value; 0 = "No tangible outcome yet" | Outcome subgroup |
 | `CASE_CANDIDATE` | 3.2, 4.7, 4.8, 4.13, 7.2 | Criteria from Blueprint OI-8: demonstrated outcome (4.7 substantive value), reuse potential (4.13), cross-institutional relevance (coded from 4.8), maturity (3.2 = active or embedded), willingness to share (7.2 sharing/presenting/interview); 7.1 as supporting indicator only | Follow-up case screening |
@@ -235,7 +235,7 @@ Before substantive analysis:
 4. Do not treat a HERM engagement (4.1) longer than the EA practice age (2.3) as an error; HERM may precede an operational EA practice.
 5. Check HERM status against HERM artefact/task responses.
 6. Check EA status against EA approach responses.
-7. Check 2.1 against 2.2: the highest coverage row should equal 2.1 (`EA_COVERAGE_CONSISTENT`); flag deviations.
+7. Check 2.1 against 2.2: the most advanced coverage row (lowest substantive code) should equal 2.1 (`EA_COVERAGE_CONSISTENT`); flag deviations.
 8. Flag low respondent knowledge (1.8) for sensitivity analyses.
 9. Distinguish item non-response from explicit `Don't know` responses.
 10. Preserve raw multi-select variables; do not collapse them prematurely.
