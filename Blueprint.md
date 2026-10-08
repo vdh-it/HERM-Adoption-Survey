@@ -810,13 +810,13 @@ Prompt: "Your e-mail address"
 
 **Condition:** Show if institution name provided in 1.1
 
-**Type:** Single select
+**Type:** Single select, randomised
 
-> You had provided the name of your institution at the beginning of this survey.
+> You had provided the name of your institution at the beginning of this survey. This may in connection with your role lead reveal your identity.
 > May your institution be named in publications or datasets resulting from this survey?
 
-- Yes, the institution may be named
-- No, use and publish only anonymised or aggregated information
+- Yes, the institution may be named, and I understand that this may identify me
+- No, do not name the institution; publish my responses only in de-identified or aggregated form
 
 ---
 
@@ -1029,4 +1029,6 @@ If translated, a translation and reconciliation procedure should be defined to p
 - HERM evaluator / pilot: approximately 7–9 minutes
 - HERM non-user with EA practice: approximately 5–7 minutes
 - Respondent without active EA practice: approximately 4–5 minutes
+
+> Update 2026-10-08: The estimates above are the original design targets. The project team now expects about 20 minutes on average, varying strongly with the institution's EA and HERM experience and the length of free-text answers. Communication to respondents and distribution partners uses "about 20 minutes on average" (see `Survey_Invitation.md`). Replace the per-path estimates with medians from the first field responses.
 

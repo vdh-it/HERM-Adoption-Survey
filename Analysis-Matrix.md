@@ -196,6 +196,7 @@ Decided (Blueprint OI-10, 2026-10-08):
 - All countries below this threshold are pooled into one group, **"Other countries"** (`COUNTRY_GROUP`).
 - Institutions are counted with the selection rule of E3 (one response per institution). Responses without an institution name count as one institution each; report how many such responses a country group contains.
 - Country is taken from 1.2, not from the link attribute.
+- The same threshold applies to distribution channels (`CHANNEL`): channel-specific results are reported to a distribution partner only if at least 5 participating institutions responded through its channel (decided 2026-10-08).
 - Re-assess the threshold and the pooling after the field phase, before any country comparison is reported.
 
 ### E2. Institution-level prevalence estimates
