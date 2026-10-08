@@ -36,7 +36,7 @@ As promised in `Survey_Invitation.md`; any change here must also be made there.
 | 1 | Now | Board endorsement message to national organisations | EUNIS Board |
 | 2 | Shortly after step 1 | Invitation (Part 1 and 2 of `Survey_Invitation.md`) with main link and `[SEND-BY DATE]` to each partner | [OWNER] |
 | 3 | First field day after each partner mailing | Check export: attribute columns present, channel values match the sent link | [OWNER] |
-| 4 | Weekly | Count responses and institutions per channel; update tracking table | [OWNER] |
+| 4 | Weekly | Count responses and institutions per channel; update tracking table and contact status (5.1) | [OWNER] |
 | 5 | `[SEND-BY DATE]` passed without confirmation | Friendly follow-up to the partner | [OWNER] |
 | 6 | About 2–3 weeks after a partner's mailing | Reminder text (Part 3) and reminder link to the partner; priority for channels below 5 institutions | [OWNER] |
 | 7 | When participation levels off, at the latest after about 6 weeks | Decide the closing date | EA SIG |
@@ -56,34 +56,61 @@ As promised in `Survey_Invitation.md`; any change here must also be made there.
 
 ## 5. Tracking table
 
-"Membership" is taken from `National_Higher_Education_IT_Networks_Europe.md` and is only a rough denominator; replace it with the number the partner reports.
+"Membership" is taken from `National_Higher_Education_IT_Networks_Europe.md` and is only a rough denominator; replace it with the number the partner reports. "Contact": names and e-mail addresses of contact persons are kept only in `EUNIS_contacts.csv`, which is excluded from Git (`.gitignore`). "in CSV" means a representative is listed there; "not on EUNIS map" means the contact must come from elsewhere.
 
 | Channel | Country | Contact | Membership (inventory) | Invitation sent | Send-by | Partner sent | Reached (reported) | Reminder sent | Institutions |
 |---|---|---|---|---|---|---|---|---|---|
-| AMUE | FR | | 178 institutions | | | | | | |
-| CINECA | IT | | 71 HE institutions | | | | | | |
-| CSIESR | FR | | 145 institutions | | | | | | |
-| CSC | FI | | undefined | | | | | | |
-| EUNIS_CZ | CZ | | undefined | | | | | | |
-| EUNIS_SK | SK | | 20 full + 1 associate | | | | | | |
-| GUnet | GR | | 25 universities | | | | | | |
-| Jisc | GB | | undefined | | | | | | |
-| MUCI | PL | | > 100 institutions | | | | | | |
-| LADOK | SE | | 43 institutions | | | | | | |
-| OPI | PL | | undefined | | | | | | |
-| SIGMA | ES | | 17 universities | | | | | | |
-| SURF | NL | | > 120 institutions | | | | | | |
-| UCISA | GB | | undefined | | | | | | |
-| ZKI | DE | | > 250 members | | | | | | |
-| CIO | DE | | 56 individuals | | | | | | |
-| HIS | DE | | 223 members | | | | | | |
-| RASH | AL | | undefined | | | | | | |
-| Asiera | IE | | 9 institutions | | | | | | |
-| SRCE | HR | | undefined | | | | | | |
-| VPC | LV | | 4 founders | | | | | | |
-| Sikt | NO | | undefined | | | | | | |
-| SIG (DE, FI, EU) | — | | n/a | | | | | | |
-| EUNIS | EU | | n/a | | | | | | |
+| AMUE | FR | in CSV | 178 institutions | | | | | | |
+| CINECA | IT | not on EUNIS map | 71 HE institutions | | | | | | |
+| CSIESR | FR | in CSV | 145 institutions | | | | | | |
+| CSC | FI | in CSV | undefined | | | | | | |
+| EUNIS_CZ | CZ | in CSV | undefined | | | | | | |
+| EUNIS_SK | SK | in CSV | 20 full + 1 associate | | | | | | |
+| GUnet | GR | in CSV | 25 universities | | | | | | |
+| Jisc | GB | in CSV | undefined | | | | | | |
+| MUCI | PL | in CSV | > 100 institutions | | | | | | |
+| LADOK | SE | in CSV | 43 institutions | | | | | | |
+| OPI | PL | in CSV | undefined | | | | | | |
+| SIGMA | ES | in CSV | 17 universities | | | | | | |
+| SURF | NL | in CSV | > 120 institutions | | | | | | |
+| UCISA | GB | not on EUNIS map | undefined | | | | | | |
+| ZKI | DE | in CSV | > 250 members | | | | | | |
+| CIO | DE | in CSV (not on EUNIS map) | 56 individuals | | | | | | |
+| HIS | DE | in CSV | 223 members | | | | | | |
+| RASH | AL | in CSV | undefined | | | | | | |
+| Asiera | IE | in CSV | 9 institutions | | | | | | |
+| SRCE | HR | in CSV | undefined | | | | | | |
+| VPC | LV | in CSV | 4 founders | | | | | | |
+| Sikt | NO | in CSV | undefined | | | | | | |
+| Funidata | FI | in CSV | 8 owner organisations | | | | | | |
+| HKdir | NO | in CSV | undefined | | | | | | |
+| SIG (DE, FI, EU) | — | in CSV | n/a | | | | | | |
+| EUNIS | EU | EUNIS secretariat | n/a | | | | | | |
+
+**Added 2026-10-08 from the EUNIS member map:** Funidata (FI) and the Norwegian Directorate for Higher Education and Skills (HKdir, NO). Both are also marked in the network inventory. Test their links before the first mailing (rule 4).
+
+### 5.1 Contact status in `EUNIS_contacts.csv`
+
+The column **"Distribution status"** in `EUNIS_contacts.csv` holds the current lifecycle state of each contact. Any value other than `not relevant` marks a contact as relevant for the study. The tracking table above keeps dates and numbers; the CSV keeps the current state. Update both when a step of section 3 is done.
+
+| Status | Meaning | Set when | Next status |
+|---|---|---|---|
+| `not relevant` | Default. No direct contact planned: institutions (reached through the EUNIS channel), solution providers, test entries | — | — |
+| `contact missing` | Relevant, but no usable address yet | Initial state | `to invite` once an address is known, e.g. from the EUNIS secretariat |
+| `to invite` | Relevant, address available, first mail not yet sent | Initial state, or address found | `invited` |
+| `invited` | First mail (Part 1 and 2 of `Survey_Invitation.md`) sent | Step 2 | `confirmed`, `declined` or, after `[SEND-BY DATE]`, `follow-up sent` |
+| `follow-up sent` | `[SEND-BY DATE]` passed without reaction; friendly follow-up sent | Step 5 | `confirmed`, `declined` or `no response` |
+| `confirmed` | Partner agreed to distribute or announced its mailing date | Partner reply | `distributed` |
+| `distributed` | Partner has sent the invitation to its members | Partner confirms mailing | `reminder sent` |
+| `reminder sent` | Reminder text (Part 3) and reminder link sent to the partner | Step 6 | `final reminder sent` |
+| `final reminder sent` | Final reminder with closing date sent through the partner | Step 8 | `closed` |
+| `declined` | Partner will not distribute | Partner reply | End state; channel only reached through EUNIS |
+| `no response` | No reaction after the follow-up | About one week after `follow-up sent` | End state; channel only reached through EUNIS |
+| `closed` | Field phase closed; thank-you mail with pointer to the results sent | Step 9 | — |
+
+Initial state on 2026-10-08: 30 contacts `to invite` (all national channels except CINECA, EUNIS, and the two leads of each SIG channel), 1 contact `contact missing` (CINECA), all other entries `not relevant`. Contacts provided by the project team are marked "provided by project team" in the CSV.
+
+**One status carrier per channel:** if a channel has several contacts, the contact we actually write to carries the status; the others are `not relevant` with a note naming the carrier (CSIESR, SRCE). Exception: the SIG channels, where both co-leads are contacted.
 
 ---
 
@@ -108,7 +135,7 @@ https://survey.lamapoll.de/EA-and-HERM-Adoption?Country_NL=1&Distribution_SURF=1
 https://survey.lamapoll.de/EA-and-HERM-Adoption?Country_GB=1&Distribution_UCISA=1&main=1
 https://survey.lamapoll.de/EA-and-HERM-Adoption?Country_DE=1&Distribution_ZKI=1&main=1
 
-Additional organisations which also are EUNIS members:
+Additional organisations which also are EUNIS members (Funidata and HKdir added 2026-10-08 from the EUNIS member map):
 https://survey.lamapoll.de/EA-and-HERM-Adoption?Country_DE=1&Distribution_CIO=1&main=1
 https://survey.lamapoll.de/EA-and-HERM-Adoption?Country_DE=1&Distribution_HIS=1&main=1
 https://survey.lamapoll.de/EA-and-HERM-Adoption?Country_AL=1&Distribution_RASH=1&main=1
@@ -116,6 +143,8 @@ https://survey.lamapoll.de/EA-and-HERM-Adoption?Country_IE=1&Distribution_Asiera
 https://survey.lamapoll.de/EA-and-HERM-Adoption?Country_HR=1&Distribution_SRCE=1&main=1
 https://survey.lamapoll.de/EA-and-HERM-Adoption?Country_LV=1&Distribution_VPC=1&main=1
 https://survey.lamapoll.de/EA-and-HERM-Adoption?Country_NO=1&Distribution_Sikt=1&main=1
+https://survey.lamapoll.de/EA-and-HERM-Adoption?Country_FI=1&Distribution_Funidata=1&main=1
+https://survey.lamapoll.de/EA-and-HERM-Adoption?Country_NO=1&Distribution_HKdir=1&main=1
 
 Special Interest Groups (expected selection bias, see rule 5):
 https://survey.lamapoll.de/EA-and-HERM-Adoption?Country_DE=1&Distribution_SIG=1&main=1
@@ -152,6 +181,8 @@ https://survey.lamapoll.de/EA-and-HERM-Adoption?Country_IE=1&Distribution_Asiera
 https://survey.lamapoll.de/EA-and-HERM-Adoption?Country_HR=1&Distribution_SRCE=1&reminder=1
 https://survey.lamapoll.de/EA-and-HERM-Adoption?Country_LV=1&Distribution_VPC=1&reminder=1
 https://survey.lamapoll.de/EA-and-HERM-Adoption?Country_NO=1&Distribution_Sikt=1&reminder=1
+https://survey.lamapoll.de/EA-and-HERM-Adoption?Country_FI=1&Distribution_Funidata=1&reminder=1
+https://survey.lamapoll.de/EA-and-HERM-Adoption?Country_NO=1&Distribution_HKdir=1&reminder=1
 https://survey.lamapoll.de/EA-and-HERM-Adoption?Country_DE=1&Distribution_SIG=1&reminder=1
 https://survey.lamapoll.de/EA-and-HERM-Adoption?Country_FI=1&Distribution_SIG=1&reminder=1
 https://survey.lamapoll.de/EA-and-HERM-Adoption?Country_EU=1&Distribution_SIG=1&reminder=1
@@ -159,3 +190,25 @@ https://survey.lamapoll.de/EA-and-HERM-Adoption?Country_EU=1&Distribution_EUNIS=
 
 Template:
 https://survey.lamapoll.de/EA-and-HERM-Adoption?Country_XX=1&Distribution_XX=1&reminder=1
+
+---
+
+## 7. EUNIS member map: summary
+
+**Source:** public member map embedded on https://eunis.org/eunis-members/ (iframe `community.eunis.org/company-map/eunis`), retrieved 2026-10-08 via the map's public endpoints. **118 entries.**
+
+**Contact details are not kept in this file.** The full list with representatives, roles, websites and e-mail addresses is in `EUNIS_contacts.csv` (excluded from Git). Use it only to contact organisations about this survey.
+
+| Type on the map | Entries | Survey channel |
+|---|---|---|
+| National / sectoral organisations | 21 | their own channel |
+| Institutions | 93 | EUNIS |
+| Solution providers (SAP, SemaLogic) | 2 | none |
+| Other (EUNIS itself, platform test entry) | 2 | none |
+
+**Findings**
+
+- **All 21 national / sectoral organisations on the map** are covered by a channel. Funidata (FI) and the Norwegian Directorate for Higher Education and Skills (NO) were added on 2026-10-08 as a result of this comparison.
+- **CINECA, UCISA and Hochschul-CIO are not on the map**, although they have channels. Contacts must come from elsewhere, e.g. the EUNIS Board introduction.
+- **SURF's representative on the map is the Board member** to whom `Letter to the board.md` is addressed.
+- **Institutions in countries without a national channel** can only be reached through the EUNIS channel: AT 3, BE 5, CH 7, DK 5, EE 1, LU 1, PT 3, RO 1, SI 1. For these countries the EUNIS mailing and its reminders are the only distribution route.
