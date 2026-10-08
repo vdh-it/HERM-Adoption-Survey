@@ -152,8 +152,8 @@ All agents operate under constraints defined in `.instructions.md`:
 
 ## Access Restrictions
 
-The `.logs/` directory is **excluded from agent access**. It contains local
-runtime/session logs, not research data, and must not be read, indexed, or
+The `.logs/` and `no_agent_access/` directories are **excluded from agent access**. 
+They contains local runtime/session logs, not research data, and must not be read, indexed, or
 referenced by any agent listed above.
 
 ---
