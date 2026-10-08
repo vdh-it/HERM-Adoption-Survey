@@ -2,7 +2,7 @@
 
 **Purpose:** Define in advance which research questions can be answered from which variables, at which unit of analysis, and with which type of analysis.
 
-**Aligned with:** Blueprint, last updated 2026-10-04. All question numbers refer to this version.
+**Aligned with:** Blueprint, last updated 2026-10-08. All question numbers refer to this version. Distribution data refer to `Distribution.md` (LamaPoll link attributes) and `National_Higher_Education_IT_Networks_Europe.md` (membership counts).
 
 ---
 
@@ -29,8 +29,8 @@
 | RQ17 | What difficulties or gaps occur in HERM use? | 4.11 difficulties | Respondent / institution | Qualitative text | Thematic content analysis | Same limitation as RQ15 |
 | RQ18 | How is HERM integrated with broader EA? | 4.12 integration | Institution | Ordinal categorical | Frequencies; cross-tabs with HERM status, EA status, EA coverage | Only shown if 2.1 = established, early operational, or exploring |
 | RQ19 | Which adaptations, extensions or mappings of HERM might be reusable? | 4.13 adaptations | Institution | Separate binary variables | Multiple-response frequencies; candidate identification for community sharing | Reuse potential is self-assessed |
-| RQ20 | Why is HERM not in operational use? | 5.1 barriers | Institution | Separate binary variables | Multiple-response frequencies | Respondents may not know organisational reasons |
-| RQ21 | What is the most important HERM barrier? | 5.2 primary barrier | Institution | Nominal categorical | Ranked frequencies; cross-tabs | Only meaningful because a single primary barrier is explicitly selected |
+| RQ20 | Why is HERM not in operational use? | 5.1 barriers | Institution | Separate binary variables | Multiple-response frequencies, always split by 3.2 status (non-users vs. evaluators/pilot users) | Respondents may not know organisational reasons; evaluators and pilot users answer after Section 4 without the "discontinued" option |
+| RQ21 | What is the most important HERM barrier? | 5.2 primary barrier | Institution | Nominal categorical | Ranked frequencies; cross-tabs; split by 3.2 status | Only meaningful because a single primary barrier is explicitly selected |
 | RQ22 | How likely is future HERM consideration? | 5.3 future consideration | Institution | Ordinal categorical | Frequencies; association with barriers / EA status | Intention is not future behaviour |
 | RQ23 | What role might HERM play if adopted? | 5.4 potential role | Institution | Nominal categorical | Frequencies; comparison with 4.12 | Hypothetical expectation |
 | RQ24 | What would enable HERM adoption? | 5.5 adoption requirements | Respondent / institution | Qualitative text | Thematic coding | Open text; prevalence estimates require coding |
@@ -40,6 +40,7 @@
 | RQ28 | What is the highest-priority support need? | 6.4 primary support | Institution / respondent | Nominal categorical | Ranked frequencies | Single priority enables a meaningful ranking |
 | RQ29 | Which institutions may have experience useful to peers? | 7.1 perceived peer value; 4.7; 4.8; 4.13 | Institution / case | Screening variables | Candidate identification | 7.1 is subjective and should not alone define transferability (OI-8) |
 | RQ30 | Who is willing to share, participate in follow-up, or be matched with peers? | 7.2, 8.1, 8.2 | Respondent | Multiple binary consent / interest variables | Recruitment list; peer-matching list; counts | Operational/community variable, not substantive research outcome; kept outside the research dataset |
+| RQ31 | How well did the distribution channels reach the community? | Channel attribute (`Distribution_*`), reminder attribute, 1.2 country; membership counts from the network inventory | Respondent / institution / channel | `CHANNEL`, `CHANNEL_WAVE`, `CHANNEL_REACH_RATIO` (see B) | Responses and institutions per channel and country; rough reach ratio per channel; comparison of key outcomes (2.1, 3.2) between channels and between main and reminder wave | Methodological variable, not a substantive result. Membership counts are heterogeneous (institutions, individuals, owners, "undefined"), memberships overlap (e.g. three German channels), and forwarded links keep the original attribute. Reach ratios are therefore orders of magnitude, not response rates |
 
 ---
 
@@ -47,7 +48,7 @@
 
 | Derived variable | Source variables | Suggested coding | Intended use |
 |---|---|---|---|
-| `RESPONDENT_UNIT` | 1.7 | Central IT / central administration / decentralised IT / faculty / external / other | Vantage point; interpretation of within-institution differences (E3) |
+| `RESPONDENT_UNIT` | 1.7 (multi-select) | One binary variable per unit (central IT / central administration / decentralised IT / faculty / external / other) plus `RESPONDENT_UNIT_COUNT` | Vantage point; interpretation of within-institution differences (E3) |
 | `RESPONDENT_KNOWLEDGE_LEVEL` | 1.8 | Ordered categorical | Sensitivity analysis for institution-level answers; selection rule in E3 |
 | `EA_ACTIVE` | 2.1 | 1 = established or early operational; 0 = all other known states | Basic subgroup comparison; equals the visibility condition of 2.3 |
 | `EA_ANY_ENGAGEMENT` | 2.1 | 1 = established, early operational, or exploring | Descriptive subgroup; routing condition for 2.2 and 2.4–2.6; visibility condition of 4.12 |
@@ -74,6 +75,12 @@
 | `CASE_CANDIDATE` | 3.2, 4.7, 4.8, 4.13, 7.2 | Criteria from Blueprint OI-8: demonstrated outcome (4.7 substantive value), reuse potential (4.13), cross-institutional relevance (coded from 4.8), maturity (3.2 = active or embedded), willingness to share (7.2 sharing/presenting/interview); 7.1 as supporting indicator only | Follow-up case screening |
 | `PEER_MATCH_PROFILE` | 1.3, 1.4, 1.5, 2.1, `EA_COVERAGE_TYPE` (where available), 2.3, 3.2 | Profile vector; only for respondents who selected peer matching in 7.2 and provided an e-mail address in 8.1 | Peer matching (operational, not a research output; see E7) |
 | `DUPLICATE_INSTITUTION_FLAG` | 1.1 and metadata | 1 = institution appears more than once | Data cleaning / sensitivity analysis |
+| `CHANNEL` | LamaPoll attribute `Distribution_*` | Name of the distribution channel (e.g. ZKI, SURF, EUNIS); "direct / unknown" if no attribute | Channel analysis (RQ31) |
+| `CHANNEL_WAVE` | LamaPoll attributes `main`, `reminder` | main / reminder / unknown | Effect of reminders; comparison of early and late respondents |
+| `CHANNEL_COUNTRY_MISMATCH` | Country attribute in the link, 1.2 | 1 = link country differs from 1.2 | Detects forwarded links; 1.2 is authoritative for country analyses |
+| `CHANNEL_REACH_RATIO` | `CHANNEL`, membership counts in the network inventory | Participating institutions per channel ÷ member institutions of the channel; missing where the inventory says "membercount undefined" or counts individuals only | Rough order of magnitude of reach per channel (RQ31) |
+| `COUNTRY_GROUP` | 1.2, 1.1, `DUPLICATE_INSTITUTION_FLAG` | Country if at least 5 participating institutions; otherwise "Other countries" (E1) | Country comparisons |
+| `FIELD_WEEK` | LamaPoll start time | Calendar week of the field phase; derived before timestamps are removed (Blueprint data rule 12) | Response curve; link to reminder dates |
 
 ---
 
@@ -89,6 +96,9 @@
 - Respondent role distribution
 - Respondent organisational unit distribution
 - Respondent knowledge-of-EA distribution
+- Responses and institutions per distribution channel and wave (`CHANNEL`, `CHANNEL_WAVE`)
+- Rough reach per channel (`CHANNEL_REACH_RATIO`) and countries without any channel
+- Response curve per field week (`FIELD_WEEK`)
 
 ### C2. EA landscape
 
@@ -178,7 +188,15 @@ Use only where cell sizes are adequate.
 
 ### E1. Country comparisons
 
-Do not treat country differences as population differences unless recruitment coverage and minimum country-level sample sizes are adequate. Countries with few institutions or responses may be pooled into a combined group for group-wise comparison (Blueprint OI-10); define the minimum group size and the pooling rule before analysis.
+Do not treat country differences as population differences unless recruitment coverage and minimum country-level sample sizes are adequate.
+
+Decided (Blueprint OI-10, 2026-10-08):
+
+- A country is reported as its own group only if at least **5 participating institutions** from that country are included.
+- All countries below this threshold are pooled into one group, **"Other countries"** (`COUNTRY_GROUP`).
+- Institutions are counted with the selection rule of E3 (one response per institution). Responses without an institution name count as one institution each; report how many such responses a country group contains.
+- Country is taken from 1.2, not from the link attribute.
+- Re-assess the threshold and the pooling after the field phase, before any country comparison is reported.
 
 ### E2. Institution-level prevalence estimates
 
@@ -241,6 +259,47 @@ Before substantive analysis:
 10. Preserve raw multi-select variables; do not collapse them prematurely.
 11. Flag peer-matching selection (7.2) without an e-mail address (8.1).
 12. Document all recoding and derived variables in a reproducible codebook.
+
+### F1. Additional consistency checks
+
+"Hard" checks indicate a routing or data error and must be resolved. "Soft" checks indicate implausible but possible answers; flag them, do not correct them, and use the flag in sensitivity analyses.
+
+**Routing (hard)**
+
+13. Respondents with 3.2 = Active operational use or Embedded have no values in Section 5.
+14. Respondents with 3.2 = Being evaluated or Pilot have no values in 5.3–5.5 and never selected "HERM was previously used but discontinued" in 5.1.
+15. Respondents with 3.2 = Not considered, Previously used or Don't know have no values in Section 4.
+16. 8.2 is answered only where 1.1 contains an institution name; 8.1 only where 7.2 contains an option other than "None of these".
+
+**HERM status (soft)**
+
+17. 2.4 vs. 3.2: HERM selected in 2.4 but 3.2 = Not considered; or 3.2 = Pilot, Active or Embedded but HERM not selected in 2.4 (only for respondents who saw 2.4).
+18. 3.1 vs. 3.2: respondent "was not familiar with HERM" but reports 3.2 = Active operational use or Embedded.
+19. 4.3 vs. 3.2: 3.2 = Active operational use or Embedded but every artefact row in 4.3 is "Not used" or "Don't know".
+20. 4.12 vs. 3.2: 3.2 = Embedded in governance or standard EA processes but 4.12 = "No relationship established yet" or "Used independently".
+21. 4.7 vs. 3.2: 3.2 = Embedded and 4.7 = "No tangible outcome yet".
+22. 4.1 vs. 3.2: 3.2 = Embedded and 4.1 = "Less than 1 year".
+23. 5.1 vs. 3.2: "HERM was previously used but discontinued" selected while 3.2 ≠ Previously used.
+24. 2.4 vs. 4.13: "HORA mapping" in 4.13 without HORA / HOSA in 2.4.
+
+**EA status (soft)**
+
+25. 2.3 vs. 2.1: 2.1 = Established operational practice and 2.3 = "Less than 1 year".
+26. 5.1 vs. 2.1: "Existing EA approaches already meet our needs" while 2.1 = No EA practice.
+27. 2.4: "No formal framework; pragmatic or ad hoc EA practice" selected together with a named framework (TOGAF, Zachman) or "Custom / in-house EA framework".
+
+**Profile (soft)**
+
+28. 1.4 vs. 1.5: implausible size combinations, e.g. fewer than 1,000 students and 10,000 or more staff, unless 1.3 = Research institution.
+29. 1.2 vs. link attribute: `CHANNEL_COUNTRY_MISMATCH` = 1 (forwarded link; 1.2 remains authoritative).
+30. 1.7 vs. 1.8: 1.7 = "External to the institution" combined with 1.8 = "directly responsible"; plausible for consultants, but interpret institution-level answers with care.
+31. 1.7 multi-select: several units selected. Not an error; record the number of units and use the set of units, not a single unit, when interpreting differences between respondents of one institution (E3).
+
+**Response behaviour (soft)**
+
+32. Identical submissions from the same institution within a short time (double submission).
+33. Straight-lining in the matrices 2.2 and 4.3 (identical column in every row, especially "Don't know").
+34. Speeders: total duration far below the median of the same routing path. Define the threshold from the field data, not from the pretest, because pretest durations include feedback writing.
 
 ---
 

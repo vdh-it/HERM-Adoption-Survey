@@ -3,7 +3,7 @@
 **Status:** Revised Draft  
 **Audience:** EA practitioners and related decision-makers at higher education institutions  
 **Distribution:** EUNIS and national organisations via member channels  
-**Last updated:** 2026-10-04
+**Last updated:** 2026-10-08
 
 ---
 
@@ -50,10 +50,16 @@ Else
 
 Section 3: HERM Awareness & Adoption               everyone
 
-If HERM status = Evaluating / Pilot / Active / Embedded
+If HERM status (3.2) = Evaluating / Pilot / Active / Embedded
     -> Section 4: HERM Usage Details
 Else
     -> Section 5: HERM Non-Adoption & Barriers
+
+After Section 4:
+If HERM status (3.2) = Active / Embedded
+    -> Section 6
+If HERM status (3.2) = Evaluating / Pilot
+    -> Section 5, reduced: 5.1 (without "discontinued") and 5.2 only
 
 Section 6: Open Questions & Support Needs          everyone
 Section 7: Knowledge Sharing & Follow-up           everyone, partly conditional
@@ -173,7 +179,7 @@ If **Other**: follow-up text question "Specific Country" — "Please state the c
 
 ## 1.7 Your organisational unit
 
-**Type:** Single select
+**Type:** Multi-select
 
 > In which part of your institution do you mainly work?
 
@@ -375,13 +381,18 @@ If **Other**: follow-up text question "Specific Country" — "Please state the c
 - Embedded in governance or standard EA processes -> Section 4
 - All other responses -> Section 5
 
+**Routing after Section 4:**
+
+- Active operational use / Embedded in governance or standard EA processes -> Section 6
+- Being evaluated / considered / Pilot or experimental use -> Section 5 (5.1 and 5.2 only; 5.3–5.5 hidden)
+
 ---
 
 # Section 4: HERM Usage Details
 
 ## 4.1 Duration of HERM engagement
 
-**Condition:** Show if 3.2 is selected as other than "not considered" or "Don't know" or 3.1 is selected as "basic concept or well known".
+**Condition:** Show if 3.2 is selected as other than "not considered" or "Don't know" or if 3.1 is selected as "basic concept" or "well known".
 
 **Type:** Single select
 
@@ -401,7 +412,7 @@ If **Other**: follow-up text question "Specific Country" — "Please state the c
 
 **Type:** Multi-select, randomised
 
-> In which areas of your organisation are the HERM artefacts mentioned earlier used?
+> In which areas of your organisation are HERM artefacts used?
 
 - Institution-wide / cross-domain
 - Teaching and learning (as topic)
@@ -627,6 +638,8 @@ Prompt: "Provide details on road blocks concerning HERM..."
 - Don't know / Cannot assess
 - Other
 
+**Implementation note:** Shown to all respondents in Section 5, including HERM evaluators and pilot users (3.2 = Being evaluated / considered, Pilot or experimental use) after Section 4. For these two groups, hide the option "HERM was previously used but discontinued". Report results separately by 3.2 status.
+
 ---
 
 ## 5.2 Primary barrier
@@ -642,9 +655,13 @@ Added options:
 - None of the above
 - Don't know / Cannot assess
 
+**Implementation note:** No change needed for evaluators and pilot users; because the options are piped from 5.1, "discontinued" is absent when it was hidden there.
+
 ---
 
 ## 5.3 Future consideration of HERM
+
+**Condition:** Hide if 3.2 = Being evaluated / considered or Pilot or experimental use
 
 **Type:** Single select
 
@@ -659,7 +676,7 @@ Added options:
 
 ## 5.4 Potential role of HERM
 
-**Condition:** Show if 5.3 = Yes / under discussion
+**Condition:** Show if 5.3 = Yes / under discussion (therefore hidden for evaluators and pilot users, who do not see 5.3)
 
 **Type:** Single select
 
@@ -675,6 +692,8 @@ Added options:
 ---
 
 ## 5.5 Requirements for future adoption
+
+**Condition:** Hide if 3.2 = Being evaluated / considered or Pilot or experimental use (they already answered 4.11)
 
 **Type:** Text, optional
 
@@ -704,7 +723,7 @@ Added options:
 
 **Type:** Multi-select, randomised
 
-> What kind of support would your institution like HERM to provide to help move EA forward?
+> What support from the EA and HERM community would help your institution advance EA?
 
 - None currently
 - Introductory guidance
@@ -829,7 +848,7 @@ Closing text: "Thank you again for your personal support of the global HERM comm
 9. Do not automatically merge conflicting responses from the same institution; define a reconciliation rule before analysis.
 10. Preserve the exact survey version used for every response. We restart survey responses after pre-testing.
 11. Store each row of matrix items (2.2, 4.3) as a separate ordinal variable, keeping the LamaPoll column coding (1 = most advanced stage … 4 = none; 5 = Don't know / n.a., treated as missing).
-12. Remove contact details (8.1) from the research dataset; keep them in a separate contact list with restricted access.
+12. Remove direct identifiers and technical metadata from the research dataset before any sharing, including sharing within the EA SIG. This covers the contact e-mail (8.1), the LamaPoll participant fields "E-Mail" and "Name", all timestamps ("Datum", "Startzeit", "Endzeit"), device, operating system, browser and referrer. Keep contact details in a separate contact list with restricted access. Before removing timestamps, derive the coarse variable `FIELD_WEEK` (see Analysis Matrix B); keep durations only internally for data-quality checks and drop them before publication. Keep the distribution attributes (channel, reminder) in the research dataset.
 13. Exclude responses with 0.1 = Preview or Leave from the research dataset; keep any feedback given in 9.1 for survey improvement only.
 
 ---
@@ -902,7 +921,7 @@ A reporting definition should be fixed before fieldwork.
 | Previously used, but no longer in use            | formerly yes | discontinued adoption      |
 | Don't know / Cannot assess                       |            — | excluded (unknown)         |
 
-> Note: Routing after 3.2 does not follow this definition one-to-one. "Being evaluated / considered" is routed to Section 4 (usage details) although it does not count as adoption, and "Previously used" is routed to Section 5. Reports on Section 4 must therefore distinguish evaluators from adopters.
+> Note: Routing after 3.2 does not follow this definition one-to-one. "Being evaluated / considered" is routed to Section 4 (usage details) although it does not count as adoption, and "Previously used" is routed to Section 5. Reports on Section 4 must therefore distinguish evaluators from adopters. Evaluators and pilot users additionally answer 5.1 and 5.2 after Section 4, so barrier results must be reported separately by 3.2 status.
 
 ## OI-6 — HERM artefact taxonomy
 
@@ -953,6 +972,8 @@ Are country comparisons an intended output?
 If yes, minimum case counts per country, treatment of uneven national recruitment, and aggregation rules should be specified before fieldwork.
 
 > We have a few countries where fewer than 10 universities exist. Grouping them into one class might be an option for group-wise comparison.
+
+> Decided (2026-10-08): The minimum size of a country group is 5 participating institutions. All countries with fewer institutions are pooled into one group, "Other countries". This rule is to be re-assessed after the field phase (see Analysis Matrix E1).
 
 ## OI-11 — EA maturity beyond HERM status
 
