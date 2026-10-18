@@ -120,39 +120,70 @@ Initial state on 2026-10-08: 30 contacts `to invite` (all national channels exce
 
 Known organisations from eunis.org:
 https://survey.lamapoll.de/EA-and-HERM-Adoption?Country_FR=1&Distribution_AMUE=1&main=1
+https://fynl.in/nPqnMK
 https://survey.lamapoll.de/EA-and-HERM-Adoption?Country_IT=1&Distribution_CINECA=1&main=1
+https://fynl.in/XyvbKtuw
 https://survey.lamapoll.de/EA-and-HERM-Adoption?Country_FR=1&Distribution_CSIESR=1&main=1
+https://fynl.in/Uv3KfjhL
 https://survey.lamapoll.de/EA-and-HERM-Adoption?Country_FI=1&Distribution_CSC=1&main=1
+https://fynl.in/DdkXosB
 https://survey.lamapoll.de/EA-and-HERM-Adoption?Country_CZ=1&Distribution_EUNIS_CZ=1&main=1
+https://fynl.in/pPZMWDa
 https://survey.lamapoll.de/EA-and-HERM-Adoption?Country_SK=1&Distribution_EUNIS_SK=1&main=1
+https://fynl.in/iIKpNL
 https://survey.lamapoll.de/EA-and-HERM-Adoption?Country_GR=1&Distribution_GUnet=1&main=1
+https://fynl.in/9ck0yJ
 https://survey.lamapoll.de/EA-and-HERM-Adoption?Country_GB=1&Distribution_Jisc=1&main=1
+https://fynl.in/wmal3fTb
 https://survey.lamapoll.de/EA-and-HERM-Adoption?Country_PL=1&Distribution_MUCI=1&main=1
+https://fynl.in/K9SF2eq
 https://survey.lamapoll.de/EA-and-HERM-Adoption?Country_SE=1&Distribution_LADOK=1&main=1
+https://fynl.in/FbHldb
 https://survey.lamapoll.de/EA-and-HERM-Adoption?Country_PL=1&Distribution_OPI=1&main=1
+https://fynl.in/kUu2ug
 https://survey.lamapoll.de/EA-and-HERM-Adoption?Country_ES=1&Distribution_SIGMA=1&main=1
+https://fynl.in/1QW3xZzG
 https://survey.lamapoll.de/EA-and-HERM-Adoption?Country_NL=1&Distribution_SURF=1&main=1
+https://fynl.in/dya6rK2Q
 https://survey.lamapoll.de/EA-and-HERM-Adoption?Country_GB=1&Distribution_UCISA=1&main=1
+https://fynl.in/TD8laEF
 https://survey.lamapoll.de/EA-and-HERM-Adoption?Country_DE=1&Distribution_ZKI=1&main=1
+https://fynl.in/SxjDyR
 
 Additional organisations which also are EUNIS members (Funidata and HKdir added 2026-10-08 from the EUNIS member map):
 https://survey.lamapoll.de/EA-and-HERM-Adoption?Country_DE=1&Distribution_CIO=1&main=1
+https://fynl.in/NXdSxC
 https://survey.lamapoll.de/EA-and-HERM-Adoption?Country_DE=1&Distribution_HIS=1&main=1
+https://fynl.in/yPmj6I
 https://survey.lamapoll.de/EA-and-HERM-Adoption?Country_AL=1&Distribution_RASH=1&main=1
+https://fynl.in/CJujqY
 https://survey.lamapoll.de/EA-and-HERM-Adoption?Country_IE=1&Distribution_Asiera=1&main=1
+https://fynl.in/sbT3Yc
 https://survey.lamapoll.de/EA-and-HERM-Adoption?Country_HR=1&Distribution_SRCE=1&main=1
+https://fynl.in/XUC5kb
 https://survey.lamapoll.de/EA-and-HERM-Adoption?Country_LV=1&Distribution_VPC=1&main=1
+https://fynl.in/RqDnxg6i
 https://survey.lamapoll.de/EA-and-HERM-Adoption?Country_NO=1&Distribution_Sikt=1&main=1
+https://fynl.in/1JQLaaO
 https://survey.lamapoll.de/EA-and-HERM-Adoption?Country_FI=1&Distribution_Funidata=1&main=1
 https://survey.lamapoll.de/EA-and-HERM-Adoption?Country_NO=1&Distribution_HKdir=1&main=1
+https://fynl.in/8XiM5hjC
 
 Special Interest Groups (expected selection bias, see rule 5):
 https://survey.lamapoll.de/EA-and-HERM-Adoption?Country_DE=1&Distribution_SIG=1&main=1
+https://fynl.in/w2XL1L
 https://survey.lamapoll.de/EA-and-HERM-Adoption?Country_FI=1&Distribution_SIG=1&main=1
+https://fynl.in/Oq7Z4N22
 https://survey.lamapoll.de/EA-and-HERM-Adoption?Country_EU=1&Distribution_SIG=1&main=1
+https://fynl.in/Q6CYM1HS
+
+EA Week:
+https://survey.lamapoll.de/EA-and-HERM-Adoption?Country_EU=1&Distribution_EAWeek=1&main=1
+https://fynl.in/Ya0kwnXt
 
 All EUNIS members:
 https://survey.lamapoll.de/EA-and-HERM-Adoption?Country_EU=1&Distribution_EUNIS=1&main=1
+https://fynl.in/celc50mt
 
 Template:
 https://survey.lamapoll.de/EA-and-HERM-Adoption?Country_XX=1&Distribution_XX=1&main=1
