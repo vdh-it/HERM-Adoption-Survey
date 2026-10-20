@@ -1,6 +1,6 @@
 # Distribution Plan
 
-**Last updated:** 2026-10-08
+**Last updated:** 2026-10-20
 **Texts:** all invitation and reminder texts are in `Survey_Invitation.md`. This file holds links, process, rules and tracking only.
 
 ## 1. Current status
@@ -19,7 +19,7 @@
 As promised in `Survey_Invitation.md`; any change here must also be made there.
 
 - Each partner has its own link; it identifies the channel, never the respondent.
-- Partners are asked to send the invitation **within two weeks** of our mail (`[SEND-BY DATE]`); members are asked to respond **within three weeks**.
+- Partners are asked to send the invitation **soon** (no fixed date, since invitations go out over several days); members are asked to respond **within three weeks**.
 - Reminder text and reminder link are **not** part of the first mail; we send them when a reminder is due.
 - The closing date is announced **at least two weeks in advance**; the final reminder goes through all channels and the EUNIS mailing lists.
 - Channel-specific results are reported only if **at least 5 institutions** responded through the channel (Analysis Matrix E1).
@@ -34,10 +34,10 @@ As promised in `Survey_Invitation.md`; any change here must also be made there.
 | Step | When | What | Owner |
 |---|---|---|---|
 | 1 | Now | Board endorsement message to national organisations | EUNIS Board |
-| 2 | Shortly after step 1 | Invitation (Part 1 and 2 of `Survey_Invitation.md`) with main link and `[SEND-BY DATE]` to each partner | [OWNER] |
+| 2 | Shortly after step 1 | Invitation (Part 1 and 2 of `Survey_Invitation.md`) with main link to each partner | [OWNER] |
 | 3 | First field day after each partner mailing | Check export: attribute columns present, channel values match the sent link | [OWNER] |
 | 4 | Weekly | Count responses and institutions per channel; update tracking table and contact status (5.1) | [OWNER] |
-| 5 | `[SEND-BY DATE]` passed without confirmation | Friendly follow-up to the partner | [OWNER] |
+| 5 | About two weeks after the invitation without confirmation | Friendly follow-up to the partner | [OWNER] |
 | 6 | About 2–3 weeks after a partner's mailing | Reminder text (Part 3) and reminder link to the partner; priority for channels below 5 institutions | [OWNER] |
 | 7 | When participation levels off, at the latest after about 6 weeks | Decide the closing date | EA SIG |
 | 8 | At least 2 weeks before closing | Final reminder with closing date via all partners and via EUNIS (`Distribution_EUNIS`, `reminder=1`) | [OWNER], EUNIS |
@@ -58,34 +58,35 @@ As promised in `Survey_Invitation.md`; any change here must also be made there.
 
 "Membership" is taken from `National_Higher_Education_IT_Networks_Europe.md` and is only a rough denominator; replace it with the number the partner reports. "Contact": names and e-mail addresses of contact persons are kept only in `EUNIS_contacts.csv`, which is excluded from Git (`.gitignore`). "in CSV" means a representative is listed there; "not on EUNIS map" means the contact must come from elsewhere.
 
-| Channel | Country | Contact | Membership (inventory) | Invitation sent | Send-by | Partner sent | Reached (reported) | Reminder sent | Institutions |
+| Channel | Country | Contact | Membership (inventory) | Invitation sent | Follow-up due | Partner sent | Reached (reported) | Reminder sent | Institutions |
 |---|---|---|---|---|---|---|---|---|---|
-| AMUE | FR | in CSV | 178 institutions | | | | | | |
-| CINECA | IT | not on EUNIS map | 71 HE institutions | | | | | | |
-| CSIESR | FR | in CSV | 145 institutions | | | | | | |
-| CSC | FI | in CSV | undefined | | | | | | |
-| EUNIS_CZ | CZ | in CSV | undefined | | | | | | |
-| EUNIS_SK | SK | in CSV | 20 full + 1 associate | | | | | | |
-| GUnet | GR | in CSV | 25 universities | | | | | | |
-| Jisc | GB | in CSV | undefined | | | | | | |
-| MUCI | PL | in CSV | > 100 institutions | | | | | | |
-| LADOK | SE | in CSV | 43 institutions | | | | | | |
-| OPI | PL | in CSV | undefined | | | | | | |
-| SIGMA | ES | in CSV | 17 universities | | | | | | |
-| SURF | NL | in CSV | > 120 institutions | | | | | | |
-| UCISA | GB | not on EUNIS map | undefined | | | | | | |
-| ZKI | DE | in CSV | > 250 members | | | | | | |
-| CIO | DE | in CSV (not on EUNIS map) | 56 individuals | | | | | | |
-| HIS | DE | in CSV | 223 members | | | | | | |
-| RASH | AL | in CSV | undefined | | | | | | |
-| Asiera | IE | in CSV | 9 institutions | | | | | | |
-| SRCE | HR | in CSV | undefined | | | | | | |
-| VPC | LV | in CSV | 4 founders | | | | | | |
-| Sikt | NO | in CSV | undefined | | | | | | |
-| Funidata | FI | in CSV | 8 owner organisations | | | | | | |
-| HKdir | NO | in CSV | undefined | | | | | | |
-| SIG (DE, FI, EU) | — | in CSV | n/a | | | | | | |
-| EUNIS | EU | EUNIS secretariat | n/a | | | | | | |
+| AMUE | FR | in CSV | 178 institutions | - | | | | | |
+| CINECA | IT | not on EUNIS map | 71 HE institutions | - | | | | | |
+| CSIESR | FR | in CSV | 145 institutions | - | | | | | |
+| CSC | FI | in CSV | undefined | - | | | | | |
+| EUNIS_CZ | CZ | in CSV | undefined | - | | | | | |
+| EUNIS_SK | SK | in CSV | 20 full + 1 associate | - | | | | | |
+| GUnet | GR | in CSV | 25 universities | - | | | | | |
+| Jisc | GB | in CSV | undefined | - | | | | | |
+| MUCI | PL | in CSV | > 100 institutions | - | | | | | |
+| LADOK | SE | in CSV | 43 institutions | - | | | | | |
+| OPI | PL | in CSV | undefined | - | | | | | |
+| SIGMA | ES | in CSV | 17 universities | - | | | | | |
+| SURF | NL | in CSV | > 120 institutions | - | | | | | |
+| UCISA | GB | not on EUNIS map | undefined | - | | | | | |
+| ZKI | DE | in CSV | > 250 members | - | | | | | |
+| CIO | DE | in CSV (not on EUNIS map) | 56 individuals | - | | | | | |
+| HIS | DE | in CSV | 223 members | - | | | | | |
+| RASH | AL | in CSV | undefined | - | | | | | |
+| Asiera | IE | in CSV | 9 institutions | - | | | | | |
+| SRCE | HR | in CSV | undefined | - | | | | | |
+| VPC | LV | in CSV | 4 founders | - | | | | | |
+| Sikt | NO | in CSV | undefined | - | | | | | |
+| Funidata | FI | in CSV | 8 owner organisations | - | | | | | |
+| HKdir | NO | in CSV | undefined | - | | | | | |
+| SIG (DE, FI, EU) | — | in CSV | n/a | DE,FI,EU | | | | | |
+| EA Week | EU | EA Week | n/a | - | | | | | |
+| EUNIS | EU | EUNIS secretariat | n/a | - | | | | | |
 
 **Added 2026-10-08 from the EUNIS member map:** Funidata (FI) and the Norwegian Directorate for Higher Education and Skills (HKdir, NO). Both are also marked in the network inventory. Test their links before the first mailing (rule 4).
 
@@ -98,8 +99,8 @@ The column **"Distribution status"** in `EUNIS_contacts.csv` holds the current l
 | `not relevant` | Default. No direct contact planned: institutions (reached through the EUNIS channel), solution providers, test entries | — | — |
 | `contact missing` | Relevant, but no usable address yet | Initial state | `to invite` once an address is known, e.g. from the EUNIS secretariat |
 | `to invite` | Relevant, address available, first mail not yet sent | Initial state, or address found | `invited` |
-| `invited` | First mail (Part 1 and 2 of `Survey_Invitation.md`) sent | Step 2 | `confirmed`, `declined` or, after `[SEND-BY DATE]`, `follow-up sent` |
-| `follow-up sent` | `[SEND-BY DATE]` passed without reaction; friendly follow-up sent | Step 5 | `confirmed`, `declined` or `no response` |
+| `invited` | First mail (Part 1 and 2 of `Survey_Invitation.md`) sent | Step 2 | `confirmed`, `declined` or, after about two weeks, `follow-up sent` |
+| `follow-up sent` | About two weeks after the invitation without reaction; friendly follow-up sent | Step 5 | `confirmed`, `declined` or `no response` |
 | `confirmed` | Partner agreed to distribute or announced its mailing date | Partner reply | `distributed` |
 | `distributed` | Partner has sent the invitation to its members | Partner confirms mailing | `reminder sent` |
 | `reminder sent` | Reminder text (Part 3) and reminder link sent to the partner | Step 6 | `final reminder sent` |
@@ -166,6 +167,7 @@ https://fynl.in/RqDnxg6i
 https://survey.lamapoll.de/EA-and-HERM-Adoption?Country_NO=1&Distribution_Sikt=1&main=1
 https://fynl.in/1JQLaaO
 https://survey.lamapoll.de/EA-and-HERM-Adoption?Country_FI=1&Distribution_Funidata=1&main=1
+https://fynl.in/mZ4Ug4n
 https://survey.lamapoll.de/EA-and-HERM-Adoption?Country_NO=1&Distribution_HKdir=1&main=1
 https://fynl.in/8XiM5hjC
 

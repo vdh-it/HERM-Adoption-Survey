@@ -1,13 +1,13 @@
 # Survey Invitation for National Organisations — Draft
 
-**Status:** Draft, 2026-10-08
+**Status:** Draft, updated 2026-10-20
 **Sender:** Markus von der Heyde, Principal Investigator, on behalf of the EUNIS EA SIG
 **Recipients:** contact persons of the national and sectoral organisations listed in `Distribution.md`
 **Prerequisite:** the endorsement message of the EUNIS Board has been sent to the organisation
 
-Placeholders: `[ORGANISATION]`, `[CONTACT NAME]`, `[MAIN LINK]`, `[REMINDER LINK]`, `[SEND-BY DATE]` (two weeks after this mail), `[CLOSING DATE]` (final reminder only). The survey is open since 2026-10-08.
+Placeholders: `[ORGANISATION]`, `[CONTACT NAME]`, `[MAIN LINK]`, `[REMINDER LINK]`, `[CLOSING DATE]` (final reminder only). The survey is open since 2026-10-08.
 
-**Internal, not to be communicated:** The field phase is planned for about two months. Externally we only set short, honest targets: partners send within two weeks, members respond within three weeks. The actual closing date is announced with the final reminder, at least two weeks in advance. Do not announce a fixed end date that is later extended.
+**Internal, not to be communicated:** The field phase is planned for about two months. Externally we only set short, honest targets: partners send soon (no fixed date; friendly follow-up after about two weeks), members respond within three weeks. The actual closing date is announced with the final reminder, at least two weeks in advance. Do not announce a fixed end date that is later extended.
 
 **First mail to each organisation:** Part 1 and Part 2 only. Part 3 is an internal template; it is sent later, together with the reminder link, when the EA SIG decides that a reminder is due for a channel.
 
@@ -38,26 +38,24 @@ The value of all of this depends on how many of your members respond. Results fo
 
 ### What we ask you to do
 
-1. **Send the invitation by [SEND-BY DATE]** to your relevant member channels, using `[MAIN LINK]`. The survey is already open, so the sooner your members receive it, the better. Please adapt the master text in Part 2 and, ideally, translate it into the language you normally use with your members. The questionnaire itself is in English.
+1. **Send the invitation soon** to your relevant member channels, using `[MAIN LINK]`. The survey is already open, so the sooner your members receive it, the better. Please adapt the template invitation below and, ideally, translate it into the language you normally use with your members. The questionnaire itself is in English.
 2. **Add a few sentences on why** the results matter for your own community. This makes a measurable difference to participation.
 3. **Send a reminder later.** We will contact you when a reminder would help in your community and send you a short text together with a separate reminder link. Please let us know now whether you can send such a reminder to your members.
 4. **Tell us roughly how many** institutions or relevant members received the invitation, so that participation through your channel can be interpreted properly.
-5. **Use only your own links.** They are what allows us to attribute responses to your community.
+5. **Use only the provided link.** This is what allows us to attribute responses to your community.
 
 ### Timing
 
 The survey is open now. To keep momentum, we ask you to follow this timing:
 
-- **Please send your invitation by [SEND-BY DATE].** Experience shows that most responses arrive within a few days of an invitation, so an early mailing makes the biggest difference.
-- **Your members are asked to respond within three weeks** of receiving your invitation. The master text in Part 2 already says so.
-- **We follow up with reminders.** We monitor participation per channel and will contact you with a reminder text and link when a reminder would help in your community.
+- **Your members are asked to respond within three weeks** of receiving your invitation. The template invitation below already says so.
 - **We announce the closing date at least two weeks in advance.** A final reminder will then be sent through your channel and through the EUNIS mailing lists.
 
 ### Who should take part
 
 We invite people with insight into EA or IT strategy at their institution, for example enterprise, business or solution architects, CIOs and heads of IT, digital strategy or digital office staff, and IT programme managers. Institutions without any EA practice are explicitly welcome; their answers are just as important. Several people from the same institution may respond, since different units often have different views.
 
-The questionnaire adapts to each respondent. Depending on their answers, it skips questions that do not apply and goes into more depth where an institution has experience with EA or HERM. It takes about 20 minutes on average: noticeably less for institutions with little EA or HERM experience, and more for those who share detailed HERM use cases. Please mention this in your invitation, so that colleagues without EA experience are not put off.
+The questionnaire adapts to each respondent. Depending on their answers, it skips questions that do not apply and goes into more depth where an institution has experience with EA or HERM. It takes about 20 minutes on average: noticeably less for institutions with little EA or HERM experience, and more for those who share detailed HERM use cases.
 
 ### Data protection
 
@@ -73,9 +71,9 @@ SemaLogic · markus.von.der.heyde@semalogic.de
 
 ---
 
-## Part 2: Master invitation for members
+## Part 2: Template invitation for your members
 
-*To be adapted and, ideally, translated by [ORGANISATION]. The paragraph in square brackets is for your own message.*
+*To be adapted and, ideally, translated by [ORGANISATION]. The paragraph in square brackets is for your own message to your members. Choose well to motivate participation.*
 
 **Subject:** How does your institution use Enterprise Architecture? European survey by EUNIS
 
@@ -85,7 +83,7 @@ Dear colleagues,
 
 [Why this matters for our community: 2–3 sentences by ORGANISATION, for example which decisions or activities the results will inform.]
 
-The survey asks about the status of EA at your institution, the frameworks you use, your experience with HERM, barriers and the support you would find useful. The questionnaire is in English and adapts to your answers: it only asks what applies to your institution. On average it takes about 20 minutes, less if your institution has little experience with EA or HERM, more if you share detailed HERM experience. Your institution is equally welcome if it has no EA practice yet; this is important for a realistic picture. Several colleagues from one institution may take part.
+The survey asks about the status of EA at your institution, the frameworks you use, your experience with HERM, barriers and the support you would find useful. The questionnaire is in English and adapts to your answers: it only asks what applies to your institution. On average it takes about 20 minutes, less if your institution has little experience with EA or HERM, more if you share detailed HERM experience. Your answers are equally welcome if you have no EA practice yet; this is important for a realistic picture. Several colleagues from one institution may take part.
 
 Please use this link, so that the results for our community can be evaluated separately:
 
@@ -93,7 +91,7 @@ Please use this link, so that the results for our community can be evaluated sep
 
 The survey is open now. **Please take part within the next three weeks.**
 
-All participants can receive the results. The de-identified data will be published openly, and contact details are never published.
+All participants can receive the aggregated results. The de-identified data will be published openly, and contact details are never published.
 
 Thank you for your support!
 
@@ -101,7 +99,7 @@ Thank you for your support!
 
 ---
 
-## Part 3: Master reminder for members (internal template)
+## Part 3: Template reminder for members (internal)
 
 *Not part of the first mail. The EA SIG sends this text with the channel's `[REMINDER LINK]` when a reminder is due. Before sending, update it with current figures where helpful, e.g. how many institutions have already taken part. Organisations must use the reminder link, not the main link.*
 
