@@ -70,19 +70,19 @@ As promised in `Survey_Invitation.md`; any change here must also be made there.
 | Jisc | GB | in CSV | undefined | - | | | | | |
 | MUCI | PL | in CSV | > 100 institutions | - | | | | | |
 | LADOK | SE | in CSV | 43 institutions | - | | | | | |
-| OPI | PL | in CSV | undefined | - | | | | | |
-| SIGMA | ES | in CSV | 17 universities | - | | | | | |
-| SURF | NL | in CSV | > 120 institutions | - | | | | | |
-| UCISA | GB | not on EUNIS map | undefined | - | | | | | |
+| OPI | PL | in CSV | undefined | invited | | | | | |
+| SIGMA | ES | in CSV | 17 universities | invited | | | | | |
+| SURF | NL | in CSV | > 120 institutions | invited | | | | | |
+| UCISA | GB | not on EUNIS map | undefined | invited | | | | | |
 | ZKI | DE | in CSV | > 250 members | - | | | | | |
-| CIO | DE | in CSV (not on EUNIS map) | 56 individuals | - | | | | | |
+| CIO | DE | in CSV (not on EUNIS map) | 56 individuals | confirmed | | | | | |
 | HIS | DE | in CSV | 223 members | - | | | | | |
-| RASH | AL | in CSV | undefined | - | | | | | |
+| RASH | AL | in CSV | undefined | invited | | | | | |
 | Asiera | IE | in CSV | 9 institutions | - | | | | | |
-| SRCE | HR | in CSV | undefined | - | | | | | |
-| VPC | LV | in CSV | 4 founders | - | | | | | |
-| Sikt | NO | in CSV | undefined | - | | | | | |
-| Funidata | FI | in CSV | 8 owner organisations | - | | | | | |
+| SRCE | HR | in CSV | undefined | invited | | | | | |
+| VPC | LV | in CSV | 4 founders | invited | | | | | |
+| Sikt | NO | in CSV | undefined | confirmed | | | | | |
+| Funidata | FI | in CSV | 8 owner organisations | invited | | | | | |
 | HKdir | NO | in CSV | undefined | - | | | | | |
 | SIG (DE, FI, EU) | — | in CSV | n/a | DE,FI,EU | | | | | |
 | EA Week | EU | EA Week | n/a | - | | | | | |
