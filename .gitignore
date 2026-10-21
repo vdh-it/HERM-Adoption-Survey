@@ -1,2 +1,7 @@
 no_agent_access/
+.logs/
+data/
 EUNIS_contacts.csv
+__pycache__/
+*.py[cod]
+landscape_runs/*/cache/
