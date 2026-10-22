@@ -60,7 +60,7 @@ As promised in `Survey_Invitation.md`; any change here must also be made there.
 
 | Channel | Country | Contact | Membership (inventory) | Invitation sent | Follow-up due | Partner sent | Reached (reported) | Reminder sent | Institutions |
 |---|---|---|---|---|---|---|---|---|---|
-| AMUE | FR | in CSV | 178 institutions | - | | | | | |
+| AMUE | FR | in CSV | 178 institutions | invited | | | | | |
 | CINECA | IT | not on EUNIS map | 71 HE institutions | - | | | | | |
 | CSIESR | FR | in CSV | 145 institutions | - | | | | | |
 | CSC | FI | in CSV | undefined | - | | | | | |
@@ -70,6 +70,7 @@ As promised in `Survey_Invitation.md`; any change here must also be made there.
 | Jisc | GB | in CSV | undefined | - | | | | | |
 | MUCI | PL | in CSV | > 100 institutions | - | | | | | |
 | LADOK | SE | in CSV | 43 institutions | - | | | | | |
+| UniDig | SE | not on EUNIS map | 38 institutions | invited | | | | | |
 | OPI | PL | in CSV | undefined | invited | | | | | |
 | SIGMA | ES | in CSV | 17 universities | invited | | | | | |
 | SURF | NL | in CSV | > 120 institutions | invited | | | | | |
@@ -138,6 +139,8 @@ https://survey.lamapoll.de/EA-and-HERM-Adoption?Country_GB=1&Distribution_Jisc=1
 https://fynl.in/wmal3fTb
 https://survey.lamapoll.de/EA-and-HERM-Adoption?Country_PL=1&Distribution_MUCI=1&main=1
 https://fynl.in/K9SF2eq
+https://survey.lamapoll.de/EA-and-HERM-Adoption?Country_SE=1&Distribution_UniDig=1&main=1
+https://fynl.in/jYrRVP
 https://survey.lamapoll.de/EA-and-HERM-Adoption?Country_SE=1&Distribution_LADOK=1&main=1
 https://fynl.in/FbHldb
 https://survey.lamapoll.de/EA-and-HERM-Adoption?Country_PL=1&Distribution_OPI=1&main=1
