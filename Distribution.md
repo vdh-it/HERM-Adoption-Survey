@@ -61,15 +61,16 @@ As promised in `Survey_Invitation.md`; any change here must also be made there.
 | Channel | Country | Contact | Membership (inventory) | Invitation sent | Follow-up due | Partner sent | Reached (reported) | Reminder sent | Institutions |
 |---|---|---|---|---|---|---|---|---|---|
 | AMUE | FR | in CSV | 178 institutions | invited | | | | | |
+| Arge ZID | AT | not on EUNIS | 22 institutions | invited | | | | | |
 | CINECA | IT | not on EUNIS map | 71 HE institutions | - | | | | | |
 | CSIESR | FR | in CSV | 145 institutions | - | | | | | |
 | CSC | FI | in CSV | undefined | - | | | | | |
-| EUNIS_CZ | CZ | in CSV | undefined | - | | | | | |
+| EUNIS_CZ | CZ | in CSV | undefined | invited | | | | | |
 | EUNIS_SK | SK | in CSV | 20 full + 1 associate | - | | | | | |
 | GUnet | GR | in CSV | 25 universities | - | | | | | |
 | Jisc | GB | in CSV | undefined | - | | | | | |
 | MUCI | PL | in CSV | > 100 institutions | - | | | | | |
-| LADOK | SE | in CSV | 43 institutions | - | | | | | |
+| Ladok | SE | in CSV | 43 institutions | invited | | | | | |
 | UniDig | SE | not on EUNIS map | 38 institutions | invited | | | | | |
 | OPI | PL | in CSV | undefined | invited | | | | | |
 | SIGMA | ES | in CSV | 17 universities | invited | | | | | |
@@ -88,6 +89,11 @@ As promised in `Survey_Invitation.md`; any change here must also be made there.
 | SIG (DE, FI, EU) | — | in CSV | n/a | DE,FI,EU | | | | | |
 | EA Week | EU | EA Week | n/a | - | | | | | |
 | EUNIS | EU | EUNIS secretariat | n/a | - | | | | | |
+
+5 not adressed (SIG + EA Week + EUNIS members)
+11 Endorsed
+13 Invited
+2 confirmed
 
 **Added 2026-10-08 from the EUNIS member map:** Funidata (FI) and the Norwegian Directorate for Higher Education and Skills (HKdir, NO). Both are also marked in the network inventory. Test their links before the first mailing (rule 4).
 
@@ -153,6 +159,8 @@ https://survey.lamapoll.de/EA-and-HERM-Adoption?Country_GB=1&Distribution_UCISA=
 https://fynl.in/TD8laEF
 https://survey.lamapoll.de/EA-and-HERM-Adoption?Country_DE=1&Distribution_ZKI=1&main=1
 https://fynl.in/SxjDyR
+https://survey.lamapoll.de/EA-and-HERM-Adoption?Country_AU=1&Distribution_ArgeZID=1&main=1
+https://fynl.in/MsChi0gN
 
 Additional organisations which also are EUNIS members (Funidata and HKdir added 2026-10-08 from the EUNIS member map):
 https://survey.lamapoll.de/EA-and-HERM-Adoption?Country_DE=1&Distribution_CIO=1&main=1
