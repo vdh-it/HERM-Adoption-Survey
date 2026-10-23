@@ -159,7 +159,7 @@ https://survey.lamapoll.de/EA-and-HERM-Adoption?Country_GB=1&Distribution_UCISA=
 https://fynl.in/TD8laEF
 https://survey.lamapoll.de/EA-and-HERM-Adoption?Country_DE=1&Distribution_ZKI=1&main=1
 https://fynl.in/SxjDyR
-https://survey.lamapoll.de/EA-and-HERM-Adoption?Country_AU=1&Distribution_ArgeZID=1&main=1
+https://survey.lamapoll.de/EA-and-HERM-Adoption?Country_AT=1&Distribution_ArgeZID=1&main=1
 https://fynl.in/MsChi0gN
 
 Additional organisations which also are EUNIS members (Funidata and HKdir added 2026-10-08 from the EUNIS member map):
