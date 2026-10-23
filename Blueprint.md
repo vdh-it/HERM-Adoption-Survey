@@ -846,10 +846,6 @@ Prompt: "Your e-mail address"
 
 > Do you have any final comments about the survey itself? If you chose not to participate, we would appreciate a short note on why.
 
-Final page after 9.1:
-
-> Thank you again for your personal support of the global HERM community!
-
 Closing text: "Thank you again for your personal support of the global HERM community!"
 
 ---
