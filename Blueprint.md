@@ -91,7 +91,7 @@ Introduction text see [[Introduction-text]]
 - Participate -> Section 1
 - Leave -> Section 9
 
-**Preview hint (added 2026-10-23, during the field phase):** Text element at the start of Section 1, shown only if 0.1 = Preview. Reason: 2.1 and 3.2 are optional, so a preview that only clicks "Next" follows "All other responses" twice, skips 2.2–2.6 and the whole of Section 4, and gives distribution partners a misleading impression of the survey. No single path shows all questions, because Section 4 and 5.3–5.5 exclude each other. The hint creates no variable and does not change routing; check this against the LamaPoll codebook export after the change.
+**Preview hint:** Text element at the start of Section 1, shown only if 0.1 = Preview. 2.1 and 3.2 are optional, so a preview that only clicks "Next" follows "All other responses" twice, skips 2.2–2.6 and the whole of Section 4, and gives distribution partners a misleading impression of the survey. No single path shows all questions, because Section 4 and 5.3–5.5 exclude each other. The hint creates no variable and does not change routing.
 
 > **You are previewing the questionnaire.** Your answers decide which questions you see. If you only click "Next", you will skip most of the survey, including all questions on how HERM is used. To see the in-depth questions, choose "Established operational practice" as the status of Enterprise Architecture and "Active operational use" as the level of HERM adoption.
 
@@ -114,6 +114,8 @@ Optional. If you prefer not to identify your institution, leave this field blank
 **Type:** Single select as dropdown
 
 > Which country is your institution based in?
+>
+> Hint: try typing your ISO code (DE -> Germany, FI -> Suomi/Finland etc.)
 
 - European country list
 - Other (please specify below)
@@ -316,6 +318,7 @@ If **Other**: follow-up text question "Specific Country" — "Please state the c
 **Type:** Multi-select, randomised
 
 > Where is the EA practice organisationally located or formally anchored?
+> You can select more than one option.
 
 - Dedicated Enterprise Architecture team
 - Central IT
@@ -396,7 +399,7 @@ If **Other**: follow-up text question "Specific Country" — "Please state the c
 
 # Section 4: HERM Usage Details
 
-**Implementation note (changed 2026-10-23, during the field phase):** In LamaPoll, Section 4 used to be one page, "HERM Usage Details". It is now split into three pages: "HERM Usage Details" (4.1–4.7), "Your HERM use case" (note and 4.8) and "Evaluate HERM Usage" (4.9–4.13). Reason: answers up to 4.7 are saved before respondents reach the most demanding free-text question, so responses that break off there keep their value. The note creates no variable and the routing is unchanged; check this against the LamaPoll codebook export.
+**Implementation note:** In LamaPoll, Section 4 is split into three pages: "HERM Usage Details" (4.1–4.7), "Your HERM use case" (note and 4.8) and "Evaluate HERM Usage" (4.9–4.13). Answers up to 4.7 are saved before respondents reach the most demanding free-text question, so responses that break off there keep their value. The note creates no variable and does not change routing.
 
 ## 4.1 Duration of HERM engagement
 
@@ -842,6 +845,10 @@ Prompt: "Your e-mail address"
 **Type:** Text, optional
 
 > Do you have any final comments about the survey itself? If you chose not to participate, we would appreciate a short note on why.
+
+Final page after 9.1:
+
+> Thank you again for your personal support of the global HERM community!
 
 Closing text: "Thank you again for your personal support of the global HERM community!"
 
