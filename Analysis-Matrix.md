@@ -2,7 +2,7 @@
 
 **Purpose:** Define in advance which research questions can be answered from which variables, at which unit of analysis, and with which type of analysis.
 
-**Aligned with:** Blueprint, last updated 2026-10-08. All question numbers refer to this version. Distribution data refer to `Distribution.md` (LamaPoll link attributes) and `National_Higher_Education_IT_Networks_Europe.md` (membership counts).
+**Aligned with:** Blueprint, last updated 2026-10-23. All question numbers refer to this version. Distribution data refer to `Distribution.md` (LamaPoll link attributes) and `National_Higher_Education_IT_Networks_Europe.md` (membership counts).
 
 ---
 
@@ -260,6 +260,7 @@ Before substantive analysis:
 10. Preserve raw multi-select variables; do not collapse them prematurely.
 11. Flag peer-matching selection (7.2) without an e-mail address (8.1).
 12. Document all recoding and derived variables in a reproducible codebook.
+13. Keep partial responses (0.1 = Participate, broken off before Section 9); LamaPoll saves answers page by page (see the Section 4 implementation note in the Blueprint). Drop them only if no question after 0.1 was answered. Flag them with `PARTIAL_RESPONSE` and the last answered question, treat questions after the break-off as not reached rather than as item non-response (check 9), include them in all analyses of the questions they answered, and report the number of cases per question.
 
 ### F1. Additional consistency checks
 

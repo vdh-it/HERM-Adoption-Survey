@@ -3,7 +3,7 @@
 **Status:** Revised Draft  
 **Audience:** EA practitioners and related decision-makers at higher education institutions  
 **Distribution:** EUNIS and national organisations via member channels  
-**Last updated:** 2026-10-08
+**Last updated:** 2026-10-23
 
 ---
 
@@ -37,6 +37,8 @@ Section 0: Introduction, GDPR, How to proceed?    everyone
 
 If 0.1 = Leave
     -> Section 9
+If 0.1 = Preview
+    -> preview hint (see 0.1), then Section 1
 
 Section 1: Respondent & Institution Profile        everyone
 Section 2: EA Practice                             everyone, partly conditional
@@ -88,6 +90,10 @@ Introduction text see [[Introduction-text]]
 - Preview -> Section 1 (responses are excluded from the study; see data rule 13)
 - Participate -> Section 1
 - Leave -> Section 9
+
+**Preview hint (added 2026-10-23, during the field phase):** Text element at the start of Section 1, shown only if 0.1 = Preview. Reason: 2.1 and 3.2 are optional, so a preview that only clicks "Next" follows "All other responses" twice, skips 2.2–2.6 and the whole of Section 4, and gives distribution partners a misleading impression of the survey. No single path shows all questions, because Section 4 and 5.3–5.5 exclude each other. The hint creates no variable and does not change routing; check this against the LamaPoll codebook export after the change.
+
+> **You are previewing the questionnaire.** Your answers decide which questions you see. If you only click "Next", you will skip most of the survey, including all questions on how HERM is used. To see the in-depth questions, choose "Established operational practice" as the status of Enterprise Architecture and "Active operational use" as the level of HERM adoption.
 
 ---
 
@@ -390,6 +396,8 @@ If **Other**: follow-up text question "Specific Country" — "Please state the c
 
 # Section 4: HERM Usage Details
 
+**Implementation note (changed 2026-10-23, during the field phase):** In LamaPoll, Section 4 used to be one page, "HERM Usage Details". It is now split into three pages: "HERM Usage Details" (4.1–4.7), "Your HERM use case" (note and 4.8) and "Evaluate HERM Usage" (4.9–4.13). Reason: answers up to 4.7 are saved before respondents reach the most demanding free-text question, so responses that break off there keep their value. The note creates no variable and the routing is unchanged; check this against the LamaPoll codebook export.
+
 ## 4.1 Duration of HERM engagement
 
 **Condition:** Show if 3.2 is selected as other than "not considered" or "Don't know" or if 3.1 is selected as "basic concept" or "well known".
@@ -531,6 +539,10 @@ If **Other**: follow-up text question "Specific Country" — "Please state the c
 > _A concise description is sufficient; you do not need to address every point._
 
 Prompt: "Your HERM use-case-description..."
+
+In LamaPoll, 4.8 has its own page "Your HERM use case" (see the implementation note at the start of Section 4), introduced by this note:
+
+> **Note:** The following question is at the core of the entire initiative because we are most interested in how HERM is applied in various Higher Education Institutions. We appreciate the time and effort you have put into your answer.
 
 ---
 
