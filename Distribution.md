@@ -87,7 +87,7 @@ As promised in `Survey_Invitation.md`; any change here must also be made there.
 | Jisc             | GB      | in CSV                    | undefined              | endorsed        |               |              |                    |               |              |
 | Ladok            | SE      | in CSV                    | 43 institutions        | invited         |               |              |                    |               |              |
 | MUCI             | PL      | in CSV                    | > 100 institutions     | declined        |               |              |                    |               |              |
-| UniDig           | SE      | not on EUNIS map          | 38 institutions        | distributed     |               |              |                    |               |              |
+| UniDig           | SE      | not on EUNIS map          | 38 institutions        | distributed     |               |              |                    |               |           35 |
 | OPI              | PL      | in CSV                    | undefined              | invited         |               |              |                    |               |              |
 | RASH             | AL      | in CSV                    | undefined              | invited         |               |              |                    |               |              |
 | SWITCH           | CH      | not on EUNIS map          | undefined              | invited         |               |              |                    |               |              |
@@ -96,9 +96,10 @@ As promised in `Survey_Invitation.md`; any change here must also be made there.
 | SRCE             | HR      | in CSV                    | undefined              | invited         |               |              |                    |               |              |
 | SURF             | NL      | in CSV                    | > 120 institutions     | confirmed       |               |              |                    |               |              |
 | UCISA            | GB      | not on EUNIS map          | undefined              | invited         |               |              |                    |               |              |
+| VLIR             | BE      | in CSV (not on EUNIS map) | 5 universities         | invited         |               |              |                    |               |              |
 | VPC              | LV      | in CSV                    | 4 founders             | invited         |               |              |                    |               |              |
 | ZKI              | DE      | in CSV                    | > 250 members          | endorsed        |               |              |                    |               |              |
-| SIG (DE, FI, EU) | —       | in CSV                    | n/a                    | DE,FI,EU        |               |              |                    |               |              |
+| SIG (DE, FI, EU) | —       | in CSV                    | n/a                    | -               |               |              |                    |               |              |
 | EA Week          | EU      | EA Week                   | n/a                    | -               |               |              |                    |               |              |
 | EUNIS            | EU      | EUNIS secretariat         | n/a                    | -               |               |              |                    |               |              |
 
@@ -106,7 +107,7 @@ Current Stats: ✅ 2026-10-26
 5 not adressed (SIG + EA Week + EUNIS members)
 11 endorsed
 1 declined
-13 invited
+14 invited
 2 confirmed
 2 distributed
 
@@ -182,6 +183,8 @@ https://survey.lamapoll.de/EA-and-HERM-Adoption?Country_CH=1&Distribution_SWITCH
 https://fynl.in/LIL5pD
 https://survey.lamapoll.de/EA-and-HERM-Adoption?Country_ES=1&Distribution_Crue=1&main=1
 https://fynl.in/1D4rmZU
+https://survey.lamapoll.de/EA-and-HERM-Adoption?Country_BE=1&Distribution_VLIR=1&main=1
+https://fynl.in/0DktfKL
 
 
 Additional organisations which also are EUNIS members (Funidata and HKdir added 2026-10-08 from the EUNIS member map):
