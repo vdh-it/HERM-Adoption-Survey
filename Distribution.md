@@ -99,15 +99,18 @@ As promised in `Survey_Invitation.md`; any change here must also be made there.
 | VLIR             | BE      | in CSV (not on EUNIS map) | 5 universities         | invited         |               |              |                    |               |              |
 | VPC              | LV      | in CSV                    | 4 founders             | invited         |               |              |                    |               |              |
 | ZKI              | DE      | in CSV                    | > 250 members          | endorsed        |               |              |                    |               |              |
-| SIG (DE, FI, EU) | —       | in CSV                    | n/a                    | -               |               |              |                    |               |              |
+| EA SIG DE        | DE      | in CSV                    | ~25 members            | -               |               |              |                    |               |              |
+| EA SIG DK        | DK      | in CSV                    | 8 universities         | invited         |               |              |                    |               |              |
+| EA SIG FI        | FI      | in CSV                    | n/a                    | -               |               |              |                    |               |              |
+| EA SIG EUNIS     | EU      | in CSV                    | ~120 members           | -               |               |              |                    |               |              |
 | EA Week          | EU      | EA Week                   | n/a                    | -               |               |              |                    |               |              |
 | EUNIS            | EU      | EUNIS secretariat         | n/a                    | -               |               |              |                    |               |              |
 
-Current Stats: ✅ 2026-10-26
-5 not adressed (SIG + EA Week + EUNIS members)
+Current Stats: ✅ 2026-10-27
+5 not addressed (SIG + EA Week + EUNIS members)
 11 endorsed
 1 declined
-14 invited
+15 invited
 2 confirmed
 2 distributed
 
@@ -187,7 +190,7 @@ https://survey.lamapoll.de/EA-and-HERM-Adoption?Country_BE=1&Distribution_VLIR=1
 https://fynl.in/0DktfKL
 
 
-Additional organisations which also are EUNIS members (Funidata and HKdir added 2026-10-08 from the EUNIS member map):
+Additional organisations which also are EUNIS members:
 https://survey.lamapoll.de/EA-and-HERM-Adoption?Country_DE=1&Distribution_CIO=1&main=1
 https://fynl.in/NXdSxC
 https://survey.lamapoll.de/EA-and-HERM-Adoption?Country_DE=1&Distribution_HIS=1&main=1
@@ -214,6 +217,8 @@ https://survey.lamapoll.de/EA-and-HERM-Adoption?Country_FI=1&Distribution_SIG=1&
 https://fynl.in/Oq7Z4N22
 https://survey.lamapoll.de/EA-and-HERM-Adoption?Country_EU=1&Distribution_SIG=1&main=1
 https://fynl.in/Q6CYM1HS
+https://survey.lamapoll.de/EA-and-HERM-Adoption?Country_DK=1&Distribution_SIG=1&main=1
+https://fynl.in/v1S3as
 
 EA Week:
 https://survey.lamapoll.de/EA-and-HERM-Adoption?Country_EU=1&Distribution_EAWeek=1&main=1
