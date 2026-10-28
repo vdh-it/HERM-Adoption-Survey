@@ -67,52 +67,52 @@ As promised in `Survey_Invitation.md`; any change here must also be made there.
 
 "Membership" is taken from `National_Higher_Education_IT_Networks_Europe.md` and is only a rough denominator; replace it with the number the partner reports. "Contact": names and e-mail addresses of contact persons are kept only in `EUNIS_contacts.csv`, which is excluded from Git (`.gitignore`). "in CSV" means a representative is listed there; "not on EUNIS map" means the contact must come from elsewhere.
 
-| Channel          | Country | Contact                   | Membership (inventory) | Invitation sent | Follow-up due | Partner sent | Reached (reported) | Reminder sent | Institutions |
-| ---------------- | ------- | ------------------------- | ---------------------- | --------------- | ------------- | ------------ | ------------------ | ------------- | ------------ |
-| AMUE             | FR      | in CSV                    | 178 institutions       | invited         |               |              |                    |               |              |
-| Arge ZID         | AT      | not on EUNIS              | 22 institutions        | invited         |               |              |                    |               |              |
-| ARNES            | SI      | not on EUNIS map          | undefined              | endorsed        |               |              |                    |               |              |
-| Asiera           | IE      | in CSV                    | 9 institutions         | endorsed        |               |              |                    |               |              |
-| CINECA           | IT      | not on EUNIS map          | 71 HE institutions     | endorsed        |               |              |                    |               |              |
-| CIO              | DE      | in CSV (not on EUNIS map) | 56 individuals         | distributed     |               |              |                    |               |              |
-| Crue             | ES      | not on EUNIS map          | undefined              | endorsed        |               |              |                    |               |              |
-| CSC              | FI      | in CSV                    | undefined              | endorsed        |               |              |                    |               |              |
-| CSIESR           | FR      | in CSV                    | 145 institutions       | endorsed        |               |              |                    |               |              |
-| EUNIS_CZ         | CZ      | in CSV                    | undefined              | invited         |               |              |                    |               |              |
-| EUNIS_SK         | SK      | in CSV                    | 20 full + 1 associate  | endorsed        |               |              |                    |               |              |
-| Funidata         | FI      | in CSV                    | 8 owner organisations  | invited         |               |              |                    |               |              |
-| GUnet            | GR      | in CSV                    | 25 universities        | invited         |               |              |                    |               |              |
-| HIS              | DE      | in CSV                    | 223 members            | endorsed        |               |              |                    |               |              |
-| HKdir            | NO      | in CSV                    | undefined              | endorsed        |               |              |                    |               |              |
-| Jisc             | GB      | in CSV                    | undefined              | endorsed        |               |              |                    |               |              |
-| Ladok            | SE      | in CSV                    | 43 institutions        | invited         |               |              |                    |               |              |
-| MUCI             | PL      | in CSV                    | > 100 institutions     | declined        |               |              |                    |               |              |
-| UniDig           | SE      | not on EUNIS map          | 38 institutions        | distributed     |               |              |                    |               |           35 |
-| OPI              | PL      | in CSV                    | undefined              | invited         |               |              |                    |               |              |
-| RASH             | AL      | in CSV                    | undefined              | invited         |               |              |                    |               |              |
-| SWITCH           | CH      | not on EUNIS map          | undefined              | invited         |               |              |                    |               |              |
-| SIGMA            | ES      | in CSV                    | 17 universities        | invited         |               |              |                    |               |              |
-| Sikt             | NO      | in CSV                    | undefined              | confirmed       |               |              |                    |               |              |
-| SRCE             | HR      | in CSV                    | undefined              | invited         |               |              |                    |               |              |
-| SURF             | NL      | in CSV                    | > 120 institutions     | confirmed       |               |              |                    |               |              |
-| UCISA            | GB      | not on EUNIS map          | undefined              | invited         |               |              |                    |               |              |
-| VLIR             | BE      | in CSV (not on EUNIS map) | 5 universities         | invited         |               |              |                    |               |              |
-| VPC              | LV      | in CSV                    | 4 founders             | invited         |               |              |                    |               |              |
-| ZKI              | DE      | in CSV                    | > 250 members          | endorsed        |               |              |                    |               |              |
-| EA SIG DE        | DE      | in CSV                    | ~25 members            | -               |               |              |                    |               |              |
-| EA SIG DK        | DK      | in CSV                    | 8 universities         | invited         |               |              |                    |               |              |
-| EA SIG FI        | FI      | in CSV                    | n/a                    | -               |               |              |                    |               |              |
-| EA SIG EUNIS     | EU      | in CSV                    | ~120 members           | -               |               |              |                    |               |              |
-| EA Week          | EU      | EA Week                   | n/a                    | -               |               |              |                    |               |              |
-| EUNIS            | EU      | EUNIS secretariat         | n/a                    | -               |               |              |                    |               |              |
+| Channel      | Country | Contact                   | Membership (inventory) | Invitation sent    | Follow-up due | Partner sent | Reached (reported) | Reminder sent | Institutions |
+| ------------ | ------- | ------------------------- | ---------------------- | ------------------ | ------------- | ------------ | ------------------ | ------------- | ------------ |
+| AMUE         | FR      | in CSV                    | 178 institutions       | invited            | -             |              |                    |               |              |
+| Arge ZID     | AT      | not on EUNIS              | 22 institutions        | invited            | -             |              |                    |               | 77           |
+| ARNES        | SI      | not on EUNIS map          | undefined              | endorsed           | done          |              |                    |               |              |
+| Asiera       | IE      | in CSV                    | 9 institutions         | endorsed           | done          |              |                    |               |              |
+| CINECA       | IT      | not on EUNIS map          | 71 HE institutions     | endorsed           | done          |              |                    |               |              |
+| CIO          | DE      | in CSV (not on EUNIS map) | 56 individuals         | distributed        | -             |              | yes                |               |              |
+| Crue         | ES      | not on EUNIS map          | undefined              | endorsed           | done          |              |                    |               |              |
+| CSC          | FI      | in CSV                    | undefined              | endorsed           | done          |              |                    |               |              |
+| CSIESR       | FR      | in CSV                    | 145 institutions       | endorsed           | done          |              |                    |               |              |
+| EUNIS_CZ     | CZ      | in CSV                    | undefined              | invited            | -             |              |                    |               |              |
+| EUNIS_SK     | SK      | in CSV                    | 20 full + 1 associate  | endorsed           | done          |              |                    |               |              |
+| Funidata     | FI      | in CSV                    | 8 owner organisations  | invited            | -             |              |                    |               |              |
+| GUnet        | GR      | in CSV                    | 25 universities        | invited            | -             |              |                    |               |              |
+| HIS          | DE      | in CSV                    | 223 members            | endorsed           | done          |              |                    |               |              |
+| HKdir        | NO      | in CSV                    | undefined              | endorsed           | done          |              |                    |               |              |
+| Jisc         | GB      | in CSV                    | undefined              | endorsed           | done          |              |                    |               |              |
+| Ladok        | SE      | in CSV                    | 43 institutions        | declined -> UniDig | -             |              |                    |               |              |
+| MUCI         | PL      | in CSV                    | > 100 institutions     | declined           | -             |              |                    |               |              |
+| UniDig       | SE      | not on EUNIS map          | 38 institutions        | distributed        | -             |              | yes                |               | 35           |
+| OPI          | PL      | in CSV                    | undefined              | distributed        | -             |              |                    |               |              |
+| RASH         | AL      | in CSV                    | undefined              | invited            | -             |              |                    |               |              |
+| SWITCH       | CH      | not on EUNIS map          | undefined              | invited            | -             |              |                    |               |              |
+| SIGMA        | ES      | in CSV                    | 17 universities        | invited            | -             |              |                    |               |              |
+| Sikt         | NO      | in CSV                    | undefined              | confirmed          | -             |              |                    |               |              |
+| SRCE         | HR      | in CSV                    | undefined              | invited            | -             |              |                    |               |              |
+| SURF         | NL      | in CSV                    | > 120 institutions     | confirmed          | -             |              |                    |               |              |
+| UCISA        | GB      | not on EUNIS map          | undefined              | invited            | -             |              |                    |               |              |
+| VLIR         | BE      | in CSV (not on EUNIS map) | 5 universities         | invited            | -             |              |                    |               |              |
+| VPC          | LV      | in CSV                    | 4 founders             | invited            | -             |              |                    |               |              |
+| ZKI          | DE      | in CSV                    | > 250 members          | invited            | done          |              |                    |               |              |
+| EA SIG DE    | DE      | in CSV                    | ~25 members            | -                  |               |              |                    |               |              |
+| EA SIG DK    | DK      | in CSV                    | 8 universities         | invited            | -             |              |                    |               |              |
+| EA SIG FI    | FI      | in CSV                    | n/a                    | -                  |               |              |                    |               |              |
+| EA SIG EUNIS | EU      | in CSV                    | 98 members             | -                  |               |              |                    |               |              |
+| EA Week      | EU      | EA Week                   | n/a                    | -                  |               |              |                    |               |              |
+| EUNIS        | EU      | EUNIS secretariat         | n/a                    | -                  |               |              |                    |               |              |
 
-Current Stats: ✅ 2026-10-27
+Current Stats: ✅ 2026-10-28
 5 not addressed (SIG + EA Week + EUNIS members)
-11 endorsed
-1 declined
-15 invited
+10 endorsed
+2 declined
+14 invited
 2 confirmed
-2 distributed
+3 distributed
 
 **Added 2026-10-08 from the EUNIS member map:** Funidata (FI) and the Norwegian Directorate for Higher Education and Skills (HKdir, NO). Both are also marked in the network inventory. Test their links before the first mailing (rule 4).
 
