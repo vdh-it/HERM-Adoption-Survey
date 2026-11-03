@@ -52,6 +52,8 @@ As promised in `Survey_Invitation.md`; any change here must also be made there.
 | 8 | At least 2 weeks before closing | Final reminder with closing date via all partners and via EUNIS (`Distribution_EUNIS`, `reminder=1`) | [OWNER], EUNIS |
 | 9 | Closing date | Close survey; export; apply Blueprint data rules 12 and 13 | [OWNER] |
 
+---
+
 ## 4. Rules
 
 1. Send each partner only its own link. Never send the reminder link in the first mail.
@@ -62,7 +64,7 @@ As promised in `Survey_Invitation.md`; any change here must also be made there.
 6. Check the export after the first real responses of each new channel; correct broken links immediately.
 
 ---
-  
+
 ## 5. Tracking table
 
 "Membership" is taken from `National_Higher_Education_IT_Networks_Europe.md` and is only a rough denominator; replace it with the number the partner reports. "Contact": names and e-mail addresses of contact persons are kept only in `EUNIS_contacts.csv`, which is excluded from Git (`.gitignore`). "in CSV" means a representative is listed there; "not on EUNIS map" means the contact must come from elsewhere.
@@ -108,7 +110,7 @@ As promised in `Survey_Invitation.md`; any change here must also be made there.
 | EA Week      | EU      | EA Week                   | n/a                    | -                  |               |              |                    |               |              |
 | EUNIS        | EU      | EUNIS secretariat         | n/a                    | -                  |               |              |                    |               |              |
 
-Current Stats - 38 potential channels: ✅ 2026-11-04
+Current Stats - 38 potential channels: ✅ 2026-11-03
 5 not addressed (SIG + EA Week + EUNIS members)
 8 endorsed (ARNES/SI, Crue/ES, CSC/FI, EUNIS_SK/SK, HIS/DE, Jisc/GB, RASH/AL, Uni/EE)
 3 declined
