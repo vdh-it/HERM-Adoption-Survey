@@ -302,6 +302,7 @@ Before substantive analysis:
 32. Identical submissions from the same institution within a short time (double submission).
 33. Straight-lining in the matrices 2.2 and 4.3 (identical column in every row, especially "Don't know").
 34. Speeders: total duration far below the median of the same routing path. Define the threshold from the field data, not from the pretest, because pretest durations include feedback writing.
+35. Extreme pauses: any page shown longer than 30 min (`Dauer für Seite`). Flag `EXTREME_PAUSE`; exclude the response from all duration statistics, keep its answers. Duration = sum of page durations, not `Beantwortungsdauer`. Pages of 10–30 min are counted, not excluded. Threshold set from field data on 2026-11-03 (clear gap between plausible page times and pauses of hours to days; results identical at 30 and 60 min). Implemented in `qa/duration_stats.py`.
 
 ---
 
