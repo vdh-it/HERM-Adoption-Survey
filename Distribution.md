@@ -1,6 +1,6 @@
 # Distribution Plan
 
-**Last updated:** 2026-10-20
+**Last updated:** 2026-11-03
 **Texts:** all invitation and reminder texts are in `Survey_Invitation.md`. This file holds links, process, rules and tracking only.
 
 ## 1. Current status
@@ -12,11 +12,12 @@
 - [+] Board endorsement message sent to the national organisations (requested in `Letter to the board.md`).
 - [+] First field-day check of the export (see rule 6). ✅ 2026-10-26
 - [ ] Observe where people get distracted and break off. Consider any question that reduces participation. Should we rephrase or cancel this question?
+	2026-11-03: 11 of 28 participants broke off; 4 of them right after consent (first profile page, starting with institution name), the rest scattered. Watch.
 - [ ] Observe the participation rate per distribution channel.
-	1) Can we support a specific distribution channel? 
+	1) Can we support a specific distribution channel?
 	2) Have we finished the main field phase?
 - [ ] Observe if people give reasons for not participating and consider whether any of these reasons can be changed.
-- [ ] Observe the 'Other' categories: is there a missing item that we need to add?
+- [ ] Observe the 'Other' categories: is there a missing item that we need to add? ✅ 2026-11-03
 - [ ] Test the raw data: are there any issues that motivate change? ✅ 2026-10-26 (CSV import with ";" works)
 - [ ] Define when to close the survey.
 - [ ] Send reminders with the final date to the channels.
