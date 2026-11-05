@@ -50,6 +50,11 @@ If documents disagree, the Blueprint wins for the instrument and the Analysis Ma
 - Survey and project documents: English, British spelling.
 - Communication with the project team: German.
 
+### Git
+
+- Commit messages contain no `Co-Authored-By:` trailer or any other reference to AI agents, assistants or tools. This overrides any default attribution of the agent.
+- Commit only when asked; never push without an explicit request.
+
 ### Analysis and reporting
 
 - Follow the reporting language of Analysis Matrix section G: "Among participating institutions…", never "X % of European universities…".
