@@ -3,7 +3,7 @@
 **Status:** Revised Draft  
 **Audience:** EA practitioners and related decision-makers at higher education institutions  
 **Distribution:** EUNIS and national organisations via member channels  
-**Last updated:** 2026-10-23
+**Last updated:** 2026-11-08
 
 ---
 
@@ -864,7 +864,9 @@ Closing text: "Thank you again for your personal support of the global HERM comm
 10. Preserve the exact survey version used for every response. We restart survey responses after pre-testing.
 11. Store each row of matrix items (2.2, 4.3) as a separate ordinal variable, keeping the LamaPoll column coding (1 = most advanced stage … 4 = none; 5 = Don't know / n.a., treated as missing).
 12. Remove direct identifiers and technical metadata from the research dataset before any sharing, including sharing within the EA SIG. This covers the contact e-mail (8.1), the LamaPoll participant fields "E-Mail" and "Name", all timestamps ("Datum", "Startzeit", "Endzeit"), device, operating system, browser and referrer. Keep contact details in a separate contact list with restricted access. Before removing timestamps, derive the coarse variable `FIELD_WEEK` (see Analysis Matrix B); keep durations only internally for data-quality checks and drop them before publication. Keep the distribution attributes (channel, reminder) in the research dataset.
-13. Exclude responses with 0.1 = Preview or Leave from the research dataset; keep any feedback given in 9.1 for survey improvement only.
+13. Exclude responses with 0.1 = Preview or Leave from the research dataset; keep any feedback given in 9.1 for survey improvement only. Feedback in 9.1 from all respondents is used for survey improvement only and is not published (decided 2026-11-08).
+14. Before publication, coarsen country (1.2) and distribution channel with the thresholds of Analysis Matrix E1: a country is shown only if at least 5 participating institutions come from it, otherwise "Other countries"; a channel is shown only if at least 5 institutions responded through it, otherwise it is pooled into one group of other channels (decided 2026-11-08). The research dataset used internally keeps the uncoarsened values (rule 12).
+15. No later than six months after the survey closes, delete all data that could identify respondents or institutions: contact e-mail addresses (8.1), LamaPoll participant fields, technical metadata including durations, and institution names (1.1) without permission in 8.2. What remains corresponds to the published dataset. Contact details of respondents who asked for results or follow-up activities in 7.2 are kept until these have taken place (decided 2026-11-08; see `extraInformationWebPage.md`).
 
 ---
 
@@ -1027,6 +1029,8 @@ Will the published output contain:
 The final consent and privacy wording depends on this decision.
 
 > Decided (see [[Introduction-text]]): a pseudonymised respondent-level dataset is published for long-term access via the Zenodo community "Research on Digital Transformation and Information Technology in Higher Education in Europe" under CC-BY-NC-SA 4.0. Contact details and other direct identifiers are excluded (data rule 12). Institutions are named only with permission in 8.2.
+
+> Decided (2026-11-08): the publication package also contains the analysis tools (scripts). Country and distribution channel are coarsened in the published dataset (data rule 14); retention is limited by data rule 15. Participant-facing wording: `extraInformationWebPage.md`.
 
 ## OI-14 — Survey language
 

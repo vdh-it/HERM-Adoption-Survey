@@ -198,6 +198,7 @@ Decided (Blueprint OI-10, 2026-10-08):
 - Country is taken from 1.2, not from the link attribute.
 - The same threshold applies to distribution channels (`CHANNEL`): channel-specific results are reported to a distribution partner only if at least 5 participating institutions responded through its channel (decided 2026-10-08).
 - Re-assess the threshold and the pooling after the field phase, before any country comparison is reported.
+- The same thresholds apply to the published dataset: `COUNTRY_GROUP` replaces the country, and channels with fewer than 5 participating institutions are pooled (Blueprint data rule 14, decided 2026-11-08). Participants are told this on the additional information page (`extraInformationWebPage.md`).
 
 ### E2. Institution-level prevalence estimates
 

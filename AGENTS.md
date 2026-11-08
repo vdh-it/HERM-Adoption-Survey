@@ -2,7 +2,7 @@
 
 This file is the **single place** where project context, rules and agent roles are maintained. `CLAUDE.md` only points here.
 
-**Last updated:** 2026-10-08
+**Last updated:** 2026-11-08
 
 ---
 
@@ -23,6 +23,7 @@ Status on 2026-10-08: questionnaire implemented, pretest completed in September 
 | `Analysis-Matrix.md` | Research questions, derived variables, checks, reporting language | **Source of truth for the analysis** |
 | `LamaPoll_Realisation.pdf`, `LamaPoll_Codebook.pdf` | Implemented survey; LamaPoll numbering (Frage 1–48, V1–V185) | Must match the Blueprint |
 | `Introduction-text.md` | Welcome and GDPR text of the survey | Must match Blueprint OI-13 |
+| `extraInformationWebPage.md` | Additional information page linked from the welcome text: privacy, data preparation, retention, FAQ | Must match Blueprint data rules 12–15 and OI-13 |
 | `Distribution.md` | Channel links with LamaPoll attributes | Working document |
 | `National_Higher_Education_IT_Networks_Europe.md` | Inventory of national networks with membership counts | Basis for channels and reach estimates |
 | `Countries.md` | Country list used in question 1.2 | Must match LamaPoll |
