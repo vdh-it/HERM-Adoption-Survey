@@ -11,7 +11,9 @@ Placeholders: `[ORGANISATION]`, `[CONTACT NAME]`, `[MAIN LINK]`, `[REMINDER LINK
 
 **First mail to each organisation:** Part 1 and Part 2 only. Part 3 is an internal template; it is sent later, together with the reminder link, when the EA SIG decides that a reminder is due for a channel.
 
-**Next wave (NRENs, see `NextWave.md`), added 2026-11-03, draft for EA SIG review:** first mail to an NREN = Part 4 with Part 5 attached. Part 5 can also be sent directly to official institutional addresses. Notes on use are in Part 6. Additional placeholders: `[NREN]`, `[COUNTRY]`, `[RESPONSE DATE]`, `[REFERENCE]`, `[SIGNATORY]`.
+**Next wave (NRENs, see `NextWave.md`), added 2026-11-03, draft for EA SIG review:** first mail to an NREN = Part 4 with Part 5 attached. Part 5 can also be sent directly to official institutional addresses. Notes on use are in Part 6. Additional placeholders: `[NREN]`, `[COUNTRY]`, `[NUMBER]`, `[RESPONSE DATE]`, `[REFERENCE]`, `[SIGNATORY]`. Part 4 is tailored to group A (2026-11-05).
+
+**Request to GÉANT (Part 7), added 2026-11-05, draft:** strategy and alternatives in `NextWave.md` section 6, "Approach to GÉANT". Additional placeholders: `[GÉANT CONTACT]`, `[BOARD MEMBER]`.
 
 ---
 
@@ -124,17 +126,28 @@ Thank you!
 
 ---
 
-## Part 4: Request to a national research and education network (NREN)
+## Part 4: Request to a national research and education network (NREN), group A
 
-*Draft, 2026-11-03. For countries without an IT leadership association in our channel list (see `NextWave.md`). First mail = Part 4 with Part 5 attached or quoted below it. If the EUNIS Board has introduced us, start with the bracketed sentence.*
+*Draft, 2026-11-03, tailored to group A on 2026-11-05: TR, RO, HU, UA, BG, RS, LT (`NextWave.md` sections 3 and 6). Sent directly by the Principal Investigator to the management level of the NREN, not to NOC or CSIRT addresses. Addresses and contact routes per NREN: `EUNIS_contacts.csv` (web check 2026-11-05). First mail = Part 4 with Part 5 attached or quoted below it. Before sending, create and test the channel link (`NextWave.md` section 5, `Distribution.md` rule 4). Country notes:*
+
+- *HU: address the HUNGARNET association, whose members are the institutions, not the network operator.*
+- *RO: the NREN website offers only a contact form. A second route is the EUNIS member institution in RO, which hosted the EUNIS 2026 congress.*
+- *TR: ULAKBİM publishes no general e-mail address, only phone and a registered (KEP) address. Ask by phone for the right addressee, or use the GÉANT route (Part 7, option D).*
+- *RS: the e-mail address comes from a network registry entry of 2022 and could not be checked on the AMRES website. Confirm it first.*
+
+*If no person is known, use "Dear colleagues at [NREN]". The bracketed clause "one of the larger higher education systems" fits TR, RO, HU, UA and BG; omit it for RS and LT.*
 
 **Subject:** Request for support: forwarding a EUNIS consultation on Enterprise Architecture to the higher education institutions in [COUNTRY]
 
 Dear [CONTACT NAME],
 
-[Following the introduction by the EUNIS Board,] I am writing on behalf of the EUNIS Enterprise Architecture Special Interest Group (EA SIG) with a short and specific request.
+I am writing on behalf of the EUNIS Enterprise Architecture Special Interest Group (EA SIG) with a short and specific request.
 
-We are running the first European consultation of higher education institutions on Enterprise Architecture (EA) and the Higher Education Reference Model (HERM). It asks institutions how they plan and govern their IT and business architecture, which barriers they face and what support they would find useful. National organisations in about 20 European countries already support its distribution. [COUNTRY] is not yet represented, and [NREN] is, as far as we can see, the organisation with the most direct and trusted connection to all higher education institutions in the country.
+We are running the first European consultation of higher education institutions on Enterprise Architecture (EA) and the Higher Education Reference Model (HERM). It asks institutions how they plan and govern their IT and business architecture, which barriers they face and what support they would find useful. The EUNIS Board supports it. EUNIS President Evelien Renders wrote to the national organisations on behalf of the Board:
+
+> "One of the things I value most about EUNIS is how much we learn from each other across borders. […] With surveys like this, the hardest part is getting people to fill them in. […] a personal invitation […] to your members, ideally in your own language, makes all the difference."
+
+National organisations in 20 European countries support the distribution, and institutions from [NUMBER] countries have already responded. [COUNTRY][, with one of the larger higher education systems in Europe,] is not yet represented. Without it, the European picture remains incomplete. [NREN] is, as far as we can see, the organisation with the most direct and trusted connection to all higher education institutions in the country.
 
 ### What we ask of [NREN]
 
@@ -142,6 +155,8 @@ We are running the first European consultation of higher education institutions 
 2. **Ask your contacts to pass it on to their CIO or head of IT.** Your regular contacts are often in network or IT operations; the survey is meant for the people responsible for IT strategy and architecture.
 3. **Alternatively, point us to the right body.** If a national IT directors' forum, a rectors' conference or another organisation is better placed to distribute the request, a short introduction to them would help us just as much.
 4. **Tell us roughly how many institutions** received the request, so that participation from [COUNTRY] can be interpreted properly.
+
+You are welcome to translate or adapt the request; a personal invitation in your own language works best. We can provide the texts in a format that suits you.
 
 We do not ask you to share any contact data with us. Please use only the link below; it marks responses as coming through [NREN] and never identifies individual respondents:
 
@@ -218,3 +233,55 @@ SemaLogic · markus.von.der.heyde@semalogic.de
 5. **[REFERENCE]** e.g. `EUNIS-EA-2026-[ISO]-[nn]`, one per institution if sent directly, otherwise one per channel. Record it in `EUNIS_contacts.csv`, not in Git.
 6. **Measuring the effect of the framing:** if Part 5 is sent directly to official addresses, use a separate channel name (e.g. `Distribution_Official_<ISO>`; check with the LamaPoll attribute setup first). This lets us compare the response to the consultation framing with the partner channels. Apply rule 4 of `Distribution.md` before sending.
 7. **Signatory:** a signature or co-signature on behalf of the EUNIS Board, or by the NREN itself, substantially increases the chance that rectors' offices route the request. Agree this with the Board before the first send.
+
+---
+
+## Part 7: Request to GÉANT (draft)
+
+*Draft, 2026-11-05. Sent by the Principal Investigator. The quotes are taken from that message to the national organisations; they are attributed as such and not presented as an endorsement addressed to GÉANT. The country list depends on the EA SIG decision on groups A–C (`NextWave.md` section 3); RU and BY are deliberately not included.*
+
+**To:** [GÉANT CONTACT]
+**CC:** [BOARD MEMBER], EUNIS Board
+
+**Subject:** EUNIS consultation on Enterprise Architecture: a short note to NRENs in 15 countries
+
+Dear [GÉANT CONTACT],
+
+I am writing on behalf of the EUNIS Enterprise Architecture Special Interest Group (EA SIG) with a small, specific request, in the spirit of the bridge between higher education and the NREN community that EUNIS and GÉANT discussed at TNC26 and are working on in a new Memorandum of Understanding.
+
+We are running the first European survey of higher education institutions on Enterprise Architecture (EA) and the Higher Education Reference Model (HERM): how institutions plan and govern their IT and business architecture, which barriers they face and what support would help them. The EUNIS Board supports it. When the survey started, President of EUNIS Evelien Renders wrote to the national organisations on behalf of the Board:
+
+> "One of the things I value most about EUNIS is how much we learn from each other across borders. […] With surveys like this, the hardest part is getting people to fill them in. […] a personal invitation […] to your members, ideally in your own language, makes all the difference."
+
+National partners in many countries have taken up that invitation, among the NRENs SURF, Sikt and SWITCH, and institutions from nine countries have responded so far. But there is a gap: in **Bulgaria, Cyprus, Hungary, Iceland, Kosovo, Lithuania, Luxembourg, Malta, Moldova, Montenegro, North Macedonia, Romania, Serbia, Türkiye and Ukraine** we have no partner yet. In most of these countries the NREN is the organisation with the most direct connection to all higher education institutions.
+
+### What we ask of GÉANT
+
+1. **Forward the short note below to the NRENs in these 15 countries**, through whichever channel you find appropriate. NRENs in other countries do not need to act; several already support the survey.
+2. **NRENs that are interested** reply to us directly; we then send them their own survey link and ready-made texts, and the effort for them stays small.
+3. **If a forward is not possible**, we would be just as grateful for the name of the right person in GÉANT's education or community area, or for a short slot or post in the Education SIG.
+
+We are also writing directly to some of these NRENs. If one of them hears from us twice, this is why.
+
+### What GÉANT gains
+
+- **Evidence for the education service area:** the results show where institutions see gaps in architecture, integration, shared services and IT governance.
+- **A concrete first project** for the closer cooperation between EUNIS and GÉANT.
+
+Thank you for considering this. I am happy to discuss it in a short call.
+
+Best regards,
+
+Markus von der Heyde
+Principal Investigator, on behalf of the EUNIS Enterprise Architecture SIG
+SemaLogic · markus.von.der.heyde@semalogic.de
+
+### Note for forwarding to the NRENs
+
+> **EUNIS asks NRENs for support: European survey on Enterprise Architecture in higher education**
+>
+> EUNIS, the European University Information Systems organisation, runs the first European survey of higher education institutions on Enterprise Architecture and the Higher Education Reference Model (HERM). Institutions in [COUNTRY LIST] are not yet reached. Would your NREN forward an invitation to the higher education institutions you serve, addressed to their CIO or head of IT?
+> Each country appears separately in the results once at least five institutions take part. The de-identified dataset will be published openly.
+>
+> If you are interested in supporting this initiative, please reply to Markus von der Heyde (EUNIS EA SIG), markus.von.der.heyde@semalogic.de. You will receive your own survey link and ready-made text for the distribution within your country. You do not need to share any contact data.
+

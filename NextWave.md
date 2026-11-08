@@ -2,7 +2,7 @@
 
 **Created:** 2026-11-03
 **Status:** proposal for the EA SIG; nothing has been sent yet. `Distribution.md` remains the working document for links and tracking. Invitation and reminder texts stay in `Survey_Invitation.md` (Parts 1–3). No new texts are proposed here.
-**Inputs:** `Countries.md` (47 entries), `Distribution.md` (tracking table, 2026-11-03), `National_Higher_Education_IT_Networks_Europe.md` (inventory of 7 and 8 October 2026), an aggregate count from the LamaPoll export of 2026-11-03, and web checks of 2026-11-03 for the micro-states and Bosnia and Herzegovina (sources in section 8).
+**Inputs:** `Countries.md` (47 entries), `Distribution.md` (tracking table, 2026-11-03), `National_Higher_Education_IT_Networks_Europe.md` (inventory of 7 and 8 October 2026), aggregate counts from the LamaPoll exports of 2026-11-03 and 2026-11-05 (section 4), and web checks of 2026-11-03 for the micro-states and Bosnia and Herzegovina (sources in section 8).
 
 ---
 
@@ -65,11 +65,15 @@ The institution figures for the larger systems are **orders of magnitude from ge
 
 ## 4. The larger lever: countries with a channel but without responses
 
-Aggregate from the export of 2026-11-03 (respondent level, not institution level; 28 participants as recorded in `Distribution.md`): country in question 1.2 is SE 12, NO 5, DE 4, PL 4, CZ 2, CH 1.
+**Updated 2026-11-05.** Aggregate from the export `2026-11-05-Rohdaten von Umfrage EA-and-HERM-Adoption (gefiltert).csv` (all 113 rows, previews included; respondent level, not institution level). Participants are those who chose "Participate" in question 0.1: **55 participants, 31 of them completed.** Country in question 1.2: SE 12, GB 8, DE 7, PL 4, GR 3, NO 3, CZ 2, CH 1, IE 1. 14 participants broke off before question 1.2.
 
-This means that **FR, IT, ES, GB and NL**, the largest higher education systems in the country list, have **no response yet** although channels exist (AMUE, CSIESR, CINECA, Crue, SIGMA, Jisc, UCISA, SURF). The same applies to AT, BE, DK, EE, FI, GR, HR, IE, LV, PT, SI, SK and AL.
+**Correction:** the figures given here on 2026-11-03 (SE 12, NO 5, DE 4, PL 4, CZ 2, CH 1) do not match question 1.2 in the export of that day (`2026-11-03-Rohdaten … .csv`: SE 12, PL 4, NO 3, DE 2, CH 1, CZ 1, 5 without country, 28 participants). They presumably came from the country parameter of the links, not from question 1.2. This has not been verified.
 
-Consequence for the plan: in the same weeks as the new wave, apply step 6 of `Distribution.md` (reminder with priority for channels below 5 institutions) consistently to these channels. For partners marked "endorsed" or "invited", first clarify whether they have forwarded the invitation at all.
+**Changes since 2026-11-03:** GB (UCISA distributed), GR (GUnet distributed) and IE now have responses. DE grew after the ZKI mailing.
+
+There is still **no response by question 1.2 from FR, IT, ES and NL**, four of the largest higher education systems in Western Europe, although channels exist (AMUE, CSIESR, CINECA, Crue, SIGMA, SURF). For FR: the CSIESR channel (distributed) shows one completed response, but no participant chose FR in question 1.2. Question 1.2 is authoritative (`Distribution.md` rule 2), so FR counts as 0. There are also no responses yet from AT, BE, DK, EE, FI, HR, LV, PT, SI, SK and AL.
+
+Consequence for the plan: in the same weeks as the new wave, apply step 6 of `Distribution.md` (reminder with priority for channels below 5 institutions) consistently to these channels. The tracking table of 2026-11-04 already marks reminders as due for AMUE (FR), CINECA (IT), SIGMA (ES), Arge ZID (AT), Funidata (FI), SRCE (HR), VLIR (BE), VPC (LV) and EA SIG DK, and a follow-up for SURF (NL) and Uni/PT. The endorsed partners that have not replied (Crue/ES, CSC/FI, ARNES/SI, EUNIS_SK/SK, RASH/AL, Uni/EE) first need to be asked whether they have forwarded the invitation at all (draft text in `Reminder.md`).
 
 ---
 
@@ -109,10 +113,34 @@ Syntax as in `Distribution.md`: `?Country_<ISO>=1&Distribution_<NAME>=1&main=1`.
 ### Additional routes that reach several countries at once
 
 1. **EUNIS Board / EUNIS secretariat:** ask for introductions to NRENs or rectors' conferences in group A. Contacts that come through the Board have worked better than cold mails (cf. the endorsements in `Distribution.md`).
-2. **GÉANT community:** all NRENs of groups A and B (except BA) belong to the GÉANT community. A single request to GÉANT to forward the invitation to its NREN members could replace several cold contacts. This has not been checked; it is an option.
-3. **Partners already reached in neighbouring countries:** ask ARNES (SI), SRCE (HR) and RASH (AL) for contacts in the Western Balkans; ask CESNET / EUNIS-CZ and EUNIS-SK for contacts in HU.
+2. **GÉANT community:** all NRENs of groups A and B (except BA) belong to the GÉANT community. A single request to GÉANT could replace several cold contacts. Approach and draft: see "Approach to GÉANT" below and Part 7 of `Survey_Invitation.md`.
+3. **Partners already reached in neighbouring countries:** ask ARNES (SI), SRCE (HR) and RASH (AL) for contacts in the Western Balkans; ask CESNET / EUNIS-CZ and EUNIS-SK for contacts in HU. Note: ARNES and RASH are only "endorsed" and SRCE is "invited" (2026-11-04); none of them has replied yet.
 4. **EUNIS member institutions in RO and LU** (one each, `Distribution.md` §7): ask them to forward the invitation nationally.
 5. **European Universities alliances** and the **EU DigInterOp group** (`Ideas.md`): secondary routes for groups A and B. Their selection bias is unknown, so sending institution-wide to all members is not recommended.
+
+### Approach to GÉANT (proposal, 2026-11-05)
+
+**Context.** EUNIS and GÉANT signed a Memorandum of Understanding in 2018. According to a EUNIS report from TNC26 (June 2026), a new MoU is being drafted to strengthen the links between higher education institutions and the NREN community, and GÉANT's new strategy names education as an emerging service area (sources in section 8). Our request fits this agenda. GÉANT is not expected to pass on contact data of its NREN contacts, and we should not ask for it.
+
+| Option | Pro | Contra |
+|---|---|---|
+| **A. Ask GÉANT for the contacts of the NRENs** | Direct; we keep control of the follow-up | Very unlikely under GDPR and GÉANT's own data rules; asking for it makes the whole request look naive and can cost the goodwill needed for the other options |
+| **B. GÉANT forwards a short note to the NRENs in the target countries; interested NRENs contact us (opt-in)** | No contact data change hands; small effort for GÉANT; NRENs that reply are motivated; we then send Part 4/5 ourselves and route them to IT leadership; each NREN gets its own channel link | Opt-in replies are typically few; the note can get lost among other GÉANT mails; we do not know who received it or when; a GÉANT-wide mail also reaches NRENs that are already partners (SURF, Sikt, SWITCH), so the target countries must be named |
+| **C. GÉANT forwards the survey link itself to the NRENs, which forward it to their institutions** | Shortest path to the institutions; no further round with us | Two forwarding steps away from the CIO (NREN contacts are mostly network operations staff, section 2); only one shared link (`Distribution_GEANT`), so no attribution per NREN; no chance to brief the NREN; low response expected |
+| **D. (new) Warm introduction instead of a mass forward:** GÉANT names the right person in its education or community area, or offers a short slot or post in the Education SIG | Builds on the TNC26 contacts and the MoU work; an Education SIG audience is closer to higher education than general NREN contacts; useful beyond this survey | Slower (SIG meetings follow their own calendar); covers only NRENs that take part in the SIG |
+| **E. (new) Direct mails to the NRENs in parallel (Part 4), using public addresses from the NREN websites** | Independent of GÉANT; can start at once; full control of timing and text | Cold contacts with lower response; public role addresses are often helpdesks; without a reference to GÉANT or the EUNIS Board they carry little weight |
+
+**Decision 2026-11-05: group A first, directly (E).** The web check of 2026-11-05 found a usable route for all seven NRENs of group A: e-mail for HU (HUNGARNET), UA, BG, LT and RS (RS unverified), a contact form for RO, and only phone or a registered KEP address for TR (details in `EUNIS_contacts.csv`). For seven countries the extra step via GÉANT costs more time than it saves. Text: Part 4 of `Survey_Invitation.md`, tailored to group A. GÉANT stays relevant for TR (introduction) and for the many small NRENs of group B; the GÉANT request below is postponed until then.
+
+**Original recommendation (for group B): B as the main request, D as the explicit fallback in the same mail, E in parallel. No A.**
+
+1. The mail to GÉANT (Part 7 of `Survey_Invitation.md`) asks for B: forward a ready-made short note to the NRENs in the named target countries. It states that we do not ask for contact data. As a fallback it offers D: name a person, or give us a slot or post in the Education SIG.
+2. It refers to the EUNIS–GÉANT cooperation (MoU, TNC26) and quotes the Board's endorsement message to the national organisations. The quote is attributed as what it is: a message to the national partners, not an endorsement addressed to GÉANT. Put the Board member in CC; this is a courtesy, not a new send.
+3. No survey link in the GÉANT note (against C). NRENs that reply get their own link from section 5 and Parts 4/5 within one working day. Create and test the links for groups A and B beforehand (`Distribution.md` rule 4).
+4. In parallel, mail the group A NRENs directly (E), and tell GÉANT so that NRENs are not surprised by two mails.
+5. Leave RU and BY out (group D, open decision). Countries with a channel but no response (section 4) are not part of the GÉANT request, so that existing partners are not crossed; reconsider after the reminders.
+
+**Open before sending:** EA SIG decision on groups A–C (due 2026-11-06); the recipient at GÉANT (ask the Board members who were at TNC26 for a named contact; otherwise the public Community Programme address); whether the closing date is known.
 
 ### Timeline (proposal, today = Tuesday 2026-11-03, week 45)
 
@@ -142,17 +170,18 @@ The internal two-month plan stays internal; partners only receive the closing da
 
 1. **File name:** the request mentioned `Country.md`; the repository file is `Countries.md`.
 2. **BA:** the inventory finds no verified country-wide organisation (consistent with the web check). New since the inventory: according to a university news item of September 2026, an association to act as the NREN is being founded and will apply for GÉANT membership. Status still open. Update the inventory or not? Not changed here.
-3. **"Institutions" column in the tracking table:** values such as ArgeZID 77, EUNIS_CZ 57 and UniDig 35 exceed the 28 participants recorded overall, and for ArgeZID they exceed the 22 members. The column apparently holds *reached* institutions, not *responding* ones. A clear label is needed before the column is used as a denominator.
+3. **"Institutions" column in the tracking table:** values such as ArgeZID 77, EUNIS_CZ 57 and UniDig 35 exceed the participants per channel in the export of 2026-11-05 (ArgeZID 0, EUNIS_CZ 3, UniDig 14), and for ArgeZID they exceed the 22 members. The column apparently holds *reached* institutions, not *responding* ones. A clear label is needed before the column is used as a denominator.
 4. **MC and VA:** do they belong to the target group at all (one private business school; pontifical universities in Rome)? EA SIG decision. Keeping them in `Countries.md` is harmless either way.
 5. **Institution figures** in section 2 (groups A and B) have not been verified; check them against ETER before using them.
 
 ---
 
-## 8. Sources of the web checks (2026-11-03)
+## 8. Sources of the web checks (2026-11-03, GÉANT 2026-11-05)
 
 - Monaco: [International University of Monaco (Wikipedia)](https://en.wikipedia.org/wiki/International_University_of_Monaco); [uniRank Monaco](https://www.unirank.org/mc); [Education in Monaco](https://monacovoice.com/en/article/education-in-monaco)
 - Andorra: [uniRank Andorra](https://www.unirank.org/ad); [Universitat d'Andorra (uniRank)](https://www.unirank.org/ad/uni/universitat-d-andorra/)
 - San Marino: [UniRSM, Ateneo](https://www.unirsm.sm/en/ateneo/)
 - Liechtenstein: [UFL](https://www.ufl.li/en/); [Private University in the Principality of Liechtenstein (Wikipedia)](https://en.wikipedia.org/wiki/Private_University_in_the_Principality_of_Liechtenstein)
 - Vatican City: [List of universities in Vatican City (Wikipedia)](https://en.wikipedia.org/wiki/List_of_universities_in_Vatican_City); [Pontifical universities in Rome (Wikipedia)](https://en.wikipedia.org/wiki/Pontifical_universities_in_Rome)
+- EUNIS–GÉANT (checked 2026-11-05): [EUNIS and GÉANT sign Memorandum of Understanding (GÉANT CONNECT, 2018)](https://connect.geant.org/2018/10/16/eunis-and-geant-sign-memorandum-of-understanding-on-joint-cooperation); [EUNIS at TNC26: strengthening the bridge between higher education and NRENs (EUNIS, 2026-06-17)](https://eunis.org/?p=15399); [GÉANT Community Programme](https://community.geant.org/community-programme/)
 - Bosnia and Herzegovina: [SUM: Together towards Bosnia and Herzegovina's full membership in GÉANT](https://www.sum.ba/en/objave/novosti/together-towards-bosnia-and-herzegovina’s-full-membership-in-géant); [RIPE SEE 8: The only European country without a NREN](https://www.ripe.net/participate/forms/uploads/fobi_plugins/file/see8/The%20only%20European%20country%20without%20a%20NREN_2ea6f9d6-bed1-4df0-a19d-600fe84cccaa.pdf); [GÉANT membership](https://geant.org/about-geant/membership/)
