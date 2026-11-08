@@ -31,12 +31,12 @@ We deliberately do not rely only on EUNIS mailing lists. National organisations 
 
 The survey is designed so that each distribution partner can use the results for its own community, not only for the European picture:
 
-- **A dataset you can analyse yourself.** [ORGANISATION] has its own survey link. Responses received through it carry a channel marker that identifies the distribution channel, never the individual respondent. The de-identified dataset will be published openly on Zenodo under CC BY-NC-SA 4.0 and keeps this marker. You can therefore filter your community's responses and analyse them with your own questions, for example on EA status, HERM adoption, barriers or support needs of your members.
+- **A dataset you can analyse yourself.** [ORGANISATION] has its own survey link. Responses received through it carry a channel marker that identifies the distribution channel, never the individual respondent. The de-identified dataset will be published openly on Zenodo under CC BY-NC-SA 4.0 and keeps this marker for every channel through which at least five institutions responded. You can therefore filter your community's responses and analyse them with your own questions, for example on EA status, HERM adoption, barriers or support needs of your members.
 - **A benchmark against Europe.** You can compare your community directly with the overall European results and with other countries.
 - **Feedback from us.** Where enough responses come through your channel, we will provide a short summary of your community's results alongside the European report. We invite you to discuss the results with us and the EA SIG, and to contribute to the interpretation for your country.
 - **Evidence for your own planning.** The results show where guidance, examples, exchange formats or community activities around EA would add the most value for your members.
 
-The value of all of this depends on how many of your members respond. Results for a single channel or country can only be reported separately if **at least five institutions** from it take part; smaller groups are pooled into "Other countries". Your call therefore decides whether your community becomes visible in the results.
+The value of all of this depends on how many of your members respond. A single channel or country is shown separately in the results and in the published dataset only if **at least five institutions** from it take part; smaller groups are pooled, for example into "Other countries". Your call therefore decides whether your community becomes visible in the results.
 
 ### What we ask you to do
 
@@ -57,11 +57,11 @@ The survey is open now. To keep momentum, we ask you to follow this timing:
 
 We invite people with insight into EA or IT strategy at their institution, for example enterprise, business or solution architects, CIOs and heads of IT, digital strategy or digital office staff, and IT programme managers. Institutions without any EA practice are explicitly welcome; their answers are just as important. Several people from the same institution may respond, since different units often have different views.
 
-The questionnaire adapts to each respondent. Depending on their answers, it skips questions that do not apply and goes into more depth where an institution has experience with EA or HERM. It takes about 20 minutes on average: noticeably less for institutions with little EA or HERM experience, and more for those who share detailed HERM use cases.
+The questionnaire adapts to each respondent. Depending on their answers, it skips questions that do not apply and goes into more depth where an institution has experience with EA or HERM. Most respondents need 10 to 20 minutes (typically about 12): noticeably less for institutions with little EA or HERM experience, and more for those who share detailed HERM use cases.
 
 ### Data protection
 
-Participation is voluntary and based on consent under the GDPR. The data controller is SemaLogic, Weimar, Germany. Contact details and other direct identifiers are never published. Institutions are named only if respondents explicitly agree. Full information is provided on the first page of the survey.
+Participation is voluntary and based on consent under the GDPR. The data controller is SemaLogic, Weimar, Germany. Contact details and other direct identifiers are never published. Institutions are named only if respondents explicitly agree. Full information, including a short FAQ, is provided on a separate page linked from the first page of the survey.
 
 Many thanks for supporting this work. I am happy to answer any questions or to discuss the survey in a short call.
 
@@ -85,7 +85,7 @@ Dear colleagues,
 
 [Why this matters for our community: 2–3 sentences by ORGANISATION, for example which decisions or activities the results will inform.]
 
-The survey asks about the status of EA at your institution, the frameworks you use, your experience with HERM, barriers and the support you would find useful. The questionnaire is in English and adapts to your answers: it only asks what applies to your institution. On average it takes about 20 minutes, less if your institution has little experience with EA or HERM, more if you share detailed HERM experience. Your answers are equally welcome if you have no EA practice yet; this is important for a realistic picture. Several colleagues from one institution may take part.
+The survey asks about the status of EA at your institution, the frameworks you use, your experience with HERM, barriers and the support you would find useful. The questionnaire is in English and adapts to your answers: it only asks what applies to your institution. Most respondents need 10 to 20 minutes, less if your institution has little experience with EA or HERM, more if you share detailed HERM experience. Your answers are equally welcome if you have no EA practice yet; this is important for a realistic picture. Several colleagues from one institution may take part.
 
 Please use this link, so that the results for our community can be evaluated separately:
 
@@ -111,7 +111,7 @@ Dear colleagues,
 
 Many thanks to everyone who has already taken part in the EUNIS survey on Enterprise Architecture and HERM. To make the results for our community meaningful, we need responses from as many institutions as possible, including those without an EA practice.
 
-If you have not yet taken part: the questionnaire adapts to your institution's experience and takes about 20 minutes on average, less if EA or HERM play only a small role at your institution.
+If you have not yet taken part: the questionnaire adapts to your institution's experience; most respondents need 10 to 20 minutes, less if EA or HERM play only a small role at your institution.
 
 [REMINDER LINK]
 
@@ -149,7 +149,7 @@ We do not ask you to share any contact data with us. Please use only the link be
 
 ### What [NREN] gains
 
-- **A national picture.** Results for [COUNTRY] are reported separately if at least five institutions take part. The de-identified dataset will be published openly on Zenodo under CC BY-NC-SA 4.0 and keeps the channel marker, so [NREN] can analyse its own channel.
+- **A national picture.** Results for [COUNTRY] are reported separately if at least five institutions take part. The de-identified dataset will be published openly on Zenodo under CC BY-NC-SA 4.0 and keeps the channel marker for every channel through which at least five institutions responded, so [NREN] can analyse its own channel.
 - **Evidence for service planning.** The results show where institutions see gaps in architecture, integration, shared services and IT governance, which is directly relevant to the services NRENs develop for their community.
 - **A European benchmark** for the institutions in [COUNTRY].
 
@@ -157,7 +157,7 @@ We do not ask you to share any contact data with us. Please use only the link be
 
 The consultation is open now. Institutions are asked to respond within three weeks of receiving the request. We announce the closing date at least two weeks in advance.
 
-Participation is voluntary and based on consent under the GDPR; the data controller is SemaLogic, Weimar, Germany. Full information is on the first page of the survey.
+Participation is voluntary and based on consent under the GDPR; the data controller is SemaLogic, Weimar, Germany. Full information, including a short FAQ, is on a separate page linked from the first page of the survey.
 
 Could you let me know whether [NREN] is able to forward the request, or whom we should contact instead? I am happy to discuss it in a short call.
 
@@ -197,7 +197,7 @@ Your response describes your institution's current situation, plans and requirem
 
 **About the questionnaire**
 
-The consultation is carried out as a research survey in English. It adapts to the institution's experience and takes about 20 minutes on average, less where EA plays a small role. Several colleagues from one institution may respond. Participation is voluntary and based on consent under the GDPR; the data controller is SemaLogic, Weimar, Germany. Contact details are never published, and institutions are named only if respondents explicitly agree. Full information is on the first page of the survey.
+The consultation is carried out as a research survey in English. It adapts to the institution's experience; most respondents need 10 to 20 minutes, less where EA plays a small role. Several colleagues from one institution may respond. Participation is voluntary and based on consent under the GDPR; the data controller is SemaLogic, Weimar, Germany. Contact details are never published, and institutions are named only if respondents explicitly agree. Full information, including a short FAQ, is on a separate page linked from the first page of the survey.
 
 Thank you for your support.
 
