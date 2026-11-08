@@ -5,3 +5,4 @@ EUNIS_contacts.csv
 __pycache__/
 *.py[cod]
 landscape_runs/*/cache/
+00_Invitation.*
