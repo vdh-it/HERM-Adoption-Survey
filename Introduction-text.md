@@ -1,22 +1,11 @@
-Welcome!
+**Welcome!**
 
-This survey explores the current adoption and use of Enterprise Architecture (EA) and the Higher Education Reference Model (HERM) in higher education, including practices, use cases, barriers, and support needs.
-The study is conducted in close connection with the EUNIS Enterprise Architecture Special Interest Group (EA SIG), which promotes knowledge sharing and collaborative development of EA practices across higher education. The findings will be discussed with the EA SIG and used to support further community activities and publications.
+How do European higher education institutions use Enterprise Architecture (EA) – for strategy and investment decisions, AI and digital transformation, or not yet at all? How useful is the [Higher Education Reference Model (HERM)](https://www.caudit.edu.au/communities/caudit-higher-education-reference-models/) in practice? And what support would help? A survey by the [EUNIS Enterprise Architecture Special Interest Group (EA SIG)](https://eunis.org/task-forces/enterprise-architecture/).
 
-Privacy and Data Protection
+**What you get:** a comparison of your institution with others in Europe, the option to connect with peers that have a similar EA setup, and the chance to give input on what the EA SIG works on next.
 
-Participation in this survey is voluntary.
-The data controller responsible for the processing of personal data is:
-[Company name]
-[Street Address]
-[Town]
-[Country]
-Represented by [Responsible Person], [Role].
-Contact: [E-Mail]
+**10–20 minutes**, and you can pause at any time. Institutions without any EA practice are just as important to us.
 
-The information collected through this survey will be used to analyse the adoption and use of Enterprise Architecture (EA) and the Higher Education Reference Model (HERM) in higher education. The study will be analysed by [Responsible Person] on behalf of [Company name], discussed with the EUNIS Enterprise Architecture SIG, and subsequently published.
-The legal basis for processing personal data is your consent pursuant to Art. 6(1)(a) GDPR. Contact details and other direct personal identifiers will not be included in the published research dataset. Exception: if you opt in to peer matching, your contact details will be shared only with peer institutions that have also opted in.
-Before publication, the survey data will be de-identified. Data that could identify individuals or institutions will be removed or coarsened. The resulting dataset is intended to be published for long-term public access through the Zenodo community “Research on Digital Transformation and Information Technology in Higher Education in Europe”. The published data may be downloaded, analysed and reused by third parties in accordance with the licence specified for the Zenodo record (CC-BY-NC-SA 4.0).
+**Not the right person?** Please forward the invitation link to a colleague who knows your institution's IT strategy or architecture.
 
-You may withdraw your consent at any time before publication of the dataset by contacting [Responsible Person] at [Company]. Withdrawal does not affect the lawfulness of processing carried out before withdrawal. After publication on Zenodo, complete withdrawal of already published or downloaded data can no longer be guaranteed.
-Under the GDPR, you may also have the right to request access to, correction or deletion of your personal data, restriction of processing, and data portability. You have the right to lodge a complaint with a competent data protection supervisory authority.
+**Privacy:** The data controller is [Company name], [Town], [Country] ([E-Mail]). Your answers are used to analyse the adoption of EA and HERM in higher education, and a de-identified dataset will be published openly on Zenodo. You can withdraw your consent at any time until the dataset is published. Full [privacy information](https://pad.gwdg.de/s/j4qDc67Pae#GDPR) and a short [FAQ](https://pad.gwdg.de/s/j4qDc67Pae#FAQ).
