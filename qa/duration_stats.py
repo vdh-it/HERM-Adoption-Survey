@@ -10,9 +10,11 @@ for the paths defined in Blueprint.md section 3 (Question Flow):
   2.2-2.6 and the whole of Section 4 are shown),
 - previews, break-offs and people who leave right after the consent page.
 
-Works on the raw LamaPoll export ("Rohdaten ... .csv" with readable
-column headers, as delivered in data/). Columns are found by question
-text, not by LamaPoll question number, so renumbering does not break it.
+Works on the raw LamaPoll export with readable column headers, as
+delivered in data/: German ("Rohdaten ... .csv") or English UI ("Raw
+data ... .csv"); the metadata column names are recognised in both
+languages. Columns are found by question text, not by LamaPoll question
+number, so renumbering does not break it.
 
 Outlier rule (extreme pauses): respondents often leave the survey open
 while doing other work. A page shown longer than --extreme-page seconds
@@ -46,10 +48,13 @@ BOUNCE_RATE = 5.0  # answer rate in % below which a break-off only passed the co
 COL_PROCEED = "How would you like to proceed?"
 COL_EA = "Current status of Enterprise Architecture at your institution"
 COL_HERM = "Institutional HERM adoption status"
-COL_TOTAL = "Beantwortungsdauer (in s)"
-COL_DONE = "abgeschlossen"
-COL_RATE = "Antwort-Quote"
-PAGE_PREFIX = "Dauer für Seite"
+# LamaPoll metadata columns, named after the UI language of the export (German, English).
+COL_TOTAL = ("Beantwortungsdauer (in s)", "Response time (in s)")
+COL_DONE = ("abgeschlossen", "completed")
+COL_RATE = ("Antwort-Quote", "Response rate")
+PAGE_PREFIX = ("Dauer für Seite", "Duration for Page")
+ATTR_PREFIX = ("Attribut",)  # also matches English "Attribute 1"
+EXPORT_GLOBS = ("*Rohdaten*.csv", "*Raw data*.csv")
 
 EA_NONE = {"No EA practice", "Don't know / Cannot assess"}
 EA_EXPLORING = {"Exploring or planning EA"}
@@ -72,13 +77,13 @@ EA_NONE, EA_EXPLORING, EA_OPERATIONAL, HERM_EVAL_PILOT, HERM_ACTIVE, HERM_SECTIO
 
 
 def find_latest_export(data_dir):
-    """Newest raw export (by mtime) with readable headers."""
-    candidates = sorted(data_dir.glob("*Rohdaten*.csv"),
+    """Newest raw export (by mtime) with readable headers, German or English."""
+    candidates = sorted({p for g in EXPORT_GLOBS for p in data_dir.glob(g)},
                         key=lambda p: p.stat().st_mtime, reverse=True)
     for path in candidates:
-        if COL_TOTAL in read_header(path):
+        if set(COL_TOTAL) & set(read_header(path)):
             return path
-    sys.exit(f"No raw export with column '{COL_TOTAL}' in {data_dir}")
+    sys.exit(f"No raw export with a column {COL_TOTAL} in {data_dir}")
 
 
 def sniff(sample):
@@ -104,6 +109,14 @@ def column(rows, text):
         if name.endswith(" - " + text) or name == text:
             return name
     sys.exit(f"Column not found: {text}")
+
+
+def meta_column(rows, names):
+    """Name of a LamaPoll metadata column, whichever export language is present."""
+    found = next((n for n in names if n in rows[0]), None)
+    if found is None:
+        sys.exit(f"Metadata column not found, tried: {', '.join(names)}")
+    return found
 
 
 def number(value):
@@ -147,12 +160,16 @@ class Timing:
 
 def channel_of(row):
     return next((v.removeprefix("Distribution_") for k, v in row.items()
-                 if k.startswith("Attribut") and (v or "").startswith("Distribution_")), "(none)")
+                 if k.startswith(ATTR_PREFIX) and (v or "").startswith("Distribution_")), "(none)")
 
 
 def build_report(path, extreme):
     rows = load_rows(path)
-    timing = Timing([c for c in rows[0] if c.startswith(PAGE_PREFIX)], extreme)
+    pages = [c for c in rows[0] if c.startswith(PAGE_PREFIX)]
+    if not pages:
+        sys.exit(f"No page-duration columns starting with {PAGE_PREFIX} in {path.name}")
+    timing = Timing(pages, extreme)
+    col_done, col_rate = meta_column(rows, COL_DONE), meta_column(rows, COL_RATE)
     proceed, ea_col, herm_col = (column(rows, t) for t in (COL_PROCEED, COL_EA, COL_HERM))
     for r in rows:
         r["_ea"], r["_herm"] = norm(r[ea_col]), norm(r[herm_col])
@@ -161,8 +178,8 @@ def build_report(path, extreme):
     participants = [r for r in rows if r[proceed].startswith("Participate")]
     previews = [r for r in rows if r[proceed].startswith("Preview")]
     leavers = [r for r in rows if r[proceed].startswith("Leave")]
-    done = [r for r in participants if r[COL_DONE] == "1"]
-    broken = [r for r in participants if r[COL_DONE] != "1"]
+    done = [r for r in participants if r[col_done] == "1"]
+    broken = [r for r in participants if r[col_done] != "1"]
 
     groups = [
         ("All completed", done),
@@ -178,10 +195,10 @@ def build_report(path, extreme):
          [r for r in done if r[ea] in EA_NONE and r[herm] not in HERM_SECTION4]),
         ("Break-off (participants, not completed)", broken),
         (f"  of which left after consent (answer rate < {BOUNCE_RATE:g} %)",
-         [r for r in broken if number(r[COL_RATE]) < BOUNCE_RATE]),
+         [r for r in broken if number(r[col_rate]) < BOUNCE_RATE]),
         ("**Preview** (0.1), all", previews),
-        ("  Preview clicked through to the end", [r for r in previews if r[COL_DONE] == "1"]),
-        ("  Preview stopped early", [r for r in previews if r[COL_DONE] != "1"]),
+        ("  Preview clicked through to the end", [r for r in previews if r[col_done] == "1"]),
+        ("  Preview stopped early", [r for r in previews if r[col_done] != "1"]),
         ("Leave (0.1)", leavers),
     ]
 
