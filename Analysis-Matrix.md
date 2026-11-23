@@ -75,7 +75,8 @@
 | `CASE_CANDIDATE` | 3.2, 4.7, 4.8, 4.13, 7.2 | Criteria from Blueprint OI-8: demonstrated outcome (4.7 substantive value), reuse potential (4.13), cross-institutional relevance (coded from 4.8), maturity (3.2 = active or embedded), willingness to share (7.2 sharing/presenting/interview); 7.1 as supporting indicator only | Follow-up case screening |
 | `PEER_MATCH_PROFILE` | 1.3, 1.4, 1.5, 2.1, `EA_COVERAGE_TYPE` (where available), 2.3, 3.2 | Profile vector; only for respondents who selected peer matching in 7.2 and provided an e-mail address in 8.1 | Peer matching (operational, not a research output; see E7) |
 | `DUPLICATE_INSTITUTION_FLAG` | 1.1 and metadata | 1 = institution appears more than once | Data cleaning / sensitivity analysis |
-| `CHANNEL` | LamaPoll attribute `Distribution_*` | Name of the distribution channel (e.g. ZKI, SURF, EUNIS); "direct / unknown" if no attribute | Channel analysis (RQ31) |
+| `CHANNEL` | LamaPoll attributes `Distribution_*` and `Country_*` | Name of the distribution channel (e.g. ZKI, SURF, EUNIS); "direct / unknown" if no attribute. A channel is identified by the name **together with the country attribute of the link**, because some names recur across countries (e.g. SIG DE / SIG FI, Newsletter CZ) | Channel analysis (RQ31) |
+| `CHANNEL_TYPE` | `CHANNEL` | partner (national or sectoral organisation) / EUNIS / SIG / EA Week / Projects (e.g. German state projects) / Newsletter / SocialNet (all platform channels such as LinkedIn, see `Distribution.md` rule 7) / direct / unknown (decided 2026-11-23) | Comparison of channel types; pooling of small channels |
 | `CHANNEL_WAVE` | LamaPoll attributes `main`, `reminder` | main / reminder / unknown | Effect of reminders; comparison of early and late respondents |
 | `CHANNEL_COUNTRY_MISMATCH` | Country attribute in the link, 1.2 | 1 = link country differs from 1.2 | Detects forwarded links; 1.2 is authoritative for country analyses |
 | `CHANNEL_REACH_RATIO` | `CHANNEL`, membership counts in the network inventory | Participating institutions per channel ÷ member institutions of the channel; missing where the inventory says "membercount undefined" or counts individuals only | Rough order of magnitude of reach per channel (RQ31) |
@@ -97,6 +98,7 @@
 - Respondent organisational unit distribution
 - Respondent knowledge-of-EA distribution
 - Responses and institutions per distribution channel and wave (`CHANNEL`, `CHANNEL_WAVE`)
+- Responses and institutions per channel type (`CHANNEL_TYPE`)
 - Rough reach per channel (`CHANNEL_REACH_RATIO`) and countries without any channel
 - Response curve per field week (`FIELD_WEEK`)
 
@@ -196,7 +198,7 @@ Decided (Blueprint OI-10, 2026-10-08):
 - All countries below this threshold are pooled into one group, **"Other countries"** (`COUNTRY_GROUP`).
 - Institutions are counted with the selection rule of E3 (one response per institution). Responses without an institution name count as one institution each; report how many such responses a country group contains.
 - Country is taken from 1.2, not from the link attribute.
-- The same threshold applies to distribution channels (`CHANNEL`): channel-specific results are reported to a distribution partner only if at least 5 participating institutions responded through its channel (decided 2026-10-08).
+- The same threshold applies to distribution channels (`CHANNEL`, i.e. name and link country): channel-specific results are reported to a distribution partner only if at least 5 participating institutions responded through its channel (decided 2026-10-08).
 - Re-assess the threshold and the pooling after the field phase, before any country comparison is reported.
 - The same thresholds apply to the published dataset: `COUNTRY_GROUP` replaces the country, and channels with fewer than 5 participating institutions are pooled (Blueprint data rule 14, decided 2026-11-08). Participants are told this on the additional information page (`extraInformationWebPage.md`).
 

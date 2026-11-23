@@ -1,6 +1,6 @@
 # Distribution Plan
 
-**Last updated:** 2026-11-03
+**Last updated:** 2026-11-23
 **Texts:** all invitation and reminder texts are in `Survey_Invitation.md`. This file holds links, process, rules and tracking only.
 
 ## 1. Current status
@@ -16,7 +16,7 @@
 - [ ] Observe the participation rate per distribution channel.
 	1) Can we support a specific distribution channel?
 	2) Have we finished the main field phase?
-- [ ] Observe if people give reasons for not participating and consider whether any of these reasons can be changed.
+- [+] Observe if people give reasons for not participating and consider whether any of these reasons can be changed. ✅ 2026-11-16
 - [ ] Observe the 'Other' categories: is there a missing item that we need to add? ✅ 2026-11-03
 - [ ] Test the raw data: are there any issues that motivate change? ✅ 2026-10-26 (CSV import with ";" works)
 - [ ] Define when to close the survey.
@@ -63,6 +63,7 @@ As promised in `Survey_Invitation.md`; any change here must also be made there.
 4. New channels: copy the template, add the channel to the tracking table, test the link before sending.
 5. SIG channels are expected to show selection bias; plan a sensitivity analysis without them.
 6. Check the export after the first real responses of each new channel; correct broken links immediately.
+7. Additional channels of an existing partner or outside the partner mailings: newsletters use `Distribution_Newsletter`, social media channels use the platform name (e.g. `Distribution_LinkedIn`). The country parameter distinguishes the activities. In the analysis, all platform channels are merged into the category "SocialNet" (decided 2026-11-23).
 
 ---
 
@@ -70,56 +71,58 @@ As promised in `Survey_Invitation.md`; any change here must also be made there.
 
 "Membership" is taken from `National_Higher_Education_IT_Networks_Europe.md` and is only a rough denominator; replace it with the number the partner reports. "Contact": names and e-mail addresses of contact persons are kept only in `EUNIS_contacts.csv`, which is excluded from Git (`.gitignore`). "in CSV" means a representative is listed there; "not on EUNIS map" means the contact must come from elsewhere.
 
-| Channel      | Country | Contact                   | Membership (inventory) | Invitation sent    | Follow-up due  | Partner sent | Reached (reported) | Reminder sent | Institutions |
-| ------------ | ------- | ------------------------- | ---------------------- | ------------------ | -------------- | ------------ | ------------------ | ------------- | ------------ |
-| AMUE         | FR      | in CSV                    | 178 institutions       | invited            | reminder       |              |                    |               |              |
-| Arge ZID     | AT      | not on EUNIS              | 22 institutions        | distributed        | reminder       |              |                    |               | 43           |
-| ARNES        | SI      | not on EUNIS map          | undefined              | endorsed           | done           |              |                    |               |              |
-| Asiera       | IE      | in CSV                    | 9 institutions         | invited            | done           |              |                    |               |              |
-| CINECA       | IT      | not on EUNIS map          | 71 HE institutions     | invited            | done/reminder  |              |                    |               |              |
-| CIO          | DE      | in CSV (not on EUNIS map) | 56 individuals         | distributed        | -              |              | yes                |               |              |
-| Crue         | ES      | not on EUNIS map          | undefined              | endorsed           | done           |              |                    |               |              |
-| CSC          | FI      | in CSV                    | undefined              | invited            | done           |              |                    |               |              |
-| CSIESR       | FR      | in CSV                    | 145 institutions       | distributed        | done           |              |                    |               |              |
-| EUNIS_CZ     | CZ      | in CSV                    | undefined              | distributed        | -              |              |                    |               | 48+9 = 57    |
-| EUNIS_SK     | SK      | in CSV                    | 20 full + 1 associate  | endorsed           | done           |              |                    |               |              |
-| Funidata     | FI      | in CSV                    | 8 owner organisations  | invited            | reminder       |              |                    |               |              |
-| GUnet        | GR      | in CSV                    | 25 universities        | distributed        | reminder       |              |                    |               | 25           |
-| HIS          | DE      | in CSV                    | 223 members            | endorsed           | done           |              |                    |               |              |
-| HKdir        | NO      | in CSV                    | undefined              | declined -> Sikt   | done           |              |                    |               |              |
-| Jisc         | GB      | in CSV                    | undefined              | endorsed           | done           |              |                    |               |              |
-| Ladok        | SE      | in CSV                    | 43 institutions        | declined -> UniDig | -              |              |                    |               |              |
-| MUCI         | PL      | in CSV                    | > 100 institutions     | declined           | -              |              |                    |               |              |
-| UniDig       | SE      | not on EUNIS map          | 38 institutions        | distributed        | -              |              | yes                |               | 35           |
-| OPI          | PL      | in CSV                    | undefined              | distributed        | -              |              |                    |               |              |
-| RASH         | AL      | in CSV                    | undefined              | endorsed           | done           |              |                    |               |              |
-| SWITCH       | CH      | not on EUNIS map          | undefined              | distributed        | -              |              | yes                |               |              |
-| SIGMA        | ES      | in CSV                    | 17 universities        | invited            | reminder       |              |                    |               |              |
-| Sikt         | NO      | in CSV                    | undefined              | distributed        | -              |              |                    |               |              |
-| SRCE         | HR      | in CSV                    | undefined              | invited            | reminder       |              |                    |               |              |
-| SURF         | NL      | in CSV                    | > 120 institutions     | confirmed          | reminder       |              |                    |               |              |
-| UCISA        | GB      | not on EUNIS map          | undefined              | distributed        | reminder       |              | yes                |               |              |
-| Uni          | EE      | in CSV                    | undefined              | endorsed           | done           |              |                    |               |              |
-| Uni          | PT      | in CSV                    | undefined              | invited            | reminder       |              |                    |               |              |
-| VLIR         | BE      | in CSV (not on EUNIS map) | 5 universities         | invited            | reminder       |              |                    |               |              |
-| VPC          | LV      | in CSV                    | 4 founders             | invited            | reminder       |              |                    |               |              |
-| ZKI          | DE      | in CSV                    | > 250 members          | distributed        | done, reminder |              | yes                |               |              |
-| EA SIG DE    | DE      | in CSV                    | 40 members             | -                  |                |              |                    |               |              |
-| EA SIG DK    | DK      | in CSV                    | 8 universities         | invited            | reminder       |              |                    |               |              |
-| EA SIG FI    | FI      | in CSV                    | n/a                    | -                  |                |              |                    |               |              |
-| EA SIG EUNIS | EU      | in CSV                    | 98 members             | -                  |                |              |                    |               |              |
-| EA Week      | EU      | EA Week                   | n/a                    | -                  |                |              |                    |               |              |
-| EUNIS        | EU      | EUNIS secretariat         | n/a                    | -                  |                |              |                    |               |              |
+| Channel      | Country | Contact                   | Membership (inventory) | Invitation sent    | Follow-up due                 | Partner sent | Reached (reported) | Reminder sent | Institutions     |
+| ------------ | ------- | ------------------------- | ---------------------- | ------------------ | ----------------------------- | ------------ | ------------------ | ------------- | ---------------- |
+| AMUE         | FR      | in CSV                    | 178 institutions       | distributed        | reminder                      |              |                    |               | 178              |
+| Arge ZID     | AT      | not on EUNIS              | 22 institutions        | distributed        | reminder                      |              |                    |               | 43               |
+| ARNES        | SI      | not on EUNIS map          | undefined              | endorsed           | done, reminders: 10/28, 11/18 |              |                    |               |                  |
+| Asiera       | IE      | in CSV                    | 9 institutions         | invited            | done, reminders: 11/18        |              |                    |               |                  |
+| CINECA       | IT      | not on EUNIS map          | 71 HE institutions     | invited            | done, reminders: 11/03, 11/18 |              |                    |               |                  |
+| CIO          | DE      | in CSV (not on EUNIS map) | 56 individuals         | distributed        | -                             |              | yes                |               | 56               |
+| Crue         | ES      | not on EUNIS map          | undefined              | invited            | done, reminders: 10/28, 11/18 |              |                    |               |                  |
+| CSC          | FI      | in CSV                    | undefined              | distributed        | done                          |              |                    |               |                  |
+| CSIESR       | FR      | in CSV                    | 145 institutions       | distributed        | done                          |              |                    |               | smaller EA Group |
+| EUNIS_CZ     | CZ      | in CSV                    | undefined              | distributed        | -                             |              |                    |               | 48+9 = 57        |
+| Newsletter   | CZ      | in CSV (EUNIS_CZ)         | undefined              | -                  |                               |              |                    |               |                  |
+| EUNIS_SK     | SK      | in CSV                    | 20 full + 1 associate  | endorsed           | done, reminders: 10/28, 11/18 |              |                    |               |                  |
+| Funidata     | FI      | in CSV                    | 8 owner organisations  | invited            | reminders: 11/03, 11/18       |              |                    |               |                  |
+| GUnet        | GR      | in CSV                    | 25 universities        | distributed        | reminder                      |              |                    |               | 25               |
+| HIS          | DE      | in CSV                    | 223 members            | endorsed           | done, reminders: 10/28, 11/18 |              |                    |               |                  |
+| HKdir        | NO      | in CSV                    | undefined              | declined -> Sikt   | done                          |              |                    |               |                  |
+| Jisc         | GB      | in CSV                    | undefined              | endorsed           | done, reminders: 10/28, 11/18 |              |                    |               |                  |
+| Ladok        | SE      | in CSV                    | 43 institutions        | declined -> UniDig | -                             |              |                    |               |                  |
+| MUCI         | PL      | in CSV                    | > 100 institutions     | declined           | -                             |              |                    |               |                  |
+| UniDig       | SE      | not on EUNIS map          | 38 institutions        | distributed        | -                             |              | yes                |               | 35               |
+| OPI          | PL      | in CSV                    | undefined              | distributed        | -                             |              |                    |               |                  |
+| RASH         | AL      | in CSV                    | undefined              | distributed        | done, reminders: 10/30, 11/18 |              |                    |               |                  |
+| SWITCH       | CH      | not on EUNIS map          | undefined              | distributed        | -                             |              | yes                |               |                  |
+| SIGMA        | ES      | in CSV                    | 17 universities        | invited            | reminders: 11/03, 11/18       |              |                    |               |                  |
+| Sikt         | NO      | in CSV                    | undefined              | distributed        | -                             |              |                    |               |                  |
+| SRCE         | HR      | in CSV                    | undefined              | invited            | reminders: 11/03, 11/18       |              |                    |               |                  |
+| SURF         | NL      | in CSV                    | > 120 institutions     | distributed        | reminder                      |              | yes                |               | 42               |
+| UCISA        | GB      | not on EUNIS map          | undefined              | distributed        | reminder                      |              | yes                |               |                  |
+| Uni          | EE      | in CSV                    | undefined              | endorsed           | done, reminders: 11/03, 11/18 |              |                    |               |                  |
+| Uni          | PT      | in CSV                    | undefined              | invited            | reminders: 11/08, 11/18       |              |                    |               |                  |
+| VLIR         | BE      | in CSV (not on EUNIS map) | 5 universities         | invited            | reminders: 11/03, 11/18       |              |                    |               |                  |
+| VPC          | LV      | in CSV                    | 4 founders             | invited            | reminders: 11/03, 11/18       |              |                    |               |                  |
+| ZKI          | DE      | in CSV                    | > 250 members          | distributed        | done, reminder                |              | yes                |               |                  |
+| EA SIG DE    | DE      | in CSV                    | 40 members             | -                  | starting 11/23+               |              |                    |               |                  |
+| EA SIG DK    | DK      | in CSV                    | 8 universities         | invited            | reminders: 11/03, 11/18       |              |                    |               |                  |
+| EA SIG FI    | FI      | in CSV                    | n/a                    | distributed        | starting 11/23+               |              |                    |               | 38               |
+| EA SIG EUNIS | EU      | in CSV                    | 98 members             | -                  |                               |              |                    |               |                  |
+| EA Week      | EU      | EA Week                   | n/a                    | -                  |                               |              |                    |               |                  |
+| EUNIS        | EU      | EUNIS secretariat         | n/a                    | -                  |                               |              |                    |               |                  |
+| Projects     | DE      | state projects (Landesprojekte) | n/a              | -                  |                               |              |                    |               |                  |
+| LinkedIn     | FR      | own post                  | n/a                    | -                  |                               |              |                    |               |                  |
 
-Current Stats - 38 potential channels: ✅ 2026-11-08
-5 not addressed (SIG + EA Week + EUNIS members)
-7 endorsed (ARNES/SI, Crue/ES, EUNIS_SK/SK, HIS/DE, Jisc/GB, RASH/AL, Uni/EE)
+Current Stats - 38 potential channels: ✅ 2026-11-23
+3 not addressed (EUNIS EA SIG + EA Week + EUNIS members)
+5 endorsed (ARNES/SI, EUNIS_SK/SK, HIS/DE, Jisc/GB, Uni/EE)
 3 declined
-11 invited
-1 confirmed (NL)
-11 distributed (AT, CZ, CH, 2xDE, FR, GB, GR, NO, PL, SE)
+10 invited
+17 distributed (AL, AT, CZ, CH, 2xDE, FI, 2xFR, GB, GR, NL, NO, PL, SE, SIGs: FI, DE)
 
-Overall: 24 countries in total - 20 countries participate - missing: AL, SI, SK, EE
+Overall: 24 countries in total - 21 countries participate - missing: SI, SK, EE
 
 ### 5.1 Contact status in `EUNIS_contacts.csv`
 
@@ -232,6 +235,16 @@ All EUNIS members:
 https://survey.lamapoll.de/EA-and-HERM-Adoption?Country_EU=1&Distribution_EUNIS=1&main=1
 https://fynl.in/celc50mt
 
+Projects (German state projects, Landesprojekte):
+https://survey.lamapoll.de/EA-and-HERM-Adoption?Country_DE=1&Distribution_Projects=1&main=1
+https://fynl.in/9i6JWDum
+
+Social media and Newsletter:
+https://survey.lamapoll.de/EA-and-HERM-Adoption?Country_FR=1&Distribution_LinkedIn=1&main=1
+https://fynl.in/TaD3z5IG
+https://survey.lamapoll.de/EA-and-HERM-Adoption?Country_CZ=1&Distribution_Newsletter=1&main=1
+https://fynl.in/JGcWrv
+
 Template:
 https://survey.lamapoll.de/EA-and-HERM-Adoption?Country_XX=1&Distribution_XX=1&main=1
 
@@ -242,6 +255,7 @@ https://survey.lamapoll.de/EA-and-HERM-Adoption?Country_IT=1&Distribution_CINECA
 https://survey.lamapoll.de/EA-and-HERM-Adoption?Country_FR=1&Distribution_CSIESR=1&reminder=1
 https://survey.lamapoll.de/EA-and-HERM-Adoption?Country_FI=1&Distribution_CSC=1&reminder=1
 https://survey.lamapoll.de/EA-and-HERM-Adoption?Country_CZ=1&Distribution_EUNIS_CZ=1&reminder=1
+https://survey.lamapoll.de/EA-and-HERM-Adoption?Country_CZ=1&Distribution_Newsletter=1&reminder=1
 https://survey.lamapoll.de/EA-and-HERM-Adoption?Country_SK=1&Distribution_EUNIS_SK=1&reminder=1
 https://survey.lamapoll.de/EA-and-HERM-Adoption?Country_GR=1&Distribution_GUnet=1&reminder=1
 https://survey.lamapoll.de/EA-and-HERM-Adoption?Country_GB=1&Distribution_Jisc=1&reminder=1
@@ -265,6 +279,8 @@ https://survey.lamapoll.de/EA-and-HERM-Adoption?Country_DE=1&Distribution_SIG=1&
 https://survey.lamapoll.de/EA-and-HERM-Adoption?Country_FI=1&Distribution_SIG=1&reminder=1
 https://survey.lamapoll.de/EA-and-HERM-Adoption?Country_EU=1&Distribution_SIG=1&reminder=1
 https://survey.lamapoll.de/EA-and-HERM-Adoption?Country_EU=1&Distribution_EUNIS=1&reminder=1
+https://survey.lamapoll.de/EA-and-HERM-Adoption?Country_DE=1&Distribution_Projects=1&reminder=1
+https://survey.lamapoll.de/EA-and-HERM-Adoption?Country_FR=1&Distribution_LinkedIn=1&reminder=1
 
 Template:
 https://survey.lamapoll.de/EA-and-HERM-Adoption?Country_XX=1&Distribution_XX=1&reminder=1
